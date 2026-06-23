@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: brokerage-kpi-tracker
+    runtime: static
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    staticPublishPath: dist
+    routes:
+      # Simple fallback rule for SPA routing if you decide to add page routes in the future
+      - type: rewrite
+        from: /*
+        to: /index.html
