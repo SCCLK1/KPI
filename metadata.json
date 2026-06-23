@@ -1,0 +1,6 @@
+{
+  "name": "Brokerage KPI Tracker",
+  "description": "An interactive, side-by-side financial comparison and KPI visualization dashboard for eight major Indian stock brokerages across FY25 and FY26.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
