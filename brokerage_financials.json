@@ -180,12 +180,12 @@
       "accentColor": "#00d09c",
       "kpis": {
         "broking_income": {
-          "fy25": "₹3,431.0",
-          "fy26": "₹3,901.4",
-          "fy25Val": 3431,
+          "fy25": "₹3,297.0",
+          "fy26": "~₹3,901.4",
+          "fy25Val": 3297.01,
           "fy26Val": 3901.4,
           "unit": "₹ Cr",
-          "notes": "Dominates ~81% of operations."
+          "notes": "FY25 broking revenue ₹3,297 Cr = 84.5% of operations (RHP). FY26 estimated at ~84% of operating revenue (₹4,645 Cr); not separately broken out in Q4FY26 results."
         },
         "distribution_income": {
           "fy25": "NSD",
@@ -244,18 +244,18 @@
           "notes": "Grouped under 'Cost to Grow' (Includes performance ads & brand awareness campaigns)."
         },
         "total_expense": {
-          "fy25": "₹1,561.65",
-          "fy26": "₹1,994.88",
-          "fy25Val": 1561.65,
-          "fy26Val": 1994.88,
+          "fy25": "₹1,596.49",
+          "fy26": "₹1,991.99",
+          "fy25Val": 1596.49,
+          "fy26Val": 1991.99,
           "unit": "₹ Cr",
-          "notes": "Calculated from Total Income minus Profit Before Tax."
+          "notes": "Reported total expenses (consolidated)."
         },
         "pbt": {
-          "fy25": "~₹2,500.0",
-          "fy26": "₹2,821.0",
-          "fy25Val": 2500,
-          "fy26Val": 2821,
+          "fy25": "₹2,463.8",
+          "fy26": "₹2,821.4",
+          "fy25Val": 2463.78,
+          "fy26Val": 2821.41,
           "unit": "₹ Cr",
           "notes": "High operating leverage post-IPO scale."
         },
@@ -309,11 +309,11 @@
         },
         "mtf_portfolio": {
           "fy25": "₹601.9",
-          "fy26": "₹1,668.3",
+          "fy26": "₹2,814.3",
           "fy25Val": 601.9,
-          "fy26Val": 1668.3,
+          "fy26Val": 2814.3,
           "unit": "₹ Cr",
-          "notes": "Reached ₹3,599.00 Cr in June 2026."
+          "notes": "MTF book ₹6,019 Mn (FY25) → ₹28,143 Mn (Q4FY26) per shareholders' letter. Reached ~₹3,599 Cr in June 2026."
         },
         "t5_portfolio": {
           "fy25": "NSD",
@@ -432,17 +432,17 @@
         },
         "mtf_income": {
           "fy25": "₹1,341.0",
-          "fy26": "₹1,621.1",
+          "fy26": "₹1,631.7",
           "fy25Val": 1341,
-          "fy26Val": 1621.1,
+          "fy26Val": 1631.7,
           "unit": "₹ Cr",
           "notes": "Benefited from interest rate charges."
         },
         "total_income": {
           "fy25": "₹5,247.7",
-          "fy26": "₹5,136.6",
+          "fy26": "₹5,152.2",
           "fy25Val": 5247.7,
-          "fy26Val": 5136.6,
+          "fy26Val": 5152.2,
           "unit": "₹ Cr",
           "notes": "Consolidated Total Revenue."
         },
@@ -456,9 +456,9 @@
         },
         "employee_cost": {
           "fy25": "₹855.2",
-          "fy26": "~₹1,020.0",
+          "fy26": "~₹1,067.1",
           "fy25Val": 855.2,
-          "fy26Val": 1020,
+          "fy26Val": 1067.1,
           "unit": "₹ Cr",
           "notes": "Elevated on tech and wealth hiring."
         },
@@ -567,12 +567,12 @@
           "notes": "Non-disclosed; wealth AUM stands at ₹43.4 Bn."
         },
         "networth": {
-          "fy25": "~₹4,000.0",
-          "fy26": "₹6,150.0",
-          "fy25Val": 4000,
-          "fy26Val": 6150,
+          "fy25": "₹5,639.1",
+          "fy26": "₹6,148.9",
+          "fy25Val": 5639.1,
+          "fy26Val": 6148.9,
           "unit": "₹ Cr",
-          "notes": "Comfortable capital ratios."
+          "notes": "Comfortable capital ratios (per consolidated balance sheet: ₹5,639 Cr FY25, ₹6,149 Cr FY26)."
         },
         "borrowing": {
           "fy25": "₹3,380.0",
@@ -658,12 +658,12 @@
           "notes": "Consolidated broking fees and charges."
         },
         "distribution_income": {
-          "fy25": "₹255.83",
-          "fy26": "₹284.70",
-          "fy25Val": 255.83,
-          "fy26Val": 284.7,
+          "fy25": "₹509.4",
+          "fy26": "₹590.4",
+          "fy25Val": 509.4,
+          "fy26Val": 590.4,
           "unit": "₹ Cr",
-          "notes": "Insurance and mutual fund commissions."
+          "notes": "Financial Product Distribution (incl. insurance & ancillary): ₹5,094 Mn FY25 → ₹5,904 Mn FY26."
         },
         "mtf_income": {
           "fy25": "~₹110.0",
@@ -714,12 +714,12 @@
           "notes": "Minimal branding spend compared to discount brokers; relationship-driven."
         },
         "total_expense": {
-          "fy25": "₹1,480.40",
-          "fy26": "₹1,682.50",
-          "fy25Val": 1480.4,
-          "fy26Val": 1682.5,
+          "fy25": "₹1,642.8",
+          "fy26": "₹1,846.8",
+          "fy25Val": 1642.8,
+          "fy26Val": 1846.8,
           "unit": "₹ Cr",
-          "notes": "Derived from Operating PBT subtraction."
+          "notes": "Reported total expenses: ₹16,428 Mn FY25 → ₹18,468 Mn FY26."
         },
         "pbt": {
           "fy25": "₹924.6",
@@ -1120,20 +1120,20 @@
       "accentColor": "#10b981",
       "kpis": {
         "broking_income": {
-          "fy25": "~₹367.46",
-          "fy26": "~₹223.06",
-          "fy25Val": 367.46,
-          "fy26Val": 223.06,
+          "fy25": "₹295.73",
+          "fy26": "₹223.28",
+          "fy25Val": 295.73,
+          "fy26Val": 223.28,
           "unit": "₹ Cr",
           "notes": "Declined due to transactional retail volume drops."
         },
         "distribution_income": {
-          "fy25": "~₹299.70",
-          "fy26": "~₹410.20",
-          "fy25Val": 299.7,
-          "fy26Val": 410.2,
+          "fy25": "₹204.47",
+          "fy26": "₹226.52",
+          "fy25Val": 204.47,
+          "fy26Val": 226.52,
           "unit": "₹ Cr",
-          "notes": "Derived from Mutual Fund SIP & Wealth advisory."
+          "notes": "MF + Insurance + Other distribution income (FY26: 131.12 + 87.16 + 8.24)."
         },
         "mtf_income": {
           "fy25": "NSD",
@@ -1184,20 +1184,20 @@
           "notes": "Included inside high advisory acquisition opex."
         },
         "total_expense": {
-          "fy25": "~₹517.32",
-          "fy26": "~₹560.96",
-          "fy25Val": 517.32,
-          "fy26Val": 560.96,
+          "fy25": "₹526.63",
+          "fy26": "₹558.88",
+          "fy25Val": 526.63,
+          "fy26Val": 558.88,
           "unit": "₹ Cr",
-          "notes": "Elevated opex from massive front-loaded investments."
+          "notes": "Reported total expenses; elevated opex from front-loaded investments."
         },
         "pbt": {
-          "fy25": "~₹232.00",
-          "fy26": "~₹115.00",
-          "fy25Val": 232,
-          "fy26Val": 115,
+          "fy25": "₹222.69",
+          "fy26": "₹108.23",
+          "fy25Val": 222.69,
+          "fy26Val": 108.23,
           "unit": "₹ Cr",
-          "notes": "Margins compressed on workforce expansions."
+          "notes": "FY26 after ₹8.86 Cr exceptional item; margins compressed on workforce expansions."
         },
         "pat": {
           "fy25": "₹172.49",
@@ -1272,12 +1272,12 @@
           "notes": "Negligible loan against securities (LAS) usage."
         },
         "networth": {
-          "fy25": "~₹910.0",
-          "fy26": "~₹1,050.0",
-          "fy25Val": 910,
-          "fy26Val": 1050,
+          "fy25": "₹1,243.5",
+          "fy26": "₹1,295.2",
+          "fy25Val": 1243.5,
+          "fy26Val": 1295.17,
           "unit": "₹ Cr",
-          "notes": "Comfortably capitalized relative to debt profiles."
+          "notes": "Total equity: ₹1,243.5 Cr (Mar-25) → ₹1,295.2 Cr (Mar-26)."
         },
         "borrowing": {
           "fy25": "Nil",
@@ -1507,12 +1507,12 @@
           "notes": "Integrated into ZCPL's LAS ledger."
         },
         "networth": {
-          "fy25": "~₹15,000.0",
+          "fy25": "₹16,611.0",
           "fy26": "~₹19,000.0",
-          "fy25Val": 15000,
+          "fy25Val": 16611.21,
           "fy26Val": 19000,
           "unit": "₹ Cr",
-          "notes": "Very strong cash reserves (₹22,679 Cr in FY25)."
+          "notes": "FY25 net worth ₹16,611 Cr (MCA Annual Return, standalone). FY26 estimated — no FY26 filing available."
         },
         "borrowing": {
           "fy25": "~₹210.0",
@@ -1590,20 +1590,20 @@
       "accentColor": "#d97706",
       "kpis": {
         "broking_income": {
-          "fy25": "₹3,410.0",
-          "fy26": "₹4,535.0",
-          "fy25Val": 3410,
-          "fy26Val": 4535,
+          "fy25": "~₹2,356.8",
+          "fy26": "~₹2,165.7",
+          "fy25Val": 2356.8,
+          "fy26Val": 2165.7,
           "unit": "₹ Cr",
-          "notes": "Up 33% YoY in core capital markets."
+          "notes": "Brokerage revenues ≈28% of total revenue FY25, ≈23% FY26 (per revenue-mix disclosure); excludes net interest income."
         },
         "distribution_income": {
-          "fy25": "₹288.0",
-          "fy26": "₹406.62",
-          "fy25Val": 288,
-          "fy26Val": 406.62,
+          "fy25": "~₹1,262.6",
+          "fy26": "~₹1,506.6",
+          "fy25Val": 1262.6,
+          "fy26Val": 1506.6,
           "unit": "₹ Cr",
-          "notes": "Distribution book grew 41% YoY."
+          "notes": "Distribution fees ≈15% of total revenue FY25, ≈16% FY26. (Distribution AUM book — distinct from fee income — grew 41% YoY to ₹40,662 Cr.)"
         },
         "mtf_income": {
           "fy25": "₹865.0",
@@ -1662,12 +1662,12 @@
           "notes": "Increased due to tech and physical branch expansions."
         },
         "pbt": {
-          "fy25": "₹3,110.0",
-          "fy26": "₹2,710.0",
-          "fy25Val": 3110,
-          "fy26Val": 2710,
+          "fy25": "₹2,689.0",
+          "fy26": "₹3,113.0",
+          "fy25Val": 2689,
+          "fy26Val": 3113,
           "unit": "₹ Cr",
-          "notes": "Down on MTM adjustments."
+          "notes": "Operating PBT (+16% YoY). Statutory total PAT is lower due to treasury book mark-to-market losses."
         },
         "pat": {
           "fy25": "₹2,493.95",
@@ -1742,12 +1742,12 @@
           "notes": "Managed via Motilal Oswal Finvest."
         },
         "networth": {
-          "fy25": "₹9,112.0",
+          "fy25": "₹11,110.3",
           "fy26": "₹12,888.0",
-          "fy25Val": 9112,
+          "fy25Val": 11110.3,
           "fy26Val": 12888,
           "unit": "₹ Cr",
-          "notes": "Strong consolidated equity reserves."
+          "notes": "Strong consolidated equity reserves; net worth +16% YoY to ₹12,888 Cr."
         },
         "borrowing": {
           "fy25": "₹11,845.0",
@@ -1766,12 +1766,12 @@
           "notes": "Cost of funds rose on rate adjustments."
         },
         "total_clients": {
-          "fy25": "~55.0 Lakh",
+          "fy25": "~1.28 Cr",
           "fy26": "1.55 Cr",
-          "fy25Val": 55,
+          "fy25Val": 1.28,
           "fy26Val": 1.55,
           "unit": "₹ Cr",
-          "notes": "Scaled through acquisitions and digital sign-ups."
+          "notes": "Total clients ~15.5 Mn (+21% YoY); scaled through acquisitions and digital sign-ups."
         },
         "active_clients": {
           "fy25": "~5.1 Lakh",
@@ -1849,12 +1849,12 @@
           "notes": "Scaled margin funding to support margins."
         },
         "total_income": {
-          "fy25": "₹3,264.55",
-          "fy26": "~₹3,558.35",
-          "fy25Val": 3264.55,
-          "fy26Val": 3558.35,
+          "fy25": "₹3,264.86",
+          "fy26": "~₹2,925.0",
+          "fy25Val": 3264.86,
+          "fy26Val": 2925,
           "unit": "₹ Cr",
-          "notes": "Total consolidated income."
+          "notes": "FY25 reported ₹3,264.9 Cr. FY26 estimated from 9M FY26 run-rate (₹2,259.9 Cr, down ~10% YoY); no full-year FY26 filing available."
         },
         "franchisee_expense": {
           "fy25": "Low reliance",
@@ -1889,28 +1889,28 @@
           "notes": "Marketing increased to support digital growth."
         },
         "total_expense": {
-          "fy25": "₹2,139.55",
-          "fy26": "₹2,629.35",
-          "fy25Val": 2139.55,
-          "fy26Val": 2629.35,
+          "fy25": "₹1,768.71",
+          "fy26": "~₹1,792.0",
+          "fy25Val": 1768.71,
+          "fy26Val": 1792,
           "unit": "₹ Cr",
-          "notes": "Calculated as Total Income less PAT."
+          "notes": "FY25 reported ₹1,768.7 Cr. FY26 estimated from 9M FY26 run-rate; no full-year filing available."
         },
         "pbt": {
-          "fy25": "₹1,520.0",
-          "fy26": "₹1,250.0",
-          "fy25Val": 1520,
-          "fy26Val": 1250,
+          "fy25": "₹1,496.2",
+          "fy26": "~₹1,136.0",
+          "fy25Val": 1496.15,
+          "fy26Val": 1136,
           "unit": "₹ Cr",
-          "notes": "Compressed by higher technology investments."
+          "notes": "FY25 reported ₹1,496.2 Cr. FY26 estimated from 9M FY26 (₹884.2 Cr, down ~24% YoY); compressed by higher technology investments."
         },
         "pat": {
           "fy25": "₹1,125.0",
-          "fy26": "₹929.0",
+          "fy26": "~₹852.0",
           "fy25Val": 1125,
-          "fy26Val": 929,
+          "fy26Val": 852,
           "unit": "₹ Cr",
-          "notes": "Net Profit fell 17% YoY."
+          "notes": "FY25 reported ₹1,125.0 Cr. FY26 estimated from 9M FY26 (₹661.5 Cr, down ~24% YoY); no full-year filing available."
         },
         "brokerage_yield": {
           "fy25": "Standard (HDFC Sky is Flat ₹20)",
@@ -1977,12 +1977,12 @@
           "notes": "Handled through the parent bank."
         },
         "networth": {
-          "fy25": "~₹2,800.0",
-          "fy26": "~₹3,400.0",
-          "fy25Val": 2800,
-          "fy26Val": 3400,
+          "fy25": "₹3,348.6",
+          "fy26": "~₹3,650.0",
+          "fy25Val": 3348.59,
+          "fy26Val": 3650,
           "unit": "₹ Cr",
-          "notes": "Retained earnings support net worth."
+          "notes": "FY25 reported ₹3,348.6 Cr; ₹3,569.1 Cr at Dec-25 (Q3FY26). FY26 estimated."
         },
         "borrowing": {
           "fy25": "~₹2,240.0",
