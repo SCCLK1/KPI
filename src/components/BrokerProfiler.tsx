@@ -84,7 +84,7 @@ export default function BrokerProfiler() {
       {/* Main Profile Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Side: Strategic Overview & Gauges */}
-        <div className="lg:col-span-1 space-y-8">
+        <div className="lg:col-span-1 space-y-8 lg:sticky lg:top-[160px] self-start">
           {/* Card: Brand Background */}
           <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden">
             <div className={`absolute -right-12 -top-12 h-28 w-28 rounded-full bg-gradient-to-br ${company.logoColor} opacity-5 blur-xl`} />
@@ -208,7 +208,7 @@ export default function BrokerProfiler() {
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100">
+            <div className="divide-y divide-slate-100 max-h-[660px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200">
               {kpiCategories.map((cat, idx) => (
                 <div key={idx} className="p-6 sm:p-8 space-y-4.5">
                   <h4 className="text-[11px] font-extrabold text-emerald-600 uppercase tracking-widest font-sans flex items-center gap-1.5 matches-category">

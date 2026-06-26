@@ -18,36 +18,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-amber-600 selection:text-white">
-      {/* Top Banner Warning or Sub-header */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white text-xs px-4 py-2.5 border-b border-slate-850 z-30">
-        <div className={`${containerClass} mx-auto flex flex-col sm:flex-row justify-between items-center gap-2.5 font-sans`}>
-          <div className="flex items-center gap-2 text-slate-300">
-            <ShieldAlert size={13} className="text-amber-500 animate-pulse" />
-            <span className="font-semibold text-white">Regulatory Transition Note:</span>
-            <span>FY26 figures incorporate SEBI's 'true-to-label' flat exchange fee guidelines.</span>
-          </div>
-          <div className="flex items-center gap-4 text-[11px] text-slate-400">
-            <span className="flex items-center gap-1.5">
-              <Clock size={12} />
-              Ref Local: 2026-06-22 23:39 (PST)
-            </span>
-            <span className="hidden sm:inline">|</span>
-            <span>Shriram AMC Research Desk</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Premium Corporate Header with Slate/Amber Polish */}
       <header className="sticky top-0 bg-[#0F172A] text-white border-b border-slate-800 z-40 shadow-lg">
-        <div className={`${containerClass} mx-auto`}>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-6 lg:py-0 gap-6">
+        <div className={`${containerClass} mx-auto py-4`}>
+          <div className="flex flex-col gap-4">
             {/* Title Identity */}
-            <div className="flex items-center gap-4 py-3">
-              <div className="p-3 bg-amber-600 rounded-xl text-white shadow-md">
-                <Landmark size={22} className="stroke-[2.5]" />
+            <div className="flex items-center gap-4">
+              <div className="p-2.5 bg-amber-600 rounded-xl text-white shadow-md shrink-0">
+                <Landmark size={20} className="stroke-[2.5]" />
               </div>
               <div>
-                <h1 className="font-display font-extrabold text-white text-lg leading-tight tracking-tight uppercase flex items-center gap-2">
+                <h1 className="font-display font-extrabold text-white text-sm sm:text-base md:text-lg leading-tight tracking-tight uppercase flex items-center gap-2 flex-wrap">
                   Shriram AMC — Brokerage Intelligence Suite
                   <span className="inline-block px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[9px] uppercase tracking-wider font-mono">
                     FY25 vs FY26
@@ -59,73 +40,76 @@ export default function App() {
               </div>
             </div>
 
+            {/* Divider */}
+            <div className="h-px bg-slate-800/80 w-full" />
+
             {/* Navigation tabs */}
-            <nav className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
+            <nav className="flex items-center gap-2 overflow-x-auto pb-1.5 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-700">
               <button
                 onClick={() => setActiveTab("matrix")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "matrix"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <Grid3X3 size={15} />
                 Interactive KPI Matrix
               </button>
-
+ 
               <button
                 onClick={() => setActiveTab("compare")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "compare"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <ArrowLeftRight size={15} />
                 Partner Benchmarking
               </button>
-
+ 
               <button
                 onClick={() => setActiveTab("profiler")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "profiler"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <BookOpen size={15} />
                 Strategic Partner Profiles
               </button>
-
+ 
               <button
                 onClick={() => setActiveTab("charts")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "charts"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <BarChart3 size={15} />
                 Visual Performance Analytics
               </button>
-
+ 
               <button
                 onClick={() => setActiveTab("disclosures")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "disclosures"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <HelpCircle size={15} />
                 Disclosure Analytics
               </button>
-
+ 
               <button
                 onClick={() => setActiveTab("projections")}
-                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-xs font-bold border-b-2 transition-all shrink-0 whitespace-nowrap ${
                   activeTab === "projections"
-                    ? "border-amber-500 text-amber-450"
+                    ? "border-amber-500 text-amber-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
@@ -158,8 +142,6 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
-
-
     </div>
   );
 }
