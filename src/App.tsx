@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { 
   Grid3X3, 
   BarChart3, 
-  HelpCircle, 
   ArrowLeftRight, 
   Landmark, 
   BookOpen, 
@@ -16,18 +15,18 @@ import KPIMatrix from "./components/KPIMatrix";
 import BrokerProfiler from "./components/BrokerProfiler";
 import HeadToHead from "./components/HeadToHead";
 import KPICharts from "./components/KPICharts";
-import DisclosureCard from "./components/DisclosureCard";
+
 import ProjectionsModel from "./components/ProjectionsModel";
 import CfoInsights from "./components/CfoInsights";
 
-type ActiveTab = "matrix" | "profiler" | "compare" | "charts" | "disclosures" | "projections" | "cfo";
+type ActiveTab = "matrix" | "profiler" | "compare" | "charts" | "projections" | "cfo";
 
 const navItems = [
   { id: "matrix", label: "Interactive KPI Matrix", icon: Grid3X3 },
   { id: "compare", label: "Partner Benchmarking", icon: ArrowLeftRight },
   { id: "profiler", label: "Strategic Partner Profiles", icon: BookOpen },
   { id: "charts", label: "Visual Performance Analytics", icon: BarChart3 },
-  { id: "disclosures", label: "Disclosure Analytics", icon: HelpCircle },
+
   { id: "cfo", label: "CFO Strategic Insights", icon: TrendingUp },
   { id: "projections", label: "Scenario Projections Model", icon: Sliders },
 ] as const;
@@ -185,13 +184,11 @@ export default function App() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.18, ease: "easeOut" }}
               >
-                {activeTab === "matrix" && (
-                  <KPIMatrix onSelectNsdExplanation={() => setActiveTab("disclosures")} />
-                )}
+                {activeTab === "matrix" && <KPIMatrix />}
                 {activeTab === "compare" && <HeadToHead />}
                 {activeTab === "profiler" && <BrokerProfiler />}
                 {activeTab === "charts" && <KPICharts />}
-                {activeTab === "disclosures" && <DisclosureCard />}
+
                 {activeTab === "cfo" && <CfoInsights />}
                 {activeTab === "projections" && <ProjectionsModel />}
               </motion.div>

@@ -2,11 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Search, Info, HelpCircle, ArrowUpRight, ArrowDownRight, RefreshCw, X, Download, Filter } from "lucide-react";
 import { BROKER_DATA, KPI_LIST, BrokerCompany, KPIDefinition, KPIValue } from "../data";
 
-interface KPIMatrixProps {
-  onSelectNsdExplanation: () => void;
-}
-
-export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
+export default function KPIMatrix() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [yearView, setYearView] = useState<"FY26" | "FY25" | "Both">("Both");
@@ -632,15 +628,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                   <p>
                     As designated, standard Indian retail brokerages merge specialized margin ledgers or segment details. Under RBI & SEBI guidelines, "T5 margins" and "ESOP financing" are consolidated inside the broad Margin Trading Facility (MTF) ledger.
                   </p>
-                  <button
-                    onClick={() => {
-                      setSelectedCell(null);
-                      onSelectNsdExplanation();
-                    }}
-                    className="text-amber-600 hover:text-amber-800 font-bold text-[11px] underline mt-1 text-left"
-                  >
-                    Read full conceptual explanation in Disclosure Analytics &rarr;
-                  </button>
+
                 </div>
               )}
             </div>
