@@ -89,7 +89,7 @@ export default function DisclosureCard() {
                       Regulatory Accounting Standard
                     </span>
                     <p className="leading-normal">
-                      Most standalone broker entities pool <strong>T+5 short-term margin funding</strong> and <strong>ESOP loan against securities (LAS)</strong> inside their general <strong>Margin Trading Facility (MTF) receivables book</strong>. This combines reporting parameters and explains why separate line items for these are designated as <strong>NSD (Not Separately Disclosed)</strong>.
+                      Most standalone broker entities pool <strong>T5 short-term margin funding</strong> and <strong>ESOP loan against securities (LAS)</strong> inside their general <strong>Margin Trading Facility (MTF) receivables book</strong>. This combines reporting parameters and explains why separate line items for these are designated as <strong>NSD (Not Separately Disclosed)</strong>.
                     </p>
                   </div>
                 </div>
@@ -203,3 +203,4 @@ export default function DisclosureCard() {
     </div>
   );
 }
+

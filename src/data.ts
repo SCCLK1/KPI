@@ -145,7 +145,7 @@ export const KPI_LIST: KPIDefinition[] = [
     key: "t5_portfolio",
     label: "T5 Portfolio",
     category: "Balance Sheet & Debt",
-    description: "Short-term T+5 client receivables funding."
+    description: "Short-term T5 client receivables funding."
   },
   {
     key: "esop_portfolio",
@@ -1067,7 +1067,7 @@ export const BROKER_DATA: BrokerCompany[] = [{
         fy25Val: null,
         fy26Val: null,
         unit: "text",
-        notes: "Standardized T+5 funding is merged with MTF ledgers."
+        notes: "Standardized T5 funding is merged with MTF ledgers."
       },
       esop_portfolio: {
         fy25: "NSD",
@@ -2095,7 +2095,7 @@ export const BROKER_DATA: BrokerCompany[] = [{
 export const MISSING_DISCLOSURES_EXPLANATIONS = {
   whyT5ESOP_NSD: {
     title: "Why 'T5' and 'ESOP' portfolios are designated as NSD",
-    explanation: "In Indian capital market reporting, brokers aggregate margin client receivables on their balance sheets. Only specialized NBFC finance arms (such as 360 ONE Prime or IIFL Wealth Finance) separately segregate 'ESOP funding' or 'T+5 short-term margin' as distinct, stand-alone ledger items. Standard retail brokerages (like Angel One, Groww, and Anand Rathi) pool these items inside their broader MTF (Margin Trading Facility) ledger to simplify compliance and regulatory filings."
+    explanation: "In Indian capital market reporting, brokers aggregate margin client receivables on their balance sheets. Only specialized NBFC finance arms (such as 360 ONE Prime or IIFL Wealth Finance) separately segregate 'ESOP funding' or 'T5 short-term margin' as distinct, stand-alone ledger items. Standard retail brokerages (like Angel One, Groww, and Anand Rathi) pool these items inside their broader MTF (Margin Trading Facility) ledger to simplify compliance and regulatory filings."
   },
   cacVariance: {
     title: "The Customer Acquisition Cost (CAC) and Revenue per Customer Variance",
@@ -2115,3 +2115,4 @@ export const MISSING_DISCLOSURES_EXPLANATIONS = {
     explanation: "There is an active structural wedge playing out in the Indian stock-broking environment. Discount brokers (Groww, Angel One) leverage highly automated cloud infrastructure to handle hundreds of millions of low-fee transactions. They generate major revenue volumes from speculative retail F&O premium sweeps, making them highly sensitive to regulatory pricing controls (like NSE's 'true-to-label' flat exchange payout policies in FY26 which compressed Angel One's profits). On the other hand, Traditional Advisory Elite brokers (IIFL Capital, Anand Rathi, Geojit) operate relationship desks geared toward physical HNIs. Rather than transactional retail velocity, they target asset distribution under management (AUM), mutual fund SIP backlogs, primary market investment banking syndication, and high-quality MTF credit lending, which provide stable, regulatory-insulated profitability margins (like Anand Rathi growing Net Profit by 24.8% in FY26 despite retail headwinds)."
   }
 };
+
