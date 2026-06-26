@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, Info, HelpCircle, ArrowUpRight, ArrowDownRight, RefreshCw, X } from "lucide-react";
+import { Search, Info, HelpCircle, ArrowUpRight, ArrowDownRight, RefreshCw, X, Download } from "lucide-react";
 import { BROKER_DATA, KPI_LIST, BrokerCompany, KPIDefinition, KPIValue } from "../data";
 
 interface KPIMatrixProps {
@@ -46,10 +46,10 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
             e.stopPropagation();
             setSelectedCell({ company, kpi, value: kpiData });
           }}
-          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200 transition-colors cursor-help font-mono"
+          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[9.5px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-500 border border-slate-200 transition-colors cursor-help font-mono whitespace-nowrap"
         >
-          NSD
-          <HelpCircle size={10} className="text-slate-400" />
+          Not Disclosed
+          <HelpCircle size={9} className="text-slate-400" />
         </button>
       );
     }
@@ -93,6 +93,35 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
     );
   };
 
+  const downloadMatrixAsCSV = () => {
+    let csv = "KPI Parameter,Category";
+    BROKER_DATA.forEach((b) => {
+      csv += `,"${b.name} FY25","${b.name} FY26"`;
+    });
+    csv += "\n";
+
+    KPI_LIST.forEach((kpi) => {
+      let row = `"${kpi.label.replace(/"/g, '""')}","${kpi.category}"`;
+      BROKER_DATA.forEach((b) => {
+        const kpiVal = b.kpis[kpi.key];
+        const fy25 = kpiVal ? (kpiVal.fy25 === "NSD" ? "Not Disclosed" : kpiVal.fy25) : "";
+        const fy26 = kpiVal ? (kpiVal.fy26 === "NSD" ? "Not Disclosed" : kpiVal.fy26) : "";
+        row += `,"${fy25.replace(/"/g, '""')}","${fy26.replace(/"/g, '""')}"`;
+      });
+      csv += row + "\n";
+    });
+
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", "brokerage_financials_matrix.csv");
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="space-y-6">
       {/* Search and Controls Panel */}
@@ -118,37 +147,48 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
             )}
           </div>
 
-          {/* Year View Picker */}
-          <div className="flex items-center bg-slate-100 p-1 rounded-xl w-full md:w-auto overflow-x-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+            {/* Year View Picker */}
+            <div className="flex items-center bg-slate-100 p-1 rounded-xl w-full sm:w-auto overflow-x-auto">
+              <button
+                onClick={() => setYearView("Both")}
+                className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
+                  yearView === "Both"
+                    ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
+                    : "text-slate-600 hover:text-slate-950"
+                }`}
+              >
+                YoY Side-by-Side
+              </button>
+              <button
+                onClick={() => setYearView("FY26")}
+                className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
+                  yearView === "FY26"
+                    ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
+                    : "text-slate-600 hover:text-slate-950"
+                }`}
+              >
+                FY26 Actuals
+              </button>
+              <button
+                onClick={() => setYearView("FY25")}
+                className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
+                  yearView === "FY25"
+                    ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
+                    : "text-slate-600 hover:text-slate-950"
+                }`}
+              >
+                FY25 Actuals
+              </button>
+            </div>
+
+            {/* Excel Download Button */}
             <button
-              onClick={() => setYearView("Both")}
-              className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
-                yearView === "Both"
-                  ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
-                  : "text-slate-600 hover:text-slate-950"
-              }`}
+              onClick={downloadMatrixAsCSV}
+              className="flex items-center justify-center gap-1.5 px-4.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
             >
-              YoY Side-by-Side
-            </button>
-            <button
-              onClick={() => setYearView("FY26")}
-              className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
-                yearView === "FY26"
-                  ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
-                  : "text-slate-600 hover:text-slate-950"
-              }`}
-            >
-              FY26 Actuals
-            </button>
-            <button
-              onClick={() => setYearView("FY25")}
-              className={`flex-1 md:flex-none text-xs font-medium px-4 py-2 rounded-lg transition-all ${
-                yearView === "FY25"
-                  ? "bg-white text-slate-900 shadow-xs ring-1 ring-slate-200"
-                  : "text-slate-600 hover:text-slate-950"
-              }`}
-            >
-              FY25 Actuals
+              <Download size={14} />
+              Download Excel/CSV
             </button>
           </div>
         </div>

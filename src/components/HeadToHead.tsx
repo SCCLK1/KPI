@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { BROKER_DATA, KPI_LIST, BrokerCompany, KPIDefinition } from "../data";
-import { ArrowLeftRight, Check, AlertCircle, TrendingUp, HelpCircle } from "lucide-react";
+import { ArrowLeftRight, Check, AlertCircle, TrendingUp, HelpCircle, Download } from "lucide-react";
 
 export default function HeadToHead() {
   const [brokerAId, setBrokerAId] = useState<string>("groww");
@@ -74,6 +74,184 @@ export default function HeadToHead() {
     if (!data || data.fy25Val === null || data.fy26Val === null || data.fy25Val === 0) return null;
     const p = ((data.fy26Val - data.fy25Val) / data.fy25Val) * 100;
     return `${p >= 0 ? "+" : ""}${p.toFixed(1)}%`;
+  };
+
+  const marginA = useMemo(() => {
+    const inc = brokerA.kpis.total_income?.[selectedYear === "FY26" ? "fy26Val" : "fy25Val"];
+    const pat = brokerA.kpis.pat?.[selectedYear === "FY26" ? "fy26Val" : "fy25Val"];
+    return inc && pat ? (pat / inc) * 100 : null;
+  }, [brokerA, selectedYear]);
+
+  const marginB = useMemo(() => {
+    const inc = brokerB.kpis.total_income?.[selectedYear === "FY26" ? "fy26Val" : "fy25Val"];
+    const pat = brokerB.kpis.pat?.[selectedYear === "FY26" ? "fy26Val" : "fy25Val"];
+    return inc && pat ? (pat / inc) * 100 : null;
+  }, [brokerB, selectedYear]);
+
+  // Dynamic Comparison Insights Generator
+  const dynamicInsights = useMemo(() => {
+    const kpisA = brokerA.kpis;
+    const kpisB = brokerB.kpis;
+    const yearKey = selectedYear === "FY26" ? "fy26Val" : "fy25Val";
+    const yearDisp = selectedYear === "FY26" ? "fy26" : "fy25";
+
+    const incomeA = kpisA.total_income?.[yearKey] || null;
+    const incomeB = kpisB.total_income?.[yearKey] || null;
+
+    const patA = kpisA.pat?.[yearKey] || null;
+    const patB = kpisB.pat?.[yearKey] || null;
+
+    const clientsA = kpisA.active_clients?.[yearKey] || null;
+    const clientsB = kpisB.active_clients?.[yearKey] || null;
+
+    const cacA = kpisA.cac?.[yearKey] || null;
+    const cacB = kpisB.cac?.[yearKey] || null;
+
+    const bullets: React.ReactNode[] = [];
+
+    // Scale bullet
+    if (incomeA && incomeB) {
+      if (incomeA > incomeB) {
+        const ratio = incomeA / incomeB;
+        bullets.push(
+          <span key="scale">
+            <strong>Scale Leader:</strong> <strong>{brokerA.name}</strong> operates at a larger scale with a Total Income of <strong>{kpisA.total_income?.[yearDisp]}</strong> compared to <strong>{brokerB.name}</strong>'s <strong>{kpisB.total_income?.[yearDisp]}</strong> (approx. <strong>{ratio.toFixed(1)}x</strong> larger).
+          </span>
+        );
+      } else if (incomeB > incomeA) {
+        const ratio = incomeB / incomeA;
+        bullets.push(
+          <span key="scale">
+            <strong>Scale Leader:</strong> <strong>{brokerB.name}</strong> operates at a larger scale with a Total Income of <strong>{kpisB.total_income?.[yearDisp]}</strong> compared to <strong>{brokerA.name}</strong>'s <strong>{kpisA.total_income?.[yearDisp]}</strong> (approx. <strong>{ratio.toFixed(1)}x</strong> larger).
+          </span>
+        );
+      } else {
+        bullets.push(
+          <span key="scale">
+            <strong>Scale:</strong> Both brokerages are at equal revenue scale with Total Income of <strong>{kpisA.total_income?.[yearDisp]}</strong>.
+          </span>
+        );
+      }
+    }
+
+    // Margin bullet
+    if (marginA !== null && marginB !== null) {
+      if (marginA > marginB) {
+        const diff = marginA - marginB;
+        bullets.push(
+          <span key="margin">
+            <strong>Profit Retention:</strong> <strong>{brokerA.name}</strong> demonstrates higher Net Profit Margin of <strong>{marginA.toFixed(1)}%</strong>, which is <strong>{diff.toFixed(1)}% higher</strong> than <strong>{brokerB.name}</strong>'s <strong>{marginB.toFixed(1)}%</strong>.
+          </span>
+        );
+      } else if (marginB > marginA) {
+        const diff = marginB - marginA;
+        bullets.push(
+          <span key="margin">
+            <strong>Profit Retention:</strong> <strong>{brokerB.name}</strong> demonstrates higher Net Profit Margin of <strong>{marginB.toFixed(1)}%</strong>, which is <strong>{diff.toFixed(1)}% higher</strong> than <strong>{brokerA.name}</strong>'s <strong>{marginA.toFixed(1)}%</strong>.
+          </span>
+        );
+      } else {
+        bullets.push(
+          <span key="margin">
+            <strong>Profit Retention:</strong> Both brokerages share identical profit margins of <strong>{marginA.toFixed(1)}%</strong>.
+          </span>
+        );
+      }
+    }
+
+    // Clients bullet
+    if (clientsA && clientsB) {
+      if (clientsA > clientsB) {
+        bullets.push(
+          <span key="clients">
+            <strong>Market Reach:</strong> <strong>{brokerA.name}</strong> leads on active clients registered with NSE (<strong>{kpisA.active_clients?.[yearDisp]}</strong> vs. <strong>{brokerB.name}</strong>'s <strong>{kpisB.active_clients?.[yearDisp]}</strong>).
+          </span>
+        );
+      } else if (clientsB > clientsA) {
+        bullets.push(
+          <span key="clients">
+            <strong>Market Reach:</strong> <strong>{brokerB.name}</strong> leads on active clients registered with NSE (<strong>{kpisB.active_clients?.[yearDisp]}</strong> vs. <strong>{brokerA.name}</strong>'s <strong>{kpisA.active_clients?.[yearDisp]}</strong>).
+          </span>
+        );
+      }
+    }
+
+    // Cost efficiency / CAC bullet
+    if (cacA && cacB) {
+      const isCacNumA = typeof cacA === "number";
+      const isCacNumB = typeof cacB === "number";
+      if (isCacNumA && isCacNumB) {
+        if (cacA < cacB) {
+          bullets.push(
+            <span key="cac">
+              <strong>Acquisition Efficiency:</strong> <strong>{brokerA.name}</strong> acquires clients much more cheaply with a Customer Acquisition Cost (CAC) of <strong>{kpisA.cac?.[yearDisp]}</strong> vs. <strong>{brokerB.name}</strong>'s <strong>{kpisB.cac?.[yearDisp]}</strong>.
+            </span>
+          );
+        } else if (cacB < cacA) {
+          bullets.push(
+            <span key="cac">
+              <strong>Acquisition Efficiency:</strong> <strong>{brokerB.name}</strong> acquires clients much more cheaply with a Customer Acquisition Cost (CAC) of <strong>{kpisB.cac?.[yearDisp]}</strong> vs. <strong>{brokerA.name}</strong>'s <strong>{kpisA.cac?.[yearDisp]}</strong>.
+            </span>
+          );
+        }
+      }
+    } else {
+      if (brokerA.type !== brokerB.type) {
+        bullets.push(
+          <span key="model">
+            <strong>Business Model Variance:</strong> <strong>{brokerA.name}</strong> operates as a <strong>{brokerA.type}</strong> broker, whereas <strong>{brokerB.name}</strong> is a <strong>{brokerB.type}</strong> broker. Discount models rely on high-volume digital self-serve, while Traditional models utilize partner franchisee commission splits (often reflected in higher franchisee payouts and higher CAC, but yielding higher distribution revenues).
+          </span>
+        );
+      }
+    }
+
+    // YoY growth check for selectedYear === "FY26"
+    if (selectedYear === "FY26") {
+      const incGrowA = getYoYPercentage(brokerA, "total_income");
+      const incGrowB = getYoYPercentage(brokerB, "total_income");
+      if (incGrowA && incGrowB) {
+        bullets.push(
+          <span key="growth">
+            <strong>Growth Trajectory:</strong> <strong>{brokerA.name}</strong> grew its total income by <strong>{incGrowA}</strong> YoY, compared to <strong>{brokerB.name}</strong>'s growth of <strong>{incGrowB}</strong>.
+          </span>
+        );
+      }
+    }
+
+    return bullets;
+  }, [brokerA, brokerB, selectedYear, marginA, marginB]);
+
+  const downloadComparisonAsCSV = () => {
+    let csv = `KPI Parameter,Category,${brokerA.name} ${selectedYear},Leader,${brokerB.name} ${selectedYear}\n`;
+
+    KPI_LIST.forEach((kpi) => {
+      const valA = (selectedYear === "FY26" ? brokerA.kpis[kpi.key]?.fy26 : brokerA.kpis[kpi.key]?.fy25) || "N/A";
+      const valB = (selectedYear === "FY26" ? brokerB.kpis[kpi.key]?.fy26 : brokerB.kpis[kpi.key]?.fy25) || "N/A";
+      const cleanValA = valA === "NSD" ? "Not Disclosed" : valA;
+      const cleanValB = valB === "NSD" ? "Not Disclosed" : valB;
+      const leader = getLeaderText(kpi) || "";
+      const leaderName = leader === "A" ? brokerA.name : leader === "B" ? brokerB.name : leader === "Tie" ? "Tie" : "N/A";
+      
+      csv += `"${kpi.label.replace(/"/g, '""')}","${kpi.category}","${cleanValA.replace(/"/g, '""')}","${leaderName}","${cleanValB.replace(/"/g, '""')}"\n`;
+    });
+
+    const blob = new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `${brokerA.name}_vs_${brokerB.name}_comparison_${selectedYear}.csv`);
+    link.style.visibility = "hidden";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Helper to format values
+  const formatVal = (val: string) => {
+    if (typeof val === "string" && val.includes("NSD")) {
+      return "Not Disclosed";
+    }
+    return val;
   };
 
   return (
@@ -161,15 +339,91 @@ export default function HeadToHead() {
           </div>
         </div>
 
-        {/* Search bar inside Head-to-Head */}
-        <div className="mt-4">
+        {/* Search & Download Bar */}
+        <div className="flex flex-col sm:flex-row items-center gap-3 mt-4">
           <input
             type="text"
             placeholder="Search specific KPIs for side-by-side analysis (e.g. revenue, PAT, clients)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-2.5 text-xs placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all font-sans"
+            className="flex-1 bg-slate-50 border border-slate-200/85 rounded-xl px-4 py-2.5 text-xs placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all font-sans w-full"
           />
+          <button
+            onClick={downloadComparisonAsCSV}
+            className="flex items-center justify-center gap-1.5 px-4.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
+          >
+            <Download size={14} />
+            Download Comparison CSV
+          </button>
+        </div>
+      </div>
+
+      {/* Executive Summary Insights Card */}
+      <div className="bg-[#0F172A] text-slate-100 rounded-2xl border border-slate-800 p-5 shadow-md space-y-4">
+        <h4 className="font-display font-extrabold text-sm text-emerald-400 flex items-center gap-2 uppercase tracking-wider">
+          <TrendingUp size={16} />
+          Executive Comparison Insights ({selectedYear})
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Ratios Comparison */}
+          <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800 space-y-3">
+            <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+              Core Ratios & Efficiency
+            </h5>
+            <div className="space-y-2 text-xs">
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">{brokerA.name} Net Profit Margin:</span>
+                <span className="font-mono font-bold text-emerald-400">
+                  {marginA !== null ? `${marginA.toFixed(1)}%` : "Not Disclosed"}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">{brokerB.name} Net Profit Margin:</span>
+                <span className="font-mono font-bold text-emerald-400">
+                  {marginB !== null ? `${marginB.toFixed(1)}%` : "Not Disclosed"}
+                </span>
+              </div>
+              <hr className="border-slate-850 my-1" />
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">{brokerA.name} Active Clients:</span>
+                <span className="font-mono font-bold text-slate-200">
+                  {formatVal(brokerA.kpis.active_clients?.[selectedYear === "FY26" ? "fy26" : "fy25"] || "") || "Not Disclosed"}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-slate-400">{brokerB.name} Active Clients:</span>
+                <span className="font-mono font-bold text-slate-200">
+                  {formatVal(brokerB.kpis.active_clients?.[selectedYear === "FY26" ? "fy26" : "fy25"] || "") || "Not Disclosed"}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Model Comparison Details */}
+          <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800 space-y-2 flex flex-col justify-center">
+            <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+              Operating Profile Differences
+            </h5>
+            <div className="text-[11px] text-slate-300 space-y-1.5 leading-relaxed">
+              <p>
+                <strong>{brokerA.name}</strong> operates as a <span className="text-emerald-400 font-semibold">{brokerA.type}</span> broker, focusing principally on {brokerA.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
+              </p>
+              <p>
+                <strong>{brokerB.name}</strong> operates as a <span className="text-emerald-400 font-semibold">{brokerB.type}</span> broker, focusing principally on {brokerB.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Dynamic Bullet Points */}
+        <div className="pt-3 border-t border-slate-800">
+          <ul className="list-disc pl-5 space-y-2 text-xs text-slate-300 leading-relaxed">
+            {dynamicInsights.map((bullet, idx) => (
+              <li key={idx}>
+                {bullet}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
@@ -238,7 +492,7 @@ export default function HeadToHead() {
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valA === "string" && valA.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"
                         }`}>
-                          {valA}
+                          {formatVal(valA)}
                         </span>
                         {/* YoY Indicator */}
                         {yoyA && (
@@ -280,7 +534,7 @@ export default function HeadToHead() {
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valB === "string" && valB.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"
                         }`}>
-                          {valB}
+                          {formatVal(valB)}
                         </span>
                         {/* YoY Indicator */}
                         {yoyB && (

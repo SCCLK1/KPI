@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Grid3X3, BarChart3, HelpCircle, ArrowLeftRight, Landmark, Mail, Clock, ShieldAlert, BookOpen } from "lucide-react";
+import { Grid3X3, BarChart3, HelpCircle, ArrowLeftRight, Landmark, Mail, Clock, ShieldAlert, BookOpen, Sliders } from "lucide-react";
 import KPIMatrix from "./components/KPIMatrix";
 import BrokerProfiler from "./components/BrokerProfiler";
 import HeadToHead from "./components/HeadToHead";
 import KPICharts from "./components/KPICharts";
 import DisclosureCard from "./components/DisclosureCard";
+import ProjectionsModel from "./components/ProjectionsModel";
 
-type ActiveTab = "matrix" | "profiler" | "compare" | "charts" | "disclosures";
+type ActiveTab = "matrix" | "profiler" | "compare" | "charts" | "disclosures" | "projections";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("matrix");
@@ -119,6 +120,18 @@ export default function App() {
                 <HelpCircle size={15} />
                 Missing Disclosures
               </button>
+
+              <button
+                onClick={() => setActiveTab("projections")}
+                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                  activeTab === "projections"
+                    ? "border-emerald-500 text-emerald-400"
+                    : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
+                }`}
+              >
+                <Sliders size={15} />
+                Projections Model
+              </button>
             </nav>
           </div>
         </div>
@@ -141,6 +154,7 @@ export default function App() {
             {activeTab === "profiler" && <BrokerProfiler />}
             {activeTab === "charts" && <KPICharts />}
             {activeTab === "disclosures" && <DisclosureCard />}
+            {activeTab === "projections" && <ProjectionsModel />}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -181,8 +195,8 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail size={14} className="text-emerald-400 shrink-0" />
-                  <a href="mailto:karthikeya0077@gmail.com" className="hover:text-white transition-colors underline">
-                    karthikeya0077@gmail.com
+                  <a href="mailto:analytics@shriramcredit.in" className="hover:text-white transition-colors underline">
+                    analytics@shriramcredit.in
                   </a>
                 </div>
               </div>
