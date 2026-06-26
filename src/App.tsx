@@ -159,64 +159,7 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {/* Premium Analytical Corporate Footer */}
-      <footer className="bg-slate-900 text-slate-400 border-t border-slate-800 py-10 mt-12">
-        <div className={`${containerClass} mx-auto space-y-6`}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-6 border-b border-slate-800">
-            {/* Column 1 */}
-            <div className="space-y-3">
-              <span className="font-display font-black text-slate-200 text-sm tracking-widest block uppercase">
-                Regulatory Standards
-              </span>
-              <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                Financial parameters categorized as actuals or designated as <strong>NSD (Not Separately Disclosed)</strong>. All accounting methodologies are compiled strictly from official capital publications, credit rating rationales, and SEBI compliance papers.
-              </p>
-            </div>
 
-            {/* Column 2 */}
-            <div className="space-y-3">
-              <span className="font-display font-black text-slate-200 text-sm tracking-widest block uppercase">
-                Model Classification
-              </span>
-              <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                Our suite represents two distinct branches: low-cost automated <strong>Discount Titans</strong> transacting mainly in derivatives vs. <strong>Traditional Advisory Houses</strong> focused primarily on distribution assets (AUM) and relationship HNIs.
-              </p>
-            </div>
-
-            {/* Column 3 */}
-            <div className="space-y-3">
-              <span className="font-display font-black text-slate-200 text-sm tracking-widest block uppercase">
-                Audit Registry & Desk
-              </span>
-              <div className="text-xs text-slate-400 space-y-2 font-mono">
-                <div className="flex items-center gap-2">
-                  <Clock size={14} className="text-emerald-400 shrink-0" />
-                  <span>Cycle Date: June 22, 2026</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-emerald-400 shrink-0" />
-                  <a href="mailto:analytics@shriramcredit.in" className="hover:text-white transition-colors underline">
-                    analytics@shriramcredit.in
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-            <p className="font-sans">
-              &copy; 2026 Indian Stockbroker Analytics & auditing Desk. Built for regulatory research.
-            </p>
-            <div className="flex items-center gap-4 text-[11px] font-mono">
-              <span className="text-emerald-500 flex items-center gap-1">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                Durable client-state online
-              </span>
-              <span>SEBI Class II Broker Audit Compliant</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
