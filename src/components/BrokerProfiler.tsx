@@ -82,108 +82,114 @@ export default function BrokerProfiler() {
       </div>
 
       {/* Main Profile Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Side: Strategic Overview & Gauges */}
-        <div className="lg:col-span-1 space-y-8 lg:sticky lg:top-[160px] self-start">
-          {/* Card: Brand Background */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden">
-            <div className={`absolute -right-12 -top-12 h-28 w-28 rounded-full bg-gradient-to-br ${company.logoColor} opacity-5 blur-xl`} />
-            <span className="inline-block text-[10px] font-extrabold bg-emerald-50 border border-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md mb-2 uppercase tracking-wider font-mono">
-              {company.type} model
-            </span>
-            <h3 className="font-display font-black text-2xl text-slate-950 mt-1">
-              {company.name}
-            </h3>
-            <span className="text-xs font-mono font-medium text-slate-400 mt-0.5 block">
-              {company.fullName}
-            </span>
-            <p className="text-xs text-slate-600 leading-relaxed mt-3 pt-3 border-t border-slate-100">
-              {company.background}
-            </p>
-          </div>
-
-          {/* Card: Ratios Gauges (PAT Margin & Cost-To-Income) */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
-            <h4 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-              <Activity size={16} className="text-emerald-600" />
-              Operational Efficiency Ratios
-            </h4>
-
-            {/* Gauge 1: PAT margin */}
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4">
-              <div className="flex justify-between items-center">
-                <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
-                    NPM of Total Income
-                  </span>
-                  <span className="font-display font-extrabold text-sm text-slate-800">
-                    Net Profit Margin (PAT)
-                  </span>
-                </div>
-                <div className="text-right">
-                  <span className="font-mono text-base font-black text-emerald-600">
-                    {financialRatios.patMarginFY26.toFixed(1)}%
-                  </span>
-                  <span className={`text-[10px] font-bold block ${
-                    financialRatios.patMarginDelta >= 0 ? "text-emerald-600" : "text-rose-600"
-                  }`}>
-                    {financialRatios.patMarginDelta >= 0 ? "▲" : "▼"}{Math.abs(financialRatios.patMarginDelta).toFixed(1)}% YoY
-                  </span>
-                </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        {/* Left Side: Strategic Overview & Gauges (Unified Card for Height Symmetry) */}
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden flex flex-col justify-between h-full space-y-6">
+            <div className="space-y-6">
+              {/* Brand Background Section */}
+              <div className="relative">
+                <div className={`absolute -right-12 -top-12 h-28 w-28 rounded-full bg-gradient-to-br ${company.logoColor} opacity-5 blur-xl`} />
+                <span className="inline-block text-[10px] font-extrabold bg-emerald-50 border border-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md mb-2 uppercase tracking-wider font-mono">
+                  {company.type} model
+                </span>
+                <h3 className="font-display font-black text-2xl text-slate-950 mt-1">
+                  {company.name}
+                </h3>
+                <span className="text-xs font-mono font-medium text-slate-400 mt-0.5 block">
+                  {company.fullName}
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed mt-3 pt-3 border-t border-slate-100">
+                  {company.background}
+                </p>
               </div>
 
-              {/* Progress visual bar */}
-              <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                <div 
-                  className={`h-full rounded-full transition-all duration-500 bg-emerald-600`}
-                  style={{ width: `${Math.min(100, Math.max(0, financialRatios.patMarginFY26))}%` }}
-                />
+              <hr className="border-slate-100" />
+
+              {/* Ratios Gauges Section */}
+              <div className="space-y-6">
+                <h4 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
+                  <Activity size={16} className="text-emerald-600" />
+                  Operational Efficiency Ratios
+                </h4>
+
+                {/* Gauge 1: PAT margin */}
+                <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
+                        NPM of Total Income
+                      </span>
+                      <span className="font-display font-extrabold text-sm text-slate-800">
+                        Net Profit Margin (PAT)
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-mono text-base font-black text-emerald-600">
+                        {financialRatios.patMarginFY26.toFixed(1)}%
+                      </span>
+                      <span className={`text-[10px] font-bold block ${
+                        financialRatios.patMarginDelta >= 0 ? "text-emerald-600" : "text-rose-600"
+                      }`}>
+                        {financialRatios.patMarginDelta >= 0 ? "▲" : "▼"}{Math.abs(financialRatios.patMarginDelta).toFixed(1)}% YoY
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Progress visual bar */}
+                  <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div 
+                      className={`h-full rounded-full transition-all duration-500 bg-emerald-600`}
+                      style={{ width: `${Math.min(100, Math.max(0, financialRatios.patMarginFY26))}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-400 font-sans leading-normal">
+                    FY25 Margin stood at {financialRatios.patMarginFY25.toFixed(1)}%. Shows effective profit retention.
+                  </p>
+                </div>
+
+                {/* Gauge 2: Cost-to-Income */}
+                <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4 font-sans">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
+                        Cost-To-Income Ratio
+                      </span>
+                      <span className="font-display font-extrabold text-sm text-slate-800">
+                        Opex Efficiency
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-mono text-base font-black text-slate-800">
+                        {financialRatios.costIncomeFY26.toFixed(1)}%
+                      </span>
+                      <span className={`text-[10px] font-bold block ${
+                        financialRatios.costIncomeDelta <= 0 ? "text-emerald-600" : "text-rose-600"
+                      }`}>
+                        {financialRatios.costIncomeDelta <= 0 ? "▼ Improve" : "▲ Inflated"}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Progress visual bar */}
+                  <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full rounded-full bg-slate-700 transition-all duration-500"
+                      style={{ width: `${Math.min(100, Math.max(0, financialRatios.costIncomeFY26))}%` }}
+                    />
+                  </div>
+                  <p className="text-[10px] text-slate-400 font-sans leading-normal">
+                    Cost to earn 1 Rupee. Perfect index of operating leverage post scale.
+                  </p>
+                </div>
               </div>
-              <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                FY25 Margin stood at {financialRatios.patMarginFY25.toFixed(1)}%. Shows effective profit retention.
-              </p>
             </div>
 
-            {/* Gauge 2: Cost-to-Income */}
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4 font-sans">
-              <div className="flex justify-between items-center">
-                <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
-                    Cost-To-Income Ratio
-                  </span>
-                  <span className="font-display font-extrabold text-sm text-slate-800">
-                    Opex Efficiency
-                  </span>
-                </div>
-                <div className="text-right">
-                  <span className="font-mono text-base font-black text-slate-800">
-                    {financialRatios.costIncomeFY26.toFixed(1)}%
-                  </span>
-                  <span className={`text-[10px] font-bold block ${
-                    financialRatios.costIncomeDelta <= 0 ? "text-emerald-600" : "text-rose-600"
-                  }`}>
-                    {financialRatios.costIncomeDelta <= 0 ? "▼ Improve" : "▲ Inflated"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Progress visual bar */}
-              <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                <div 
-                  className="h-full rounded-full bg-slate-700 transition-all duration-500"
-                  style={{ width: `${Math.min(100, Math.max(0, financialRatios.costIncomeFY26))}%` }}
-                />
-              </div>
-              <p className="text-[10px] text-slate-400 font-sans leading-normal">
-                Cost to earn 1 Rupee. Perfect index of operating leverage post scale.
-              </p>
-            </div>
-
-            {/* Analytical Insights card */}
-            <div className="p-4.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-2">
+            {/* Analyst Outlook (pinned at bottom) */}
+            <div className="p-4.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-2 mt-auto">
               <span className="text-[10px] font-extrabold text-emerald-700 block uppercase tracking-wider font-sans flex items-center gap-1">
                 <Award size={10} />
-                Analysist Outlook (FY26)
+                Analyst Outlook (FY26)
               </span>
               <p className="text-[11px] text-emerald-900 leading-normal font-sans">
                 {company.type === "Discount" ? (
@@ -197,9 +203,9 @@ export default function BrokerProfiler() {
         </div>
 
         {/* Right Side: Categorized KPI lists */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50">
+        <div className="lg:col-span-2">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col h-full">
+            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50 flex-none">
               <h3 className="font-display font-extrabold text-slate-900 text-base">
                 Operational & Balance-Sheet Auditing
               </h3>
@@ -208,7 +214,7 @@ export default function BrokerProfiler() {
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100 max-h-[660px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200">
+            <div className="divide-y divide-slate-100 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200 flex-1">
               {kpiCategories.map((cat, idx) => (
                 <div key={idx} className="p-6 sm:p-8 space-y-4.5">
                   <h4 className="text-[11px] font-extrabold text-emerald-600 uppercase tracking-widest font-sans flex items-center gap-1.5 matches-category">
@@ -223,7 +229,6 @@ export default function BrokerProfiler() {
                       if (!kpiDef || !kpiVal) return null;
 
                       const yoy = getYoYStr(key);
-                      const isNsd = (kpiVal.fy26 && typeof kpiVal.fy26 === "string" && kpiVal.fy26.includes("NSD")) || (kpiVal.fy25 && typeof kpiVal.fy25 === "string" && kpiVal.fy25.includes("NSD"));
 
                       return (
                         <div 

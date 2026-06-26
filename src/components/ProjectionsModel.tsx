@@ -149,7 +149,7 @@ export default function ProjectionsModel() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Left Side: Controls/Sliders Panel */}
-        <div className="lg:col-span-1 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-8">
+        <div className="lg:col-span-1 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-8 lg:sticky lg:top-[160px] self-start">
           <div className="flex justify-between items-center pb-4 border-b border-slate-100">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
               Assumptions Panel
