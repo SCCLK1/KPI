@@ -202,10 +202,10 @@ export default function BrokerProfiler() {
           </div>
         </div>
 
-        {/* Right Side: Categorized KPI lists (Extended Height, No internal scrolling) */}
+        {/* Right Side: Categorized KPI lists */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col" style={{maxHeight: '82vh'}}>
+            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50 shrink-0">
               <h3 className="font-display font-extrabold text-slate-900 text-base">
                 Operational & Balance-Sheet Auditing
               </h3>
@@ -214,7 +214,7 @@ export default function BrokerProfiler() {
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100">
+            <div className="divide-y divide-slate-100 overflow-y-auto flex-1">
               {kpiCategories.map((cat, idx) => (
                 <div key={idx} className="p-6 sm:p-8 space-y-4.5">
                   <h4 className="text-[11px] font-extrabold text-emerald-600 uppercase tracking-widest font-sans flex items-center gap-1.5 matches-category">
