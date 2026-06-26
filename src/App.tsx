@@ -56,9 +56,7 @@ export default function App() {
                 FY25-26
               </span>
             </h1>
-            <p className="text-[9px] text-slate-400 font-sans tracking-wide leading-none mt-0.5">
-              Shriram AMC Research Desk
-            </p>
+
           </div>
         </div>
         <button 
@@ -98,9 +96,6 @@ export default function App() {
                     <h1 className="font-display font-extrabold text-white text-xs leading-tight uppercase tracking-tight">
                       Brokerage Intel
                     </h1>
-                    <p className="text-[9px] text-slate-400 font-sans tracking-wide leading-none mt-0.5">
-                      Shriram AMC Research
-                    </p>
                   </div>
                 </div>
                 <button
@@ -134,17 +129,6 @@ export default function App() {
                   );
                 })}
               </nav>
-
-              <div className="p-5 border-t border-slate-800 bg-slate-950/40">
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-[9px] text-slate-500 font-mono uppercase tracking-wider">
-                    Regulatory Transition Note
-                  </span>
-                  <p className="text-[10px] text-slate-450 leading-relaxed font-sans">
-                    FY26 figures incorporate SEBI's 'true-to-label' flat exchange fee guidelines.
-                  </p>
-                </div>
-              </div>
             </motion.div>
           </>
         )}
@@ -163,9 +147,7 @@ export default function App() {
                 FY25-26
               </span>
             </h1>
-            <p className="text-[10px] text-slate-400 font-sans tracking-wide leading-none mt-1">
-              Shriram AMC Research Desk
-            </p>
+
           </div>
         </div>
 
@@ -189,17 +171,6 @@ export default function App() {
             );
           })}
         </nav>
-
-        <div className="p-5 border-t border-slate-800/80 bg-slate-950/40">
-          <div className="flex flex-col gap-1.5">
-            <span className="text-[9px] text-slate-500 font-mono uppercase tracking-wider">
-              Regulatory Transition Note
-            </span>
-            <p className="text-[10px] text-slate-450 leading-relaxed font-sans">
-              FY26 figures incorporate SEBI's 'true-to-label' flat exchange fee guidelines.
-            </p>
-          </div>
-        </div>
       </aside>
 
       {/* Main Workspace Frame */}
