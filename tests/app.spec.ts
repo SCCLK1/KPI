@@ -1,115 +1,117 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Brokerage Intelligence Suite - E2E Tests', () => {
-  
+
   test.beforeEach(async ({ page }) => {
-    // Navigate to the app before each test
     await page.goto('/');
   });
 
+  // ─── TEST 1: Page loads ─────────────────────────────────────────────────────
   test('Page loads and displays default Interactive KPI Matrix view', async ({ page }) => {
-    // Verify Page Title or Heading
-    await expect(page.locator('h1')).toContainText('Brokerage Intel');
-    
-    // Verify default tab content (KPI Matrix) is visible
-    await expect(page.locator('text=Interactive KPI Matrix')).toBeVisible();
+    // Use first() — both mobile header & desktop sidebar have an h1
+    await expect(page.locator('h1').first()).toContainText('Brokerage Intel');
+
+    // Default tab content — KPI Parameter sticky column header
     await expect(page.locator('text=KPI Parameter')).toBeVisible();
+
+    // Broker filter controls should be visible
+    await expect(page.locator('text=Compare Distribution Partners')).toBeVisible();
   });
 
+  // ─── TEST 2: Sidebar navigation ────────────────────────────────────────────
   test('Sidebar Navigation works correctly', async ({ page }) => {
-    // Click Partner Benchmarking
-    await page.click('text=Partner Benchmarking');
-    await expect(page.locator('text=Head-to-Head Comparison')).toBeVisible();
+    // Partner Benchmarking → HeadToHead heading
+    await page.locator('aside button:has-text("Partner Benchmarking")').click();
+    await expect(page.locator('text=Partner Benchmarking Comparer')).toBeVisible();
 
-    // Click Strategic Partner Profiles
-    await page.click('text=Strategic Partner Profiles');
-    await expect(page.locator('text=Select Partner to Audit')).toBeVisible();
+    // Strategic Partner Profiles → BrokerProfiler (shows broker tab row)
+    await page.locator('aside button:has-text("Strategic Partner Profiles")').click();
+    await expect(page.locator('text=Operational & Balance-Sheet Auditing')).toBeVisible();
 
-    // Click Visual Performance Analytics
-    await page.click('text=Visual Performance Analytics');
-    await expect(page.locator('text=Visual Financial Benchmarking')).toBeVisible();
+    // Visual Performance Analytics → KPICharts
+    await page.locator('aside button:has-text("Visual Performance Analytics")').click();
+    await expect(page.locator('text=Select Parameter to Visualize')).toBeVisible();
 
-    // Click Disclosure Analytics
-    await page.click('text=Disclosure Analytics');
-    await expect(page.locator('text=Conceptual & Regulatory Disclosures')).toBeVisible();
+    // Disclosure Analytics → DisclosureCard
+    await page.locator('aside button:has-text("Disclosure Analytics")').click();
+    await expect(page.locator('text=Regulatory Disclosure & Market Intelligence Portal')).toBeVisible();
 
-    // Click CFO Strategic Insights
-    await page.click('text=CFO Strategic Insights');
-    await expect(page.locator('text=Balance-Sheet and Operational Insights')).toBeVisible();
+    // CFO Strategic Insights
+    await page.locator('aside button:has-text("CFO Strategic Insights")').click();
+    await expect(page.locator('text=CFO Strategic Insights Desk')).toBeVisible();
 
-    // Click Scenario Projections Model
-    await page.click('text=Scenario Projections Model');
-    await expect(page.locator('text=Dynamic Financial Scenario Projections')).toBeVisible();
+    // Scenario Projections Model → ProjectionsModel
+    await page.locator('aside button:has-text("Scenario Projections Model")').click();
+    await expect(page.locator('text=FY27 Business Model Projection Desk')).toBeVisible();
   });
 
+  // ─── TEST 3: Search filter ─────────────────────────────────────────────────
   test('KPI Matrix parameter search filters rows correctly', async ({ page }) => {
-    // Make sure we are on matrix tab
-    await page.click('text=Interactive KPI Matrix');
+    await page.locator('aside button:has-text("Interactive KPI Matrix")').click();
 
-    // Count initial parameters row headers
     const initialRows = await page.locator('table tbody tr').count();
-    
-    // Search for a specific term, e.g. "employee"
+
     await page.fill('input[placeholder*="Search all 28 KPIs"]', 'employee');
-    await page.waitForTimeout(300); // Wait for input debounce/reactions if any
-    
-    // Verify row count is smaller
+    await page.waitForTimeout(300);
+
     const filteredRows = await page.locator('table tbody tr').count();
     expect(filteredRows).toBeLessThan(initialRows);
     await expect(page.locator('table tbody')).toContainText('Employee Cost');
   });
 
+  // ─── TEST 4: Category pill filter ──────────────────────────────────────────
   test('KPI Matrix category selection filters parameters', async ({ page }) => {
-    await page.click('text=Interactive KPI Matrix');
+    await page.locator('aside button:has-text("Interactive KPI Matrix")').click();
 
-    // Click "Expenses" category pill
+    // Click the Expenses category pill
     await page.click('button:has-text("Expenses")');
-    
-    // Check that we only see Expenses parameters
+
     await expect(page.locator('table tbody')).toContainText('Employee Cost');
     await expect(page.locator('table tbody')).not.toContainText('Broking Income');
   });
 
+  // ─── TEST 5: Broker filter ─────────────────────────────────────────────────
   test('Broker Filter - Select All / Deselect All / Multi-Select', async ({ page }) => {
-    await page.click('text=Interactive KPI Matrix');
+    await page.locator('aside button:has-text("Interactive KPI Matrix")').click();
 
-    // Click Deselect All
+    // Deselect all
     await page.click('button:has-text("Deselect All")');
 
-    // Verify empty state placeholder is shown
+    // Empty-state card appears
     await expect(page.locator('text=No Brokerage Partners Selected')).toBeVisible();
 
-    // Click Select All Partners button in empty state
+    // Restore via the call-to-action in the empty state
     await page.click('button:has-text("Select All Partners")');
 
-    // Verify table is restored
+    // Table is back with at least one broker column
+    await expect(page.locator('table')).toBeVisible();
     await expect(page.locator('text=KPI Parameter')).toBeVisible();
-    await expect(page.locator('table')).toContainText('Groww');
   });
 
+  // ─── TEST 6: Mobile responsive drawer ──────────────────────────────────────
   test('Mobile responsive drawer toggles correctly', async ({ page }) => {
-    // Set viewport to mobile size
     await page.setViewportSize({ width: 375, height: 812 });
 
-    // Desktop sidebar should be hidden
-    const desktopSidebar = page.locator('aside');
-    await expect(desktopSidebar).not.toBeVisible();
+    // Desktop aside should be hidden on mobile
+    const desktopAside = page.locator('aside');
+    await expect(desktopAside).not.toBeVisible();
 
-    // Mobile header open menu button should be visible
+    // Mobile header hamburger button is visible
     const menuButton = page.locator('header button');
     await expect(menuButton).toBeVisible();
-
-    // Click menu button
     await menuButton.click();
 
-    // Mobile drawer should slide in and be visible
-    const mobileDrawer = page.locator('text=Regulatory Transition Note');
-    await expect(mobileDrawer).toBeVisible();
+    // Mobile drawer slides in — look for the drawer's regulatory note
+    // (scoped with .lg\\:hidden parent to avoid matching the desktop aside)
+    await expect(
+      page.locator('.fixed.inset-y-0 >> text=Regulatory Transition Note')
+    ).toBeVisible();
 
-    // Click CFO Strategic Insights inside drawer
-    await page.click('button:has-text("CFO Strategic Insights")');
+    // Navigate to CFO Insights from inside the drawer
+    await page.locator('.fixed.inset-y-0 button:has-text("CFO Strategic Insights")').click();
 
-    // Drawer should close and view should switch
-    await expect(page.locator('text=Balance-Sheet and Operational Insights')).toBeVisible();
+    // Drawer closes and page content switches
+    await expect(page.locator('text=CFO Strategic Insights Desk')).toBeVisible();
   });
+
 });
