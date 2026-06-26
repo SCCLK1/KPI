@@ -261,12 +261,12 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Purely direct-to-consumer digital broker with zero physical franchisee revenue share."
       },
       employee_cost: {
-        fy25: "NSD",
+        fy25: "₹315.2",
         fy26: "~₹650.0",
-        fy25Val: null,
+        fy25Val: 315.18,
         fy26Val: 650,
         unit: "₹ Cr",
-        notes: "FY26 employee costs include ESOP write-offs."
+        notes: "FY25 employee opex ₹315.18 Cr per RHP Prospectus. FY26 includes ESOP opex."
       },
       it_expense: {
         fy25: "NSD",
@@ -333,20 +333,20 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Premium turnover (Q4 FY26 run-rate)."
       },
       market_share_cash: {
-        fy25: "NSD",
+        fy25: "19.3%",
         fy26: "26.6%",
-        fy25Val: null,
+        fy25Val: 19.31,
         fy26Val: 26.60,
         unit: "%",
-        notes: "Retail ADTO Market Share."
+        notes: "Retail ADTO cash market share (FY25 per RHP)."
       },
       market_share_derivatives: {
-        fy25: "NSD",
+        fy25: "11.4%",
         fy26: "~27.0%",
-        fy25Val: null,
+        fy25Val: 11.37,
         fy26Val: 27,
         unit: "%",
-        notes: "Retail Premium ADTO Market Share."
+        notes: "Retail Premium ADTO market share (FY25 per RHP)."
       },
       mtf_portfolio: {
         fy25: "₹601.9",
@@ -488,12 +488,12 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Consolidated Total Revenue."
       },
       franchisee_expense: {
-        fy25: "~₹450.0",
-        fy26: "NSD",
-        fy25Val: 450,
-        fy26Val: null,
+        fy25: "₹824.6",
+        fy26: "₹720.2",
+        fy25Val: 824.6,
+        fy26Val: 720.2,
         unit: "₹ Cr",
-        notes: "Paid to ~11,000+ Authorised Persons (APs)."
+        notes: "Total reported fees and commission expense; includes franchisee and AP splits."
       },
       employee_cost: {
         fy25: "₹855.2",
@@ -723,20 +723,20 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Consolidated Operating Revenue."
       },
       franchisee_expense: {
-        fy25: "NSD",
-        fy26: "NSD",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "Distributed via physical partner network split."
+        fy25: "₹496.2",
+        fy26: "₹534.1",
+        fy25Val: 496.2,
+        fy26Val: 534.1,
+        unit: "₹ Cr",
+        notes: "Sub-broker commission and partner payout sharing."
       },
       employee_cost: {
-        fy25: "NSD",
-        fy26: "NSD",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "High institutional research/IB analyst cost base."
+        fy25: "₹590.5",
+        fy26: "₹687.5",
+        fy25Val: 590.5,
+        fy26Val: 687.5,
+        unit: "₹ Cr",
+        notes: "Consolidated employee benefits expense; includes ₹7.1 Cr new labor code provision in FY26."
       },
       it_expense: {
         fy25: "NSD",
@@ -966,20 +966,20 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Shared with domestic sub-brokers."
       },
       employee_cost: {
-        fy25: "NSD",
-        fy26: "NSD",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "Grouped under total employee opex (NSD on broking level)."
+        fy25: "₹419.9",
+        fy26: "₹529.9",
+        fy25Val: 419.9,
+        fy26Val: 529.9,
+        unit: "₹ Cr",
+        notes: "Consolidated employee cost: includes ₹39.3 Cr ESOP opex in FY26."
       },
       it_expense: {
-        fy25: "NSD",
-        fy26: "NSD",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "Included inside Broking Administration costs."
+        fy25: "₹6.3",
+        fy26: "₹6.5",
+        fy25Val: 6.3,
+        fy26Val: 6.5,
+        unit: "₹ Cr",
+        notes: "IT enabled services opex per investor disclosures."
       },
       marketing_expense: {
         fy25: "NSD",
@@ -1193,20 +1193,20 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Revenue fell 10% YoY due to structural cash volume drops."
       },
       franchisee_expense: {
-        fy25: "NSD",
-        fy26: "NSD",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "Sourced through joint ventures in the Gulf/GCC countries."
+        fy25: "₹101.1",
+        fy26: "₹80.8",
+        fy25Val: 101.13,
+        fy26Val: 80.78,
+        unit: "₹ Cr",
+        notes: "Fees and commission payouts to franchise/JV sub-brokers: ₹101.13 Cr (FY25) and ₹80.78 Cr (FY26)."
       },
       employee_cost: {
-        fy25: "NSD",
-        fy26: "NSD (High)",
-        fy25Val: null,
-        fy26Val: null,
-        unit: "text",
-        notes: "Elevated due to ₹8.96 Cr Labour Code provisions."
+        fy25: "₹264.3",
+        fy26: "₹299.5",
+        fy25Val: 264.26,
+        fy26Val: 299.51,
+        unit: "₹ Cr",
+        notes: "Consolidated employee benefits expense: includes ₹8.86 Cr exceptional labor code provisions in FY26."
       },
       it_expense: {
         fy25: "NSD",
@@ -1289,12 +1289,12 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Demat register market share stands around 0.49%."
       },
       mtf_portfolio: {
-        fy25: "₹203.0",
-        fy26: "NSD",
-        fy25Val: 203,
-        fy26Val: null,
+        fy25: "₹576.0",
+        fy26: "₹641.0",
+        fy25Val: 576,
+        fy26Val: 641,
         unit: "₹ Cr",
-        notes: "Historically low margin trading book risk."
+        notes: "MTF & LAS lending book: ₹576 Cr (FY25) and ₹641 Cr (FY26) per investor disclosures."
       },
       t5_portfolio: {
         fy25: "NSD",
@@ -1891,11 +1891,11 @@ export const BROKER_DATA: BrokerCompany[] = [{
       },
       total_income: {
         fy25: "₹3,264.86",
-        fy26: "~₹2,925.0",
+        fy26: "₹3,110.22",
         fy25Val: 3264.86,
-        fy26Val: 2925.00,
+        fy26Val: 3110.22,
         unit: "₹ Cr",
-        notes: "FY25 reported ₹3,264.9 Cr. FY26 estimated from 9M FY26 run-rate (₹2,259.9 Cr, down ~10% YoY); no full-year FY26 filing available."
+        notes: "FY25 reported ₹3,264.9 Cr. FY26 reported ₹3,110.22 Cr (consolidated results)."
       },
       franchisee_expense: {
         fy25: "Low reliance",
@@ -1931,27 +1931,27 @@ export const BROKER_DATA: BrokerCompany[] = [{
       },
       total_expense: {
         fy25: "₹1,768.71",
-        fy26: "~₹1,792.0",
+        fy26: "₹1,394.02",
         fy25Val: 1768.71,
-        fy26Val: 1792.00,
+        fy26Val: 1394.02,
         unit: "₹ Cr",
-        notes: "FY25 reported ₹1,768.7 Cr. FY26 estimated from 9M FY26 run-rate; no full-year filing available."
+        notes: "FY25 reported ₹1,768.7 Cr. FY26 reported ₹1,394.02 Cr (consolidated expenses)."
       },
       pbt: {
         fy25: "₹1,496.2",
-        fy26: "~₹1,136.0",
+        fy26: "₹1,716.20",
         fy25Val: 1496.15,
-        fy26Val: 1136.00,
+        fy26Val: 1716.20,
         unit: "₹ Cr",
-        notes: "FY25 reported ₹1,496.2 Cr. FY26 estimated from 9M FY26 (₹884.2 Cr, down ~24% YoY); compressed by higher technology investments."
+        notes: "FY25 reported ₹1,496.2 Cr. FY26 reported Profit Before Tax of ₹1,716.20 Cr."
       },
       pat: {
         fy25: "₹1,125.0",
-        fy26: "~₹852.0",
+        fy26: "₹888.03",
         fy25Val: 1125,
-        fy26Val: 852.00,
+        fy26Val: 888.03,
         unit: "₹ Cr",
-        notes: "FY25 reported ₹1,125.0 Cr. FY26 estimated from 9M FY26 (₹661.5 Cr, down ~24% YoY); no full-year filing available."
+        notes: "FY25 reported ₹1,125.0 Cr. FY26 reported Net Profit of ₹888.03 Cr (down 21% YoY)."
       },
       brokerage_yield: {
         fy25: "Standard (HDFC Sky is Flat ₹20)",

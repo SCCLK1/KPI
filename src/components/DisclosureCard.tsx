@@ -3,7 +3,7 @@ import { MISSING_DISCLOSURES_EXPLANATIONS } from "../data";
 import { BookOpen, ShieldCheck, PieChart, Landmark, TrendingUp, Info } from "lucide-react";
 
 export default function DisclosureCard() {
-  const [activeTab, setActiveTab] = useState<"nsd" | "cac" | "models" | "cfo">("nsd");
+  const [activeTab, setActiveTab] = useState<"nsd" | "cac" | "models">("nsd");
 
   const explanations = MISSING_DISCLOSURES_EXPLANATIONS;
 
@@ -63,18 +63,6 @@ export default function DisclosureCard() {
           >
             <Landmark size={16} />
             Brokerage Business Models
-          </button>
-
-          <button
-            onClick={() => setActiveTab("cfo")}
-            className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
-              activeTab === "cfo"
-                ? "bg-amber-600 text-white shadow-md font-bold"
-                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-            }`}
-          >
-            <TrendingUp size={16} />
-            CFO Strategic Insights
           </button>
         </div>
 
@@ -167,121 +155,45 @@ export default function DisclosureCard() {
           )}
 
           {activeTab === "models" && (
-            <div className="space-y-4 font-sans">
+            <div className="space-y-4">
               <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-                <TrendingUp className="text-emerald-600" size={20} />
+                <BookOpen className="text-emerald-600" size={20} />
                 <h4 className="font-display font-bold text-slate-800 text-lg leading-tight">
-                  {explanations.businessModels.title}
+                  Comparing Digital vs. Advisory Execution Models
                 </h4>
               </div>
 
-              <div className="text-sm text-slate-600 leading-relaxed space-y-4">
-                <p>
-                  The Indian capital market landscape is dividing into two distinct broker types: **Discount Fintech Titans** and **Traditional Advisory Houses**.
-                </p>
-
-                <div className="p-6 sm:p-8 bg-gradient-to-br from-emerald-50/20 to-slate-50 border border-emerald-100/50 rounded-2xl space-y-4">
-                  <p className="text-xs font-medium text-slate-700 leading-relaxed">
-                    {explanations.businessModels.explanation}
-                  </p>
-                </div>
-
-                <h5 className="font-bold text-slate-800 text-xs uppercase tracking-wider pt-2">
-                  Operating Model Playbook comparison
-                </h5>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs">
-                  <div>
-                    <span className="font-extrabold text-[#0f172a] block mb-2 uppercase tracking-wider text-[10px]">
-                      Discount Playbook (Groww & Angel One)
-                    </span>
-                    <ul className="list-disc pl-4 space-y-1 text-slate-500 leading-normal">
-                      <li>Highly scalable cloud-based mobile apps</li>
-                      <li>Flat subscription fee pricing (e.g. ₹20 per trade)</li>
-                      <li>Driven by speculative F&O premium and margin-ledger expansion</li>
-                      <li>Highly sensitive to SEBI regularisations on exchange true-to-label changes</li>
+              <div className="text-sm text-slate-600 leading-relaxed space-y-6">
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
+                  <h5 className="font-display font-bold text-slate-900 text-sm">
+                    Discount Execution Portals (Zerodha, Groww, Angel One)
+                  </h5>
+                  <div className="text-xs text-slate-650 leading-relaxed space-y-2">
+                    <p>
+                      Discount brokerages utilize direct-to-consumer digital channels (web/app UIs) to onboarding self-directed traders.
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Highly standardized ₹20 flat pricing models</li>
+                      <li>Almost entirely digital client onboarding (Demat e-sign)</li>
+                      <li>Extremely exposed to regulatory changes on retail option limits</li>
                     </ul>
                   </div>
-                  <div>
-                    <span className="font-extrabold text-[#0f172a] block mb-1 uppercase tracking-wider text-[10px]">
-                      Traditional Advisory Playbook (Anand Rathi, IIFL, Geojit)
-                    </span>
-                    <ul className="list-disc pl-4 space-y-1 text-slate-500 leading-normal">
-                      <li>Relationship managers and localized Authorized partner networks</li>
+                </div>
+
+                <div className="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
+                  <h5 className="font-display font-bold text-slate-900 text-sm">
+                    Traditional Franchisee & Wealth Houses (Motilal Oswal, Anand Rathi, Geojit)
+                  </h5>
+                  <div className="text-xs text-slate-650 leading-relaxed space-y-2">
+                    <p>
+                      Advisory-focused firms operate via Authorised Persons (franchisees), institutional research tables, and dedicated wealth advisers.
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
                       <li>Variable tiered percentage pricing based on volume</li>
                       <li>Driven by cross-selling third-party portfolios (SIP, mutual funds, insurance)</li>
                       <li>Insulated from transactional retail derivative churn</li>
                     </ul>
                   </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeTab === "cfo" && (
-            <div className="space-y-4 font-sans">
-              <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-                <TrendingUp className="text-emerald-600" size={20} />
-                <h4 className="font-display font-bold text-slate-800 text-lg leading-tight">
-                  Balance-Sheet and Operational Insights for a CFO
-                </h4>
-              </div>
-
-              <div className="text-sm text-slate-600 leading-relaxed space-y-6">
-                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
-                  <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-                    <span className="font-mono text-emerald-600">01.</span> Capital Productivity: Gearing vs. Net Interest Margin (NIM)
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Zerodha</strong> operates on a debt-free model (operating with <strong>near-zero external gearing</strong> at the group level), resulting in an extremely high consolidated ROE (~31% in FY25). This requires massive cash-reserve self-funding: to power its <strong>₹7,500 Cr MTF book</strong> in FY26, Zerodha funded the entire volume on-balance-sheet using proprietary cash reserves & client collateral margins.
-                  </p>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Motilal Oswal</strong> deploys aggressive financial leverage (<strong>1.3x gearing</strong>) to scale its margin trading ledger up to <strong>₹6,094 Cr</strong>. Higher borrowing cost adjustments (<strong>8.65%</strong> in FY26) compress core NIMs on third-party bank funded volumes, but MOFSL successfully offsets margin dilution through high-margin AMC and wealth management fees, maintaining a solid <strong>24% ROE</strong>.
-                  </p>
-                </div>
-
-                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
-                  <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-                    <span className="font-mono text-emerald-600">02.</span> Cost Structure Analysis: Sourcing & Technology Investments
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Direct Digital-First Model (Zerodha)</strong> operates with nearly zero client acquisition marketing bills (CAC is effectively zero). This structural cost shelter allows Zerodha to absorb regulatory margin compression or trading volume downturns far more robustly than VC-funded counterparts.
-                  </p>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Bank-Backed Conglom Model (HDFC Securities)</strong> enjoys the capital market's cheapest bank-channel borrowing cost (<strong>7.80%</strong>). However, HSL faces heavy operational cost structures; launching and scaling the <strong>HDFC Sky</strong> platform demanded massive front-loaded technology capex. Combined with retail volume moderations, these factors led to a <strong>17% decline in net PAT to ₹929.00 Cr in FY26</strong>.
-                  </p>
-                </div>
-
-                 <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
-                  <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-                    <span className="font-mono text-emerald-600">03.</span> Earnings Volatility: Statutory vs. Core Operating Performance
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Motilal Oswal</strong> highlights why CFOs look beyond statutory headline figures. Although statutory consolidated PAT slid 18% YoY to <strong>₹2,043.42 Cr</strong> in FY26 due to treasury-book mark-to-market (MTM) non-cash valuation adjustments, MOFSL's **core operating profit (ex-corporate treasury fluctuations) surged by 16% YoY to a record ₹2,360.00 Cr**, proving the deep capital-market resilience of recurring wealth-management and asset advisory branches.
-                  </p>
-                </div>
-
-                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
-                  <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-                    <span className="font-mono text-emerald-600">04.</span> Strategic Shift from Transactional to Annuity Revenue
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    Traditional and wealth-focused players have successfully scaled non-broking businesses to buffer cyclical hits. <strong>Anand Rathi (ARSSBL)</strong> grew its non-broking revenue (distribution & MTF interest) to <strong>44.1% of its overall topline</strong> in FY26, helping expand its PAT by <strong>24.8%</strong> despite the derivatives industry slowdown.
-                  </p>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Geojit</strong> is executing a similar strategic pivot. Although its core transactional broking income contracted, its mutual fund equity AUM expanded to <strong>₹17,092 Cr</strong>, with monthly SIP collections reaching a record <strong>₹151 Cr</strong> by March 2026.
-                  </p>
-                </div>
-
-                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
-                  <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
-                    <span className="font-mono text-emerald-600">05.</span> Gearing & Gearing Limits: Impact of Leverage on NIM
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    Discount brokers are facing a margin squeeze. Due to SEBI's regulatory tightening on derivatives (true-to-label and weekly expiries), <strong>Angel One</strong>'s PAT margins contracted. In response, they raised their borrowing limits to <strong>₹20,000 Cr</strong> to expand client margin lending, which carries a higher cost of debt (<strong>8.1%</strong> in FY26).
-                  </p>
-                  <p className="text-xs text-slate-600 leading-normal">
-                    Conversely, bank-backed <strong>HDFC Securities</strong> continues to enjoy the lowest cost of funds (<strong>7.80%</strong>), allowing them to generate a healthier net interest margin (NIM) on their <strong>₹2,200 Cr</strong> client funding book, even while experiencing retail trading churn.
-                  </p>
                 </div>
               </div>
             </div>
