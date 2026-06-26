@@ -49,12 +49,12 @@ export default function App() {
             <Landmark size={18} className="stroke-[2.5]" />
           </div>
           <div>
-            <h1 className="font-display font-extrabold text-white text-xs leading-tight uppercase tracking-tight flex items-center gap-1.5">
+            <h1 className="font-display font-extrabold text-white text-xs leading-tight uppercase tracking-tight">
               Broking Business Intel
-              <span className="inline-block px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
-                FY25-26
-              </span>
             </h1>
+            <span className="inline-block mt-1 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
+              FY25-26
+            </span>
 
           </div>
         </div>
@@ -140,12 +140,12 @@ export default function App() {
             <Landmark size={20} className="stroke-[2.5]" />
           </div>
           <div>
-            <h1 className="font-display font-extrabold text-white text-sm leading-tight tracking-tight uppercase flex items-center gap-1.5">
+            <h1 className="font-display font-extrabold text-white text-sm leading-tight tracking-tight uppercase">
               Broking Business Intel
-              <span className="inline-block px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
-                FY25-26
-              </span>
             </h1>
+            <span className="inline-block mt-1 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
+              FY25-26
+            </span>
 
           </div>
         </div>
