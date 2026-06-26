@@ -260,15 +260,15 @@ export default function HeadToHead() {
       <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg">
+            <div className="p-3 bg-amber-50 text-amber-600 rounded-lg">
               <ArrowLeftRight size={18} />
             </div>
             <div>
               <h3 className="font-display font-extrabold text-[#0f172a] text-base">
-                Head-to-Head Broker Comparer
+                Partner Benchmarking Comparer
               </h3>
               <p className="text-xs text-slate-500">
-                Contrast two Indian brokers, side-by-side on any KPI line item
+                Compare operational and credit metrics of two brokerages side-by-side
               </p>
             </div>
           </div>
@@ -297,14 +297,14 @@ export default function HeadToHead() {
         {/* Picker Dropdowns Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-slate-100">
           {/* Broker A Selector */}
-          <div className={`p-5 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200`}>
-            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-2.5 font-sans">
+          <div className={`p-5 rounded-xl bg-gradient-to-br from-slate-50 to-amber-50/10 border border-slate-200`}>
+            <label className="block text-[10px] font-extrabold text-amber-600 uppercase tracking-widest mb-2.5 font-sans">
               Primary Broker (A)
             </label>
             <select
               value={brokerAId}
               onChange={(e) => handleSelectBrokerA(e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-sm font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+              className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-sm font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 font-sans"
             >
               {BROKER_DATA.map((b) => (
                 <option key={b.id} value={b.id}>
@@ -312,20 +312,20 @@ export default function HeadToHead() {
                 </option>
               ))}
             </select>
-            <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+            <p className="text-xs text-slate-500 mt-2 leading-relaxed font-sans">
               {brokerA.background}
             </p>
           </div>
 
           {/* Broker B Selector */}
-          <div className="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200">
-            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-2.5 font-sans">
+          <div className="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-amber-50/10 border border-slate-200">
+            <label className="block text-[10px] font-extrabold text-amber-600 uppercase tracking-widest mb-2.5 font-sans">
               Comparative Broker (B)
             </label>
             <select
               value={brokerBId}
               onChange={(e) => handleSelectBrokerB(e.target.value)}
-              className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-sm font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+              className="w-full bg-white border border-slate-200 rounded-lg py-2 px-3 text-sm font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 font-sans"
             >
               {BROKER_DATA.map((b) => (
                 <option key={b.id} value={b.id}>
@@ -333,7 +333,7 @@ export default function HeadToHead() {
                 </option>
               ))}
             </select>
-            <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+            <p className="text-xs text-slate-500 mt-2 leading-relaxed font-sans">
               {brokerB.background}
             </p>
           </div>
@@ -346,11 +346,11 @@ export default function HeadToHead() {
             placeholder="Search specific KPIs for side-by-side analysis (e.g. revenue, PAT, clients)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="flex-1 bg-slate-50 border border-slate-200/85 rounded-xl px-4 py-2.5 text-xs placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all font-sans w-full"
+            className="flex-1 bg-slate-50 border border-slate-200/85 rounded-xl px-4 py-2.5 text-xs placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-sans w-full"
           />
           <button
             onClick={downloadComparisonAsCSV}
-            className="flex items-center justify-center gap-1.5 px-4.5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
+            className="flex items-center justify-center gap-1.5 px-4.5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
           >
             <Download size={14} />
             Download Comparison CSV
@@ -360,7 +360,7 @@ export default function HeadToHead() {
 
       {/* Executive Summary Insights Card */}
       <div className="bg-[#0F172A] text-slate-100 rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
-        <h4 className="font-display font-extrabold text-sm text-emerald-400 flex items-center gap-2 uppercase tracking-wider">
+        <h4 className="font-display font-extrabold text-sm text-amber-400 flex items-center gap-2 uppercase tracking-wider">
           <TrendingUp size={16} />
           Executive Comparison Insights ({selectedYear})
         </h4>
@@ -373,13 +373,13 @@ export default function HeadToHead() {
             <div className="space-y-2 text-xs">
               <div className="flex justify-between items-center">
                 <span className="text-slate-400">{brokerA.name} Net Profit Margin:</span>
-                <span className="font-mono font-bold text-emerald-400">
+                <span className="font-mono font-bold text-amber-400">
                   {marginA !== null ? `${marginA.toFixed(1)}%` : "Not Disclosed"}
                 </span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="text-slate-400">{brokerB.name} Net Profit Margin:</span>
-                <span className="font-mono font-bold text-emerald-400">
+                <span className="font-mono font-bold text-amber-400">
                   {marginB !== null ? `${marginB.toFixed(1)}%` : "Not Disclosed"}
                 </span>
               </div>
@@ -406,10 +406,10 @@ export default function HeadToHead() {
             </h5>
             <div className="text-[11px] text-slate-300 space-y-1.5 leading-relaxed">
               <p>
-                <strong>{brokerA.name}</strong> operates as a <span className="text-emerald-400 font-semibold">{brokerA.type}</span> broker, focusing principally on {brokerA.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
+                <strong>{brokerA.name}</strong> operates as a <span className="text-amber-400 font-semibold">{brokerA.type}</span> broker, focusing principally on {brokerA.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
               </p>
               <p>
-                <strong>{brokerB.name}</strong> operates as a <span className="text-emerald-400 font-semibold">{brokerB.type}</span> broker, focusing principally on {brokerB.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
+                <strong>{brokerB.name}</strong> operates as a <span className="text-amber-400 font-semibold">{brokerB.type}</span> broker, focusing principally on {brokerB.type === "Discount" ? "automated high-volume digital self-serve trading." : "personalized high-touch advisory, relationship management, and third-party distribution."}
               </p>
             </div>
           </div>
@@ -437,7 +437,7 @@ export default function HeadToHead() {
                   KPI Parameter
                 </th>
                 <th className="p-5 text-center border-r border-slate-200/60">
-                  <div className="inline-block text-[10px] font-extrabold bg-emerald-50 text-emerald-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
+                  <div className="inline-block text-[10px] font-extrabold bg-amber-50 text-amber-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
                     {brokerA.type}
                   </div>
                   <div className="font-display font-extrabold text-sm text-slate-900">
@@ -451,7 +451,7 @@ export default function HeadToHead() {
                   Leader
                 </th>
                 <th className="p-5 text-center">
-                  <div className="inline-block text-[10px] font-extrabold bg-emerald-50 text-emerald-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
+                  <div className="inline-block text-[10px] font-extrabold bg-amber-50 text-amber-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
                     {brokerB.type}
                   </div>
                   <div className="font-display font-extrabold text-sm text-slate-900">
@@ -487,7 +487,7 @@ export default function HeadToHead() {
                     </td>
 
                     {/* Broker A Value row */}
-                    <td className={`p-5 text-center border-r border-slate-100/60 ${leader === "A" ? "bg-emerald-50/30" : ""}`}>
+                    <td className={`p-5 text-center border-r border-slate-100/60 ${leader === "A" ? "bg-amber-50/20" : ""}`}>
                       <div className="flex flex-col items-center justify-center">
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valA === "string" && valA.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"
@@ -507,12 +507,12 @@ export default function HeadToHead() {
                     {/* Win/Loss Middle column */}
                     <td className="p-5 text-center border-r border-slate-100/60">
                       {leader === "A" ? (
-                        <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
                           <Check size={9} strokeWidth={4} />
                           {brokerA.name}
                         </span>
                       ) : leader === "B" ? (
-                        <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
                           <Check size={9} strokeWidth={4} />
                           {brokerB.name}
                         </span>
@@ -529,7 +529,7 @@ export default function HeadToHead() {
                     </td>
 
                     {/* Broker B Value row */}
-                    <td className={`p-5 text-center ${leader === "B" ? "bg-emerald-50/30" : ""}`}>
+                    <td className={`p-5 text-center ${leader === "B" ? "bg-amber-50/20" : ""}`}>
                       <div className="flex flex-col items-center justify-center">
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valB === "string" && valB.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"

@@ -12,14 +12,14 @@ export default function DisclosureCard() {
       {/* Top Welcome Title */}
       <div className="p-6 sm:p-8 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-slate-800">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-white/10 rounded-lg text-emerald-400">
+          <div className="p-2 bg-white/10 rounded-lg text-amber-400">
             <BookOpen size={18} />
           </div>
           <div>
             <h3 className="font-display font-extrabold text-[#ffffff] text-base">
               Regulatory Disclosure & Market Intelligence Portal
             </h3>
-            <p className="text-xs text-emerald-400/90">
+            <p className="text-xs text-amber-400/90">
               Structural analysis of disclosures, CAC variances, and business models in Indian Capital Markets
             </p>
           </div>
@@ -33,43 +33,43 @@ export default function DisclosureCard() {
             onClick={() => setActiveTab("nsd")}
             className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "nsd"
-                ? "bg-emerald-600 text-white shadow-md font-bold"
+                ? "bg-amber-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
             <ShieldCheck size={16} />
-            T+5 & ESOP as 'NSD'
+            NSD Accounting Standards
           </button>
 
           <button
             onClick={() => setActiveTab("cac")}
             className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "cac"
-                ? "bg-emerald-600 text-white shadow-md font-bold"
+                ? "bg-amber-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
             <PieChart size={16} />
-            CAC & Revenue Variance
+            CAC & Revenue Analytics
           </button>
 
           <button
             onClick={() => setActiveTab("models")}
             className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "models"
-                ? "bg-emerald-600 text-white shadow-md font-bold"
+                ? "bg-amber-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
             <Landmark size={16} />
-            Discount vs Advisory Elite
+            Brokerage Business Models
           </button>
 
           <button
             onClick={() => setActiveTab("cfo")}
             className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "cfo"
-                ? "bg-emerald-600 text-white shadow-md font-bold"
+                ? "bg-amber-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >

@@ -270,8 +270,8 @@ export default function BrokerProfiler() {
                             </div>
                           </div>
 
-                          {/* Footnote notes truncate */}
-                          <p className="text-[10px] text-slate-500 leading-relaxed font-sans line-clamp-2">
+                          {/* Footnote notes full wrap */}
+                          <p className="text-[10px] text-slate-500 leading-relaxed font-sans">
                             {kpiVal.notes}
                           </p>
                         </div>

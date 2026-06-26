@@ -17,7 +17,7 @@ export default function App() {
   const containerClass = isFullWidth ? "max-w-none px-6 sm:px-8 lg:px-16" : "max-w-7xl px-6 sm:px-8 lg:px-12";
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-emerald-600 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-amber-600 selection:text-white">
       {/* Top Banner Warning or Sub-header */}
       <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white text-xs px-4 py-2.5 border-b border-slate-850 z-30">
         <div className={`${containerClass} mx-auto flex flex-col sm:flex-row justify-between items-center gap-2.5 font-sans`}>
@@ -32,29 +32,29 @@ export default function App() {
               Ref Local: 2026-06-22 23:39 (PST)
             </span>
             <span className="hidden sm:inline">|</span>
-            <span>Broker Audit Desk</span>
+            <span>Shriram AMC Research Desk</span>
           </div>
         </div>
       </div>
 
-      {/* Main Premium Corporate Header with Slate/Emerald Polish */}
+      {/* Main Premium Corporate Header with Slate/Amber Polish */}
       <header className="sticky top-0 bg-[#0F172A] text-white border-b border-slate-800 z-40 shadow-lg">
         <div className={`${containerClass} mx-auto`}>
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-6 lg:py-0 gap-6">
             {/* Title Identity */}
             <div className="flex items-center gap-4 py-3">
-              <div className="p-3 bg-emerald-600 rounded-xl text-white shadow-md">
+              <div className="p-3 bg-amber-600 rounded-xl text-white shadow-md">
                 <Landmark size={22} className="stroke-[2.5]" />
               </div>
               <div>
                 <h1 className="font-display font-extrabold text-white text-lg leading-tight tracking-tight uppercase flex items-center gap-2">
-                  Indian Brokerage KPI Suite
-                  <span className="inline-block px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-emerald-400 font-extrabold text-[9px] uppercase tracking-wider font-mono">
+                  Shriram AMC — Brokerage Intelligence Suite
+                  <span className="inline-block px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[9px] uppercase tracking-wider font-mono">
                     FY25 vs FY26
                   </span>
                 </h1>
                 <p className="text-[11px] text-slate-400 font-sans tracking-wide">
-                  Investor Reports, IPO Prospectuses & Credit Rationales Analysed
+                  Strategic Benchmarking, Operational Audits & Projections of Distribution Partners
                 </p>
               </div>
             </div>
@@ -65,72 +65,72 @@ export default function App() {
                 onClick={() => setActiveTab("matrix")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "matrix"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <Grid3X3 size={15} />
-                KPI Matrix (28 parameters)
+                Interactive KPI Matrix
               </button>
 
               <button
                 onClick={() => setActiveTab("compare")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "compare"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <ArrowLeftRight size={15} />
-                Head-to-Head
+                Partner Benchmarking
               </button>
 
               <button
                 onClick={() => setActiveTab("profiler")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "profiler"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <BookOpen size={15} />
-                Broker Profiler
+                Strategic Partner Profiles
               </button>
 
               <button
                 onClick={() => setActiveTab("charts")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "charts"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <BarChart3 size={15} />
-                KPI Charts Plots
+                Visual Performance Analytics
               </button>
 
               <button
                 onClick={() => setActiveTab("disclosures")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "disclosures"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <HelpCircle size={15} />
-                Missing Disclosures
+                Disclosure Analytics
               </button>
 
               <button
                 onClick={() => setActiveTab("projections")}
                 className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "projections"
-                    ? "border-emerald-500 text-emerald-400"
+                    ? "border-amber-500 text-amber-450"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
                 }`}
               >
                 <Sliders size={15} />
-                Projections Model
+                Scenario Projections Model
               </button>
             </nav>
           </div>

@@ -131,14 +131,14 @@ export default function ProjectionsModel() {
       {/* Top Description Panel */}
       <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-lg">
         <div className="flex items-center gap-3.5">
-          <div className="p-3 bg-emerald-600 rounded-xl text-white shadow-md">
+          <div className="p-3 bg-amber-600 rounded-xl text-white shadow-md">
             <Sliders size={20} className="stroke-[2.5]" />
           </div>
           <div>
             <h3 className="font-display font-extrabold text-base">
               FY27 Business Model Projection Desk
             </h3>
-            <p className="text-xs text-emerald-400 font-semibold">
+            <p className="text-xs text-amber-400 font-semibold">
               Interactive financial calculator simulating broker performance based on strategic assumptions
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function ProjectionsModel() {
             </span>
             <button
               onClick={resetAssumptions}
-              className="text-[10px] font-bold text-emerald-600 hover:text-emerald-800 uppercase underline cursor-pointer"
+              className="text-[10px] font-bold text-amber-600 hover:text-amber-800 uppercase underline cursor-pointer"
             >
               Reset Defaults
             </button>
@@ -173,7 +173,7 @@ export default function ProjectionsModel() {
                 setSelectedBrokerId(e.target.value);
                 resetAssumptions();
               }}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 text-xs font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2.5 px-3 text-xs font-bold text-slate-800 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-amber-500 font-sans"
             >
               {BROKER_DATA.map((b) => (
                 <option key={b.id} value={b.id}>
@@ -194,7 +194,7 @@ export default function ProjectionsModel() {
                   <Users size={14} className="text-slate-400" />
                   Active Client Growth
                 </span>
-                <span className="font-mono text-emerald-600">
+                <span className="font-mono text-amber-600">
                   {clientGrowth >= 0 ? "+" : ""}{clientGrowth}%
                 </span>
               </div>
@@ -205,7 +205,7 @@ export default function ProjectionsModel() {
                 step="5"
                 value={clientGrowth}
                 onChange={(e) => setClientGrowth(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-600"
               />
               <div className="flex justify-between text-[9px] text-slate-400 font-medium font-mono">
                 <span>-50%</span>
@@ -221,7 +221,7 @@ export default function ProjectionsModel() {
                   <DollarSign size={14} className="text-slate-400" />
                   ARPU Change (Yield)
                 </span>
-                <span className="font-mono text-emerald-600">
+                <span className="font-mono text-amber-600">
                   {arpuChange >= 0 ? "+" : ""}{arpuChange}%
                 </span>
               </div>
@@ -232,7 +232,7 @@ export default function ProjectionsModel() {
                 step="5"
                 value={arpuChange}
                 onChange={(e) => setArpuChange(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-600"
               />
               <div className="flex justify-between text-[9px] text-slate-400 font-medium font-mono">
                 <span>-30%</span>
@@ -248,7 +248,7 @@ export default function ProjectionsModel() {
                   <Activity size={14} className="text-slate-400" />
                   MTF Funding Book Growth
                 </span>
-                <span className="font-mono text-emerald-600">
+                <span className="font-mono text-amber-600">
                   {mtfGrowth >= 0 ? "+" : ""}{mtfGrowth}%
                 </span>
               </div>
@@ -259,7 +259,7 @@ export default function ProjectionsModel() {
                 step="5"
                 value={mtfGrowth}
                 onChange={(e) => setMtfGrowth(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-600"
               />
               <div className="flex justify-between text-[9px] text-slate-400 font-medium font-mono">
                 <span>-50%</span>
@@ -275,7 +275,7 @@ export default function ProjectionsModel() {
                   <Percent size={14} className="text-slate-400" />
                   Operating Expenses (Opex) Growth
                 </span>
-                <span className="font-mono text-emerald-600">
+                <span className="font-mono text-amber-600">
                   +{opexEscalation}%
                 </span>
               </div>
@@ -286,7 +286,7 @@ export default function ProjectionsModel() {
                 step="5"
                 value={opexEscalation}
                 onChange={(e) => setOpexEscalation(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                className="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-amber-600"
               />
               <div className="flex justify-between text-[9px] text-slate-400 font-medium font-mono">
                 <span>0%</span>
@@ -410,7 +410,7 @@ export default function ProjectionsModel() {
                   <tr className="bg-slate-50/50 border-b border-slate-200 font-bold text-slate-400 uppercase tracking-wider font-mono">
                     <th className="py-4 px-3.5 w-[260px]">Financial Line Item</th>
                     <th className="py-4 px-3.5 text-right">FY26 Actual</th>
-                    <th className="py-4 px-3.5 text-right bg-emerald-50/20 text-emerald-800">FY27 Projected</th>
+                    <th className="py-4 px-3.5 text-right bg-amber-50/20 text-amber-900">FY27 Projected</th>
                     <th className="py-4 px-3.5 text-right">Growth Rate</th>
                   </tr>
                 </thead>
@@ -420,7 +420,7 @@ export default function ProjectionsModel() {
                     <tr className="hover:bg-slate-50/50">
                       <td className="py-4 px-3.5 font-semibold text-slate-800">Broking Revenue</td>
                       <td className="py-4 px-3.5 text-right font-mono text-slate-600">₹{projections.fy26Broking.toFixed(1)}</td>
-                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-emerald-50/20 text-emerald-900">₹{projections.projBroking.toFixed(1)}</td>
+                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-amber-50/20 text-amber-950">₹{projections.projBroking.toFixed(1)}</td>
                       <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-bold">
                         +{(((projections.projBroking - projections.fy26Broking)/projections.fy26Broking)*100).toFixed(1)}%
                       </td>
@@ -432,7 +432,7 @@ export default function ProjectionsModel() {
                     <tr className="hover:bg-slate-50/50">
                       <td className="py-4 px-3.5 font-semibold text-slate-800">MTF Interest Revenue</td>
                       <td className="py-4 px-3.5 text-right font-mono text-slate-600">₹{projections.fy26Mtf.toFixed(1)}</td>
-                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-emerald-50/20 text-emerald-900">₹{projections.projMtf.toFixed(1)}</td>
+                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-amber-50/20 text-amber-950">₹{projections.projMtf.toFixed(1)}</td>
                       <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-bold">
                         +{mtfGrowth.toFixed(1)}%
                       </td>
@@ -444,7 +444,7 @@ export default function ProjectionsModel() {
                     <tr className="hover:bg-slate-50/50">
                       <td className="py-4 px-3.5 font-semibold text-slate-800">Distribution & Wealth Revenue</td>
                       <td className="py-4 px-3.5 text-right font-mono text-slate-600">₹{projections.fy26Dist.toFixed(1)}</td>
-                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-emerald-50/20 text-emerald-900">₹{projections.projDist.toFixed(1)}</td>
+                      <td className="py-4 px-3.5 text-right font-mono font-semibold bg-amber-50/20 text-amber-950">₹{projections.projDist.toFixed(1)}</td>
                       <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-bold">
                         +{clientGrowth.toFixed(1)}%
                       </td>
@@ -458,7 +458,7 @@ export default function ProjectionsModel() {
                       <td className="py-4 px-3.5 text-right font-mono text-slate-500">
                         ₹{(projections.fy26TotalIncome - (projections.fy26Broking + projections.fy26Mtf + projections.fy26Dist)).toFixed(1)}
                       </td>
-                      <td className="py-4 px-3.5 text-right font-mono bg-emerald-50/20 text-slate-600">₹{projections.projOther.toFixed(1)}</td>
+                      <td className="py-4 px-3.5 text-right font-mono bg-amber-50/20 text-slate-600">₹{projections.projOther.toFixed(1)}</td>
                       <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-bold">
                         +{clientGrowth.toFixed(1)}%
                       </td>
@@ -469,7 +469,7 @@ export default function ProjectionsModel() {
                   <tr className="bg-slate-50/30 hover:bg-slate-50/50 border-t border-slate-200">
                     <td className="py-4 px-3.5 font-bold text-slate-900">Total Income</td>
                     <td className="py-4 px-3.5 text-right font-mono font-bold text-slate-800">₹{projections.fy26TotalIncome.toFixed(1)}</td>
-                    <td className="py-4 px-3.5 text-right font-mono font-black bg-emerald-50/40 text-emerald-950">₹{projections.projTotalIncome.toFixed(1)}</td>
+                    <td className="py-4 px-3.5 text-right font-mono font-black bg-amber-50/35 text-amber-950">₹{projections.projTotalIncome.toFixed(1)}</td>
                     <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-black">
                       +{projections.incomeGrowth >= 0 ? "+" : ""}{projections.incomeGrowth.toFixed(1)}%
                     </td>
@@ -479,7 +479,7 @@ export default function ProjectionsModel() {
                   <tr className="hover:bg-slate-50/50">
                     <td className="py-4 px-3.5 font-semibold text-slate-700">Total Expenses</td>
                     <td className="py-4 px-3.5 text-right font-mono text-slate-600">₹{projections.fy26Expense.toFixed(1)}</td>
-                    <td className="py-4 px-3.5 text-right font-mono font-semibold bg-emerald-50/20 text-emerald-900">₹{projections.projExpense.toFixed(1)}</td>
+                    <td className="py-4 px-3.5 text-right font-mono font-semibold bg-amber-50/20 text-amber-950">₹{projections.projExpense.toFixed(1)}</td>
                     <td className="py-4 px-3.5 text-right font-mono text-rose-600 font-bold">
                       +{opexEscalation.toFixed(1)}%
                     </td>
@@ -489,7 +489,7 @@ export default function ProjectionsModel() {
                   <tr className="hover:bg-slate-50/50">
                     <td className="py-4 px-3.5 font-semibold text-slate-800">Profit Before Tax (PBT)</td>
                     <td className="py-4 px-3.5 text-right font-mono text-slate-600">₹{projections.fy26Pbt.toFixed(1)}</td>
-                    <td className="py-4 px-3.5 text-right font-mono font-semibold bg-emerald-50/20 text-emerald-900">₹{projections.projPbt.toFixed(1)}</td>
+                    <td className="py-4 px-3.5 text-right font-mono font-semibold bg-amber-50/20 text-amber-950">₹{projections.projPbt.toFixed(1)}</td>
                     <td className="py-4 px-3.5 text-right font-mono font-bold">
                       {projections.fy26Pbt > 0 ? (
                         `${((projections.projPbt - projections.fy26Pbt)/projections.fy26Pbt * 100) >= 0 ? "+" : ""}${((projections.projPbt - projections.fy26Pbt)/projections.fy26Pbt * 100).toFixed(1)}%`
@@ -501,7 +501,7 @@ export default function ProjectionsModel() {
                   <tr className="bg-slate-50/30 hover:bg-slate-50/50 border-b border-slate-200">
                     <td className="py-4 px-3.5 font-bold text-slate-900">Profit After Tax (PAT)</td>
                     <td className="py-4 px-3.5 text-right font-mono font-bold text-slate-800">₹{projections.fy26Pat.toFixed(1)}</td>
-                    <td className="py-4 px-3.5 text-right font-mono font-black bg-emerald-50/40 text-emerald-950">₹{projections.projPat.toFixed(1)}</td>
+                    <td className="py-4 px-3.5 text-right font-mono font-black bg-amber-50/35 text-amber-950">₹{projections.projPat.toFixed(1)}</td>
                     <td className="py-4 px-3.5 text-right font-mono text-emerald-600 font-black">
                       {projections.patGrowth >= 0 ? "+" : ""}{projections.patGrowth.toFixed(1)}%
                     </td>
@@ -511,7 +511,7 @@ export default function ProjectionsModel() {
                   <tr className="hover:bg-slate-50/50">
                     <td className="py-4 px-3.5 font-semibold text-slate-800">Net Profit Margin (%)</td>
                     <td className="py-4 px-3.5 text-right font-mono text-slate-600 font-semibold">{projections.fy26Margin.toFixed(1)}%</td>
-                    <td className="py-4 px-3.5 text-right font-mono font-bold bg-emerald-50/20 text-emerald-900">{projections.projMargin.toFixed(1)}%</td>
+                    <td className="py-4 px-3.5 text-right font-mono font-bold bg-amber-50/20 text-amber-950">{projections.projMargin.toFixed(1)}%</td>
                     <td className={`py-4 px-3.5 text-right font-mono font-bold ${
                       (projections.projMargin - projections.fy26Margin) >= 0 ? "text-emerald-600" : "text-rose-600"
                     }`}>

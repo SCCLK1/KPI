@@ -145,7 +145,7 @@ export default function KPICharts() {
             onClick={() => setChartType("bar")}
             className={`p-2 rounded-lg transition-all ${
               chartType === "bar"
-                ? "bg-white text-emerald-600 shadow-xs ring-1 ring-slate-200"
+                ? "bg-white text-amber-600 shadow-xs ring-1 ring-slate-200"
                 : "text-slate-500 hover:text-slate-900"
             }`}
             title="Vertical Grouped Bar Chart"
@@ -156,7 +156,7 @@ export default function KPICharts() {
             onClick={() => setChartType("line")}
             className={`p-2 rounded-lg transition-all ${
               chartType === "line"
-                ? "bg-white text-emerald-600 shadow-xs ring-1 ring-slate-200"
+                ? "bg-white text-amber-600 shadow-xs ring-1 ring-slate-200"
                 : "text-slate-500 hover:text-slate-900"
             }`}
             title="Line Comparison Chart"
@@ -170,7 +170,7 @@ export default function KPICharts() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 font-sans">
         {/* Metric 1 */}
         <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex items-center gap-4">
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+          <div className="p-3 bg-amber-50 text-amber-600 rounded-xl">
             <Award size={20} />
           </div>
           <div>
@@ -180,7 +180,7 @@ export default function KPICharts() {
             <span className="font-display font-extrabold text-base text-slate-900 block truncate">
               {stats.highestFY26Company || "N/A"}
             </span>
-            <span className="text-xs font-semibold text-emerald-600 font-mono">
+            <span className="text-xs font-semibold text-amber-600 font-mono">
               {stats.highestFY26Display}
             </span>
           </div>
@@ -188,7 +188,7 @@ export default function KPICharts() {
 
         {/* Metric 2 */}
         <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex items-center gap-4">
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+          <div className="p-3 bg-amber-50 text-amber-600 rounded-xl">
             <TrendingUp size={20} />
           </div>
           <div>
@@ -198,7 +198,7 @@ export default function KPICharts() {
             <span className="font-display font-extrabold text-base text-slate-900 block truncate">
               {stats.growthLeaderCompany || "N/A"}
             </span>
-            <span className="text-xs font-semibold text-emerald-600 font-mono">
+            <span className="text-xs font-semibold text-amber-600 font-mono">
               {stats.growthLeaderPctDisplay}
             </span>
           </div>
@@ -272,7 +272,7 @@ export default function KPICharts() {
                   formatter={(value: any, name: any, props: any) => {
                     const originalData = props.payload;
                     const valueStr = name === "FY25" ? originalData.fy25Display : originalData.fy26Display;
-                    const cleanValue = valueStr === "NSD" ? "NSD (Not Disclosed)" : valueStr;
+                    const cleanValue = valueStr === "NSD" ? "Not Separately Disclosed (NSD)" : valueStr;
                     return [cleanValue, name === "FY25" ? "FY25 Actual" : "FY26 Actual"];
                   }}
                 />
@@ -330,7 +330,7 @@ export default function KPICharts() {
                   formatter={(value: any, name: any, props: any) => {
                     const originalData = props.payload;
                     const valueStr = name === "FY25" ? originalData.fy25Display : originalData.fy26Display;
-                    const cleanValue = valueStr === "NSD" ? "NSD" : valueStr;
+                    const cleanValue = valueStr === "NSD" ? "Not Separately Disclosed (NSD)" : valueStr;
                     return [cleanValue, name === "FY25" ? "FY25 Actual" : "FY26 Actual"];
                   }}
                 />

@@ -46,10 +46,11 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
             e.stopPropagation();
             setSelectedCell({ company, kpi, value: kpiData });
           }}
-          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[9.5px] font-semibold bg-slate-100 hover:bg-slate-200 text-slate-500 border border-slate-200 transition-colors cursor-help font-mono whitespace-nowrap"
+          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-500 border border-slate-200 transition-colors cursor-help font-sans uppercase tracking-wider whitespace-nowrap"
+          title="Not Separately Disclosed (NSD) in public financial reports"
         >
           Not Disclosed
-          <HelpCircle size={9} className="text-slate-400" />
+          <HelpCircle size={8} className="text-slate-400" />
         </button>
       );
     }
@@ -135,7 +136,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
               placeholder="Search all 28 KPIs (e.g. Broking, MTF, PAT, Clients)..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all font-sans"
+              className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all font-sans"
             />
             {searchTerm && (
               <button 
@@ -185,7 +186,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
             {/* Excel Download Button */}
             <button
               onClick={downloadMatrixAsCSV}
-              className="flex items-center justify-center gap-1.5 px-4.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
+              className="flex items-center justify-center gap-1.5 px-4.5 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all w-full sm:w-auto cursor-pointer"
             >
               <Download size={14} />
               Download Excel/CSV
@@ -201,7 +202,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
               onClick={() => setSelectedCategory(cat)}
               className={`text-xs font-medium px-3.5 py-1.5 rounded-full border transition-all shrink-0 ${
                 selectedCategory === cat
-                  ? "bg-emerald-600 text-white border-emerald-600 font-semibold shadow-xs"
+                  ? "bg-amber-600 text-white border-amber-600 font-semibold shadow-xs"
                   : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900"
               }`}
             >
@@ -230,7 +231,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                     key={company.id} 
                     colSpan={yearView === "Both" ? 2 : 1}
                     className={`py-5 px-4 text-center border-r border-slate-200/60 last:border-r-0 ${
-                      yearView === "Both" ? "w-[200px]" : "w-[160px]"
+                      yearView === "Both" ? "w-[240px]" : "w-[160px]"
                     }`}
                   >
                     <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1.5">
@@ -239,8 +240,8 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                     <div className="font-display font-bold text-sm text-slate-900 block truncate">
                       {company.name}
                     </div>
-                    <div className="text-[9px] text-slate-400 font-mono font-medium truncate mt-0.5">
-                      {company.fullName.split(" Ltd")[0]}
+                    <div className="text-[9.5px] text-slate-400 font-sans font-medium truncate mt-0.5 leading-normal">
+                      {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
                     </div>
                   </th>
                 ))}
@@ -249,10 +250,10 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                 <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
                   {BROKER_DATA.map((company) => (
                     <React.Fragment key={company.id}>
-                      <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[95px]">
+                      <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[115px]">
                         2025
                       </th>
-                      <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[105px]">
+                      <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[125px]">
                         2026
                       </th>
                     </React.Fragment>
@@ -466,9 +467,9 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                       setSelectedCell(null);
                       onSelectNsdExplanation();
                     }}
-                    className="text-emerald-600 hover:text-emerald-800 font-bold text-[11px] underline mt-1 text-left"
+                    className="text-amber-600 hover:text-amber-800 font-bold text-[11px] underline mt-1 text-left"
                   >
-                    Read full conceptual explanation of Missing Disclosures &rarr;
+                    Read full conceptual explanation in Disclosure Analytics &rarr;
                   </button>
                 </div>
               )}
