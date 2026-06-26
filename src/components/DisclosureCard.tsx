@@ -232,7 +232,7 @@ export default function DisclosureCard() {
                     <span className="font-mono text-emerald-600">01.</span> Capital Productivity: Gearing vs. Net Interest Margin (NIM)
                   </h5>
                   <p className="text-xs text-slate-600 leading-normal">
-                    <strong>Zerodha</strong> avoids leverage entirely (<strong>0.0x gearing</strong> at group level), resulting in an extremely high consolidated ROE (~31% in FY25). This requires massive cash-reserve self-funding: to power its <strong>₹7,500 Cr MTF book</strong> in FY26, Zerodha funded the entire volume on-balance-sheet using proprietary cash reserves & client collateral margins.
+                    <strong>Zerodha</strong> operates on a debt-free model (operating with <strong>near-zero external gearing</strong> at the group level), resulting in an extremely high consolidated ROE (~31% in FY25). This requires massive cash-reserve self-funding: to power its <strong>₹7,500 Cr MTF book</strong> in FY26, Zerodha funded the entire volume on-balance-sheet using proprietary cash reserves & client collateral margins.
                   </p>
                   <p className="text-xs text-slate-600 leading-normal">
                     <strong>Motilal Oswal</strong> deploys aggressive financial leverage (<strong>1.3x gearing</strong>) to scale its margin trading ledger up to <strong>₹6,094 Cr</strong>. Higher borrowing cost adjustments (<strong>8.65%</strong> in FY26) compress core NIMs on third-party bank funded volumes, but MOFSL successfully offsets margin dilution through high-margin AMC and wealth management fees, maintaining a solid <strong>24% ROE</strong>.
