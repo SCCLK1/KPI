@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Search, Info, HelpCircle, ArrowUpRight, ArrowDownRight, RefreshCw, X, Download } from "lucide-react";
+import { Search, Info, HelpCircle, ArrowUpRight, ArrowDownRight, RefreshCw, X, Download, Filter } from "lucide-react";
 import { BROKER_DATA, KPI_LIST, BrokerCompany, KPIDefinition, KPIValue } from "../data";
 
 interface KPIMatrixProps {
@@ -15,6 +15,20 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
     kpi: KPIDefinition;
     value: KPIValue;
   } | null>(null);
+
+  const [selectedBrokers, setSelectedBrokers] = useState<string[]>(
+    BROKER_DATA.map((b) => b.id)
+  );
+
+  const filteredBrokers = useMemo(() => {
+    return BROKER_DATA.filter((b) => selectedBrokers.includes(b.id));
+  }, [selectedBrokers]);
+
+  const tableMinWidth = useMemo(() => {
+    const baseWidth = 240; // KPI Parameter column
+    const colWidth = yearView === "Both" ? 240 : 160;
+    return baseWidth + filteredBrokers.length * colWidth;
+  }, [filteredBrokers.length, yearView]);
 
   // Filter Categories
   const categories = ["All", "Income", "Expenses", "Profitability", "Market Metrics", "Balance Sheet & Debt", "Client Metrics"];
@@ -96,14 +110,14 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
 
   const downloadMatrixAsCSV = () => {
     let csv = "KPI Parameter,Category";
-    BROKER_DATA.forEach((b) => {
+    filteredBrokers.forEach((b) => {
       csv += `,"${b.name} FY25","${b.name} FY26"`;
     });
     csv += "\n";
 
     KPI_LIST.forEach((kpi) => {
       let row = `"${kpi.label.replace(/"/g, '""')}","${kpi.category}"`;
-      BROKER_DATA.forEach((b) => {
+      filteredBrokers.forEach((b) => {
         const kpiVal = b.kpis[kpi.key];
         const fy25 = kpiVal ? (kpiVal.fy25 === "NSD" ? "Not Disclosed" : kpiVal.fy25) : "";
         const fy26 = kpiVal ? (kpiVal.fy26 === "NSD" ? "Not Disclosed" : kpiVal.fy26) : "";
@@ -210,102 +224,214 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
             </button>
           ))}
         </div>
+
+        {/* Divider */}
+        <div className="h-px bg-slate-100 my-4" />
+
+        {/* Broker Filter Selection (Select All / Deselect All) */}
+        <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider flex items-center gap-1">
+              <Filter size={11} className="text-slate-450" />
+              Compare Distribution Partners ({selectedBrokers.length} of {BROKER_DATA.length})
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setSelectedBrokers(BROKER_DATA.map((b) => b.id))}
+                className="text-[11px] font-extrabold text-amber-600 hover:text-amber-800 transition-colors uppercase tracking-wider"
+              >
+                Select All
+              </button>
+              <span className="text-slate-350 text-xs font-light">|</span>
+              <button
+                type="button"
+                onClick={() => setSelectedBrokers([])}
+                className="text-[11px] font-extrabold text-slate-500 hover:text-slate-700 transition-colors uppercase tracking-wider"
+              >
+                Deselect All
+              </button>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {BROKER_DATA.map((broker) => {
+              const isChecked = selectedBrokers.includes(broker.id);
+              return (
+                <button
+                  key={broker.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedBrokers((prev) =>
+                      prev.includes(broker.id)
+                        ? prev.filter((id) => id !== broker.id)
+                        : [...prev, broker.id]
+                    );
+                  }}
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-[11px] font-bold transition-all ${
+                    isChecked
+                      ? "bg-slate-900 border-slate-900 text-white shadow-sm"
+                      : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                  }`}
+                >
+                  <div
+                    className={`w-3 h-3 rounded flex items-center justify-center border transition-all ${
+                      isChecked
+                        ? "bg-amber-500 border-amber-500 text-slate-950"
+                        : "border-slate-300 bg-white"
+                    }`}
+                  >
+                    {isChecked && (
+                      <svg
+                        className="w-2.5 h-2.5 text-slate-950 stroke-[4]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                  </div>
+                  <span>{broker.name}</span>
+                  <span className={`text-[9px] font-normal ${isChecked ? "text-slate-300" : "text-slate-400"}`}>
+                    ({broker.type})
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* KPI Matrix Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div className="overflow-x-auto scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
-          <table className={`w-full text-left border-collapse table-fixed ${
-            yearView === "Both" ? "min-w-[1760px]" : "min-w-[1200px]"
-          }`}>
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200">
-                <th 
-                  rowSpan={yearView === "Both" ? 2 : 1}
-                  className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
-                >
-                  KPI Parameter
-                </th>
-                {BROKER_DATA.map((company) => (
+      {filteredBrokers.length > 0 ? (
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div className="overflow-x-auto scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
+            <table 
+              style={{ minWidth: `${tableMinWidth}px` }} 
+              className="w-full text-left border-collapse table-fixed"
+            >
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200">
                   <th 
-                    key={company.id} 
-                    colSpan={yearView === "Both" ? 2 : 1}
-                    className={`py-5 px-4 text-center border-r border-slate-200/60 last:border-r-0 ${
-                      yearView === "Both" ? "w-[240px]" : "w-[160px]"
-                    }`}
+                    rowSpan={yearView === "Both" ? 2 : 1}
+                    className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
                   >
-                    <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1.5">
-                      {company.type}
-                    </div>
-                    <div className="font-display font-bold text-sm text-slate-900 block truncate">
-                      {company.name}
-                    </div>
-                    <div className="text-[9.5px] text-slate-400 font-sans font-medium truncate mt-0.5 leading-normal">
-                      {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
-                    </div>
+                    KPI Parameter
                   </th>
-                ))}
-              </tr>
-              {yearView === "Both" && (
-                <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
-                  {BROKER_DATA.map((company) => (
-                    <React.Fragment key={company.id}>
-                      <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[115px]">
-                        2025
-                      </th>
-                      <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[125px]">
-                        2026
-                      </th>
-                    </React.Fragment>
+                  {filteredBrokers.map((company) => (
+                    <th 
+                      key={company.id} 
+                      colSpan={yearView === "Both" ? 2 : 1}
+                      className={`py-5 px-4 text-center border-r border-slate-200/60 last:border-r-0 ${
+                        yearView === "Both" ? "w-[240px]" : "w-[160px]"
+                      }`}
+                    >
+                      <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1.5">
+                        {company.type}
+                      </div>
+                      <div className="font-display font-bold text-sm text-slate-900 block truncate">
+                        {company.name}
+                      </div>
+                      <div className="text-[9.5px] text-slate-400 font-sans font-medium truncate mt-0.5 leading-normal">
+                        {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
+                      </div>
+                    </th>
                   ))}
                 </tr>
-              )}
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {filteredKPIs.length > 0 ? (
-                filteredKPIs.map((kpi) => {
-                  return (
-                    <tr 
-                      key={kpi.key} 
-                      className="hover:bg-slate-50/70 transition-colors group"
-                      onClick={() => {
-                        // Select default company (e.g. Groww) if clicking row
-                        setSelectedCell({
-                          company: BROKER_DATA[0],
-                          kpi,
-                          value: BROKER_DATA[0].kpis[kpi.key]
-                        });
-                      }}
-                    >
-                      {/* Metric Name & Info */}
-                      <td className="p-5 sticky left-0 bg-white group-hover:bg-slate-50 z-10 border-r border-slate-200 font-sans shadow-sm">
-                        <div className="flex items-start gap-2.5">
-                          <div>
-                            <span className="font-semibold text-slate-800 text-sm block leading-snug">
-                              {kpi.label}
-                            </span>
-                            <span className="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
-                              {kpi.category}
-                            </span>
+                {yearView === "Both" && (
+                  <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
+                    {filteredBrokers.map((company) => (
+                      <React.Fragment key={company.id}>
+                        <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[115px]">
+                          2025
+                        </th>
+                        <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[125px]">
+                          2026
+                        </th>
+                      </React.Fragment>
+                    ))}
+                  </tr>
+                )}
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {filteredKPIs.length > 0 ? (
+                  filteredKPIs.map((kpi) => {
+                    return (
+                      <tr 
+                        key={kpi.key} 
+                        className="hover:bg-slate-50/70 transition-colors group"
+                        onClick={() => {
+                          if (filteredBrokers.length > 0) {
+                            setSelectedCell({
+                              company: filteredBrokers[0],
+                              kpi,
+                              value: filteredBrokers[0].kpis[kpi.key]
+                            });
+                          }
+                        }}
+                      >
+                        {/* Metric Name & Info */}
+                        <td className="p-5 sticky left-0 bg-white group-hover:bg-slate-50 z-10 border-r border-slate-200 font-sans shadow-sm">
+                          <div className="flex items-start gap-2.5">
+                            <div>
+                              <span className="font-semibold text-slate-800 text-sm block leading-snug">
+                                {kpi.label}
+                              </span>
+                              <span className="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
+                                {kpi.category}
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              className="text-slate-400 hover:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity self-center ml-auto"
+                              title="View description & footnotes"
+                            >
+                              <Info size={13} />
+                            </button>
                           </div>
-                          <button
-                            type="button"
-                            className="text-slate-400 hover:text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity self-center ml-auto"
-                            title="View description & footnotes"
-                          >
-                            <Info size={13} />
-                          </button>
-                        </div>
-                      </td>
-
-                      {/* Broker Columns */}
-                      {BROKER_DATA.map((company) => {
-                        const kpiData = company.kpis[kpi.key];
-                        return (
-                          <React.Fragment key={company.id}>
-                            {yearView === "Both" ? (
-                              <>
-                                {/* FY25 Column */}
+                        </td>
+  
+                        {/* Broker Columns */}
+                        {filteredBrokers.map((company) => {
+                          const kpiData = company.kpis[kpi.key];
+                          return (
+                            <React.Fragment key={company.id}>
+                              {yearView === "Both" ? (
+                                <>
+                                  {/* FY25 Column */}
+                                  <td 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setSelectedCell({
+                                        company,
+                                        kpi,
+                                        value: kpiData
+                                      });
+                                    }}
+                                    className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all font-mono text-xs text-slate-800"
+                                  >
+                                    {renderValueCell(company, kpi, false)}
+                                  </td>
+                                  {/* FY26 Column */}
+                                  <td 
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setSelectedCell({
+                                        company,
+                                        kpi,
+                                        value: kpiData
+                                      });
+                                    }}
+                                    className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-200/60 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                  >
+                                    <div className="flex flex-col items-center justify-center gap-1">
+                                      {renderValueCell(company, kpi, true)}
+                                      {getYoYDisplay(company, kpi)}
+                                    </div>
+                                  </td>
+                                </>
+                              ) : yearView === "FY26" ? (
                                 <td 
                                   onClick={(e) => {
                                     e.stopPropagation();
@@ -315,77 +441,65 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                                       value: kpiData
                                     });
                                   }}
-                                  className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all font-mono text-xs text-slate-800"
-                                >
-                                  {renderValueCell(company, kpi, false)}
-                                </td>
-                                {/* FY26 Column */}
-                                <td 
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setSelectedCell({
-                                      company,
-                                      kpi,
-                                      value: kpiData
-                                    });
-                                  }}
-                                  className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-200/60 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                  className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
                                 >
                                   <div className="flex flex-col items-center justify-center gap-1">
                                     {renderValueCell(company, kpi, true)}
                                     {getYoYDisplay(company, kpi)}
                                   </div>
                                 </td>
-                              </>
-                            ) : yearView === "FY26" ? (
-                              <td 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setSelectedCell({
-                                    company,
-                                    kpi,
-                                    value: kpiData
-                                  });
-                                }}
-                                className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
-                              >
-                                <div className="flex flex-col items-center justify-center gap-1">
-                                  {renderValueCell(company, kpi, true)}
-                                  {getYoYDisplay(company, kpi)}
-                                </div>
-                              </td>
-                            ) : (
-                              <td 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setSelectedCell({
-                                    company,
-                                    kpi,
-                                    value: kpiData
-                                  });
-                                }}
-                                className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
-                              >
-                                {renderValueCell(company, kpi, false)}
-                              </td>
-                            )}
-                          </React.Fragment>
-                        );
-                      })}
-                    </tr>
-                  );
-                })
-              ) : (
-                <tr>
-                  <td colSpan={1 + BROKER_DATA.length * (yearView === "Both" ? 2 : 1)} className="p-8 text-center text-sm text-slate-400">
-                    No matching parameters found for "{searchTerm}". Try another search term.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+                              ) : (
+                                <td 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setSelectedCell({
+                                      company,
+                                      kpi,
+                                      value: kpiData
+                                    });
+                                  }}
+                                  className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                >
+                                  {renderValueCell(company, kpi, false)}
+                                </td>
+                              )}
+                            </React.Fragment>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan={1 + filteredBrokers.length * (yearView === "Both" ? 2 : 1)} className="p-8 text-center text-sm text-slate-400">
+                      No matching parameters found for "{searchTerm}". Try another search term.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="p-12 text-center text-slate-500 bg-white rounded-2xl border border-slate-200 shadow-sm">
+          <div className="max-w-md mx-auto space-y-3.5">
+            <div className="inline-flex p-3.5 bg-amber-50 rounded-full text-amber-500 border border-amber-100">
+              <Filter size={24} className="stroke-[2.5]" />
+            </div>
+            <h4 className="font-display font-bold text-slate-900 text-base">No Brokerage Partners Selected</h4>
+            <p className="text-xs text-slate-500 leading-relaxed font-sans">
+              Select one or more brokers from the comparison filter dashboard above to display their financial performance metrics.
+            </p>
+            <button
+              type="button"
+              onClick={() => setSelectedBrokers(BROKER_DATA.map((b) => b.id))}
+              className="mt-1 inline-flex items-center justify-center px-4 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold transition-all shadow-xs cursor-pointer"
+            >
+              Select All Partners
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Row Footnote Drawer / Modal */}
       {selectedCell && (
