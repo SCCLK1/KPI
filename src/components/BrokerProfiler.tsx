@@ -62,7 +62,7 @@ export default function BrokerProfiler() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Brand Tabs Row */}
       <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
         {BROKER_DATA.map((b) => (
@@ -82,11 +82,11 @@ export default function BrokerProfiler() {
       </div>
 
       {/* Main Profile Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Side: Strategic Overview & Gauges */}
-        <div className="lg:col-span-1 space-y-6">
+        <div className="lg:col-span-1 space-y-8">
           {/* Card: Brand Background */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs relative overflow-hidden">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden">
             <div className={`absolute -right-12 -top-12 h-28 w-28 rounded-full bg-gradient-to-br ${company.logoColor} opacity-5 blur-xl`} />
             <span className="inline-block text-[10px] font-extrabold bg-emerald-50 border border-emerald-100 text-emerald-700 px-2 py-0.5 rounded-md mb-2 uppercase tracking-wider font-mono">
               {company.type} model
@@ -103,14 +103,14 @@ export default function BrokerProfiler() {
           </div>
 
           {/* Card: Ratios Gauges (PAT Margin & Cost-To-Income) */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
             <h4 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
               <Activity size={16} className="text-emerald-600" />
               Operational Efficiency Ratios
             </h4>
 
             {/* Gauge 1: PAT margin */}
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-150 space-y-3">
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4">
               <div className="flex justify-between items-center">
                 <div>
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
@@ -145,7 +145,7 @@ export default function BrokerProfiler() {
             </div>
 
             {/* Gauge 2: Cost-to-Income */}
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-150 space-y-3">
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-150 space-y-4 font-sans">
               <div className="flex justify-between items-center">
                 <div>
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block font-sans">
@@ -180,7 +180,7 @@ export default function BrokerProfiler() {
             </div>
 
             {/* Analytical Insights card */}
-            <div className="p-3.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-1">
+            <div className="p-4.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-2">
               <span className="text-[10px] font-extrabold text-emerald-700 block uppercase tracking-wider font-sans flex items-center gap-1">
                 <Award size={10} />
                 Analysist Outlook (FY26)
@@ -197,9 +197,9 @@ export default function BrokerProfiler() {
         </div>
 
         {/* Right Side: Categorized KPI lists */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-8">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-            <div className="p-5 border-b border-slate-100 bg-slate-50">
+            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50">
               <h3 className="font-display font-extrabold text-slate-900 text-base">
                 Operational & Balance-Sheet Auditing
               </h3>
@@ -210,13 +210,13 @@ export default function BrokerProfiler() {
 
             <div className="divide-y divide-slate-100">
               {kpiCategories.map((cat, idx) => (
-                <div key={idx} className="p-5 space-y-3.5">
+                <div key={idx} className="p-6 sm:p-8 space-y-4.5">
                   <h4 className="text-[11px] font-extrabold text-emerald-600 uppercase tracking-widest font-sans flex items-center gap-1.5 matches-category">
                     <ChevronRight size={12} strokeWidth={3} />
                     {cat.name}
                   </h4>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {cat.keys.map((key) => {
                       const kpiDef = KPI_LIST.find((k) => k.key === key);
                       const kpiVal = company.kpis[key];
@@ -228,7 +228,7 @@ export default function BrokerProfiler() {
                       return (
                         <div 
                           key={key} 
-                          className="p-3 bg-slate-50/70 hover:bg-slate-50 border border-slate-200/50 rounded-xl space-y-2 transition-all group cursor-help"
+                          className="p-4 bg-slate-50/70 hover:bg-slate-50 border border-slate-200/50 rounded-xl space-y-3 transition-all group cursor-help"
                           title={`${kpiDef.label}: ${kpiDef.description}`}
                         >
                           <div className="flex justify-between items-start">
@@ -250,7 +250,7 @@ export default function BrokerProfiler() {
                           </div>
 
                           {/* Dual values display */}
-                          <div className="flex items-center gap-4 bg-white/80 p-2 border border-slate-150 rounded-lg">
+                          <div className="flex items-center gap-5 bg-white/80 p-2.5 border border-slate-150 rounded-lg font-sans">
                             <div>
                               <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-wider block font-mono">FY25</span>
                               <span className={`font-mono text-xs font-bold ${

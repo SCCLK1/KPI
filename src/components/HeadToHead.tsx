@@ -255,12 +255,12 @@ export default function HeadToHead() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Selector Panels Grid */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+            <div className="p-3 bg-emerald-50 text-emerald-600 rounded-lg">
               <ArrowLeftRight size={18} />
             </div>
             <div>
@@ -295,10 +295,10 @@ export default function HeadToHead() {
         </div>
 
         {/* Picker Dropdowns Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-3 border-t border-slate-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-slate-100">
           {/* Broker A Selector */}
-          <div className={`p-4 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200`}>
-            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-1.5 font-sans">
+          <div className={`p-5 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200`}>
+            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-2.5 font-sans">
               Primary Broker (A)
             </label>
             <select
@@ -318,8 +318,8 @@ export default function HeadToHead() {
           </div>
 
           {/* Broker B Selector */}
-          <div className="p-4 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200">
-            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-1.5 font-sans">
+          <div className="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-emerald-50/10 border border-slate-200">
+            <label className="block text-[10px] font-extrabold text-emerald-600 uppercase tracking-widest mb-2.5 font-sans">
               Comparative Broker (B)
             </label>
             <select
@@ -340,7 +340,7 @@ export default function HeadToHead() {
         </div>
 
         {/* Search & Download Bar */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 mt-4">
+        <div className="flex flex-col sm:flex-row items-center gap-3 mt-6">
           <input
             type="text"
             placeholder="Search specific KPIs for side-by-side analysis (e.g. revenue, PAT, clients)..."
@@ -359,14 +359,14 @@ export default function HeadToHead() {
       </div>
 
       {/* Executive Summary Insights Card */}
-      <div className="bg-[#0F172A] text-slate-100 rounded-2xl border border-slate-800 p-5 shadow-md space-y-4">
+      <div className="bg-[#0F172A] text-slate-100 rounded-2xl border border-slate-800 p-6 sm:p-8 shadow-md space-y-6">
         <h4 className="font-display font-extrabold text-sm text-emerald-400 flex items-center gap-2 uppercase tracking-wider">
           <TrendingUp size={16} />
           Executive Comparison Insights ({selectedYear})
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Ratios Comparison */}
-          <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800 space-y-3">
+          <div className="bg-slate-950/50 p-5 rounded-xl border border-slate-800 space-y-4">
             <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
               Core Ratios & Efficiency
             </h5>
@@ -400,7 +400,7 @@ export default function HeadToHead() {
           </div>
 
           {/* Model Comparison Details */}
-          <div className="bg-slate-950/50 p-4 rounded-xl border border-slate-800 space-y-2 flex flex-col justify-center">
+          <div className="bg-slate-950/50 p-5 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-center">
             <h5 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
               Operating Profile Differences
             </h5>
@@ -433,10 +433,10 @@ export default function HeadToHead() {
           <table className="w-full text-left border-collapse table-fixed min-w-[700px]">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200">
-                <th className="p-4 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 border-r border-slate-200 z-10">
+                <th className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 border-r border-slate-200 z-10">
                   KPI Parameter
                 </th>
-                <th className="p-4 text-center border-r border-slate-200/60">
+                <th className="p-5 text-center border-r border-slate-200/60">
                   <div className="inline-block text-[10px] font-extrabold bg-emerald-50 text-emerald-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
                     {brokerA.type}
                   </div>
@@ -447,10 +447,10 @@ export default function HeadToHead() {
                     {selectedYear} Actual
                   </span>
                 </th>
-                <th className="p-4 w-[110px] text-center text-xs font-bold text-slate-400 border-r border-slate-200/60">
+                <th className="p-5 w-[110px] text-center text-xs font-bold text-slate-400 border-r border-slate-200/60">
                   Leader
                 </th>
-                <th className="p-4 text-center">
+                <th className="p-5 text-center">
                   <div className="inline-block text-[10px] font-extrabold bg-emerald-50 text-emerald-700 px-1.5 py-0.2 rounded-md mb-1 uppercase tracking-wide">
                     {brokerB.type}
                   </div>
@@ -475,7 +475,7 @@ export default function HeadToHead() {
                 return (
                   <tr key={kpi.key} className="hover:bg-slate-50/50 transition-colors">
                     {/* KPI Name & Hover Tooltip info */}
-                    <td className="p-4 sticky left-0 bg-white group hover:bg-slate-50 z-10 border-r border-slate-200 shadow-xs">
+                    <td className="p-5 sticky left-0 bg-white group hover:bg-slate-50 z-10 border-r border-slate-200 shadow-xs">
                       <div>
                         <span className="font-semibold text-slate-800 text-xs block leading-tight">
                           {kpi.label}
@@ -487,7 +487,7 @@ export default function HeadToHead() {
                     </td>
 
                     {/* Broker A Value row */}
-                    <td className={`p-4 text-center border-r border-slate-100/60 ${leader === "A" ? "bg-emerald-50/30" : ""}`}>
+                    <td className={`p-5 text-center border-r border-slate-100/60 ${leader === "A" ? "bg-emerald-50/30" : ""}`}>
                       <div className="flex flex-col items-center justify-center">
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valA === "string" && valA.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"
@@ -505,7 +505,7 @@ export default function HeadToHead() {
                     </td>
 
                     {/* Win/Loss Middle column */}
-                    <td className="p-4 text-center border-r border-slate-100/60">
+                    <td className="p-5 text-center border-r border-slate-100/60">
                       {leader === "A" ? (
                         <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 font-extrabold text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">
                           <Check size={9} strokeWidth={4} />
@@ -529,7 +529,7 @@ export default function HeadToHead() {
                     </td>
 
                     {/* Broker B Value row */}
-                    <td className={`p-4 text-center ${leader === "B" ? "bg-emerald-50/30" : ""}`}>
+                    <td className={`p-5 text-center ${leader === "B" ? "bg-emerald-50/30" : ""}`}>
                       <div className="flex flex-col items-center justify-center">
                         <span className={`font-mono text-xs font-bold ${
                           (typeof valB === "string" && valB.includes("NSD")) ? "text-slate-400 italic font-sans" : "text-slate-800"

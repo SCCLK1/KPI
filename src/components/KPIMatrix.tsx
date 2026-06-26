@@ -123,9 +123,9 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Search and Controls Panel */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
           {/* Search bar */}
           <div className="relative w-full md:max-w-md">
@@ -221,7 +221,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
               <tr className="bg-slate-50 border-b border-slate-200">
                 <th 
                   rowSpan={yearView === "Both" ? 2 : 1}
-                  className="p-4 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
+                  className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
                 >
                   KPI Parameter
                 </th>
@@ -229,11 +229,11 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                   <th 
                     key={company.id} 
                     colSpan={yearView === "Both" ? 2 : 1}
-                    className={`p-3 text-center border-r border-slate-200/60 last:border-r-0 ${
+                    className={`py-5 px-4 text-center border-r border-slate-200/60 last:border-r-0 ${
                       yearView === "Both" ? "w-[200px]" : "w-[160px]"
                     }`}
                   >
-                    <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1">
+                    <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1.5">
                       {company.type}
                     </div>
                     <div className="font-display font-bold text-sm text-slate-900 block truncate">
@@ -249,10 +249,10 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                 <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
                   {BROKER_DATA.map((company) => (
                     <React.Fragment key={company.id}>
-                      <th className="p-2 text-center border-r border-slate-100 bg-slate-50/50 w-[95px]">
+                      <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[95px]">
                         2025
                       </th>
-                      <th className="p-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[105px]">
+                      <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[105px]">
                         2026
                       </th>
                     </React.Fragment>
@@ -277,8 +277,8 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                       }}
                     >
                       {/* Metric Name & Info */}
-                      <td className="p-4 sticky left-0 bg-white group-hover:bg-slate-50 z-10 border-r border-slate-200 font-sans shadow-sm">
-                        <div className="flex items-start gap-2">
+                      <td className="p-5 sticky left-0 bg-white group-hover:bg-slate-50 z-10 border-r border-slate-200 font-sans shadow-sm">
+                        <div className="flex items-start gap-2.5">
                           <div>
                             <span className="font-semibold text-slate-800 text-sm block leading-snug">
                               {kpi.label}
@@ -314,7 +314,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                                       value: kpiData
                                     });
                                   }}
-                                  className="p-3 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all font-mono text-xs text-slate-800"
+                                  className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all font-mono text-xs text-slate-800"
                                 >
                                   {renderValueCell(company, kpi, false)}
                                 </td>
@@ -328,9 +328,9 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                                       value: kpiData
                                     });
                                   }}
-                                  className="p-3 text-center cursor-pointer border-r border-slate-200/60 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                  className="py-4.5 px-3 text-center cursor-pointer border-r border-slate-200/60 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
                                 >
-                                  <div className="flex flex-col items-center justify-center gap-0.5">
+                                  <div className="flex flex-col items-center justify-center gap-1">
                                     {renderValueCell(company, kpi, true)}
                                     {getYoYDisplay(company, kpi)}
                                   </div>
@@ -346,9 +346,9 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                                     value: kpiData
                                   });
                                 }}
-                                className="p-3.5 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
                               >
-                                <div className="flex flex-col items-center justify-center gap-0.5">
+                                <div className="flex flex-col items-center justify-center gap-1">
                                   {renderValueCell(company, kpi, true)}
                                   {getYoYDisplay(company, kpi)}
                                 </div>
@@ -363,7 +363,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                                     value: kpiData
                                   });
                                 }}
-                                className="p-3.5 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
+                                className="py-5 px-4 text-center cursor-pointer border-r border-slate-100 hover:bg-emerald-50/30 transition-all last:border-r-0 font-mono text-xs text-slate-800"
                               >
                                 {renderValueCell(company, kpi, false)}
                               </td>

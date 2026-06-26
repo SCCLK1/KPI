@@ -14,20 +14,20 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("matrix");
 
   const isFullWidth = activeTab === "matrix";
-  const containerClass = isFullWidth ? "max-w-none px-4 sm:px-6 lg:px-12" : "max-w-7xl px-4 sm:px-6 lg:px-8";
+  const containerClass = isFullWidth ? "max-w-none px-6 sm:px-8 lg:px-16" : "max-w-7xl px-6 sm:px-8 lg:px-12";
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-emerald-600 selection:text-white">
       {/* Top Banner Warning or Sub-header */}
-      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white text-xs px-4 py-2 border-b border-slate-850 z-30">
-        <div className={`${containerClass} mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 font-sans`}>
-          <div className="flex items-center gap-1.5 text-slate-300">
+      <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white text-xs px-4 py-2.5 border-b border-slate-850 z-30">
+        <div className={`${containerClass} mx-auto flex flex-col sm:flex-row justify-between items-center gap-2.5 font-sans`}>
+          <div className="flex items-center gap-2 text-slate-300">
             <ShieldAlert size={13} className="text-amber-500 animate-pulse" />
             <span className="font-semibold text-white">Regulatory Transition Note:</span>
             <span>FY26 figures incorporate SEBI's 'true-to-label' flat exchange fee guidelines.</span>
           </div>
-          <div className="flex items-center gap-3 text-[11px] text-slate-400">
-            <span className="flex items-center gap-1">
+          <div className="flex items-center gap-4 text-[11px] text-slate-400">
+            <span className="flex items-center gap-1.5">
               <Clock size={12} />
               Ref Local: 2026-06-22 23:39 (PST)
             </span>
@@ -40,10 +40,10 @@ export default function App() {
       {/* Main Premium Corporate Header with Slate/Emerald Polish */}
       <header className="sticky top-0 bg-[#0F172A] text-white border-b border-slate-800 z-40 shadow-lg">
         <div className={`${containerClass} mx-auto`}>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-4 lg:py-0 gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between py-6 lg:py-0 gap-6">
             {/* Title Identity */}
-            <div className="flex items-center gap-3 py-1.5">
-              <div className="p-2.5 bg-emerald-600 rounded-xl text-white shadow-md">
+            <div className="flex items-center gap-4 py-3">
+              <div className="p-3 bg-emerald-600 rounded-xl text-white shadow-md">
                 <Landmark size={22} className="stroke-[2.5]" />
               </div>
               <div>
@@ -60,10 +60,10 @@ export default function App() {
             </div>
 
             {/* Navigation tabs */}
-            <nav className="flex items-center gap-1 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+            <nav className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
               <button
                 onClick={() => setActiveTab("matrix")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "matrix"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -75,7 +75,7 @@ export default function App() {
 
               <button
                 onClick={() => setActiveTab("compare")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "compare"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -87,7 +87,7 @@ export default function App() {
 
               <button
                 onClick={() => setActiveTab("profiler")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "profiler"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -99,7 +99,7 @@ export default function App() {
 
               <button
                 onClick={() => setActiveTab("charts")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "charts"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -111,7 +111,7 @@ export default function App() {
 
               <button
                 onClick={() => setActiveTab("disclosures")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "disclosures"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -123,7 +123,7 @@ export default function App() {
 
               <button
                 onClick={() => setActiveTab("projections")}
-                className={`flex items-center gap-1.5 px-3.5 py-4 text-xs font-bold border-b-2 transition-all shrink-0 ${
+                className={`flex items-center gap-1.5 px-4 py-5 text-xs font-bold border-b-2 transition-all shrink-0 ${
                   activeTab === "projections"
                     ? "border-emerald-500 text-emerald-400"
                     : "border-transparent text-slate-400 hover:text-white hover:border-slate-800"
@@ -138,7 +138,7 @@ export default function App() {
       </header>
 
       {/* Primary Presentation Workspace */}
-      <main className={`flex-1 w-full mx-auto py-8 ${containerClass}`}>
+      <main className={`flex-1 w-full mx-auto py-12 sm:py-16 ${containerClass}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

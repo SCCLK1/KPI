@@ -10,9 +10,9 @@ export default function DisclosureCard() {
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
       {/* Top Welcome Title */}
-      <div className="p-5 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-slate-800">
-        <div className="flex items-center gap-2.5">
-          <div className="p-1.5 bg-white/10 rounded-lg text-emerald-400">
+      <div className="p-6 sm:p-8 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-b border-slate-800">
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-white/10 rounded-lg text-emerald-400">
             <BookOpen size={18} />
           </div>
           <div>
@@ -28,10 +28,10 @@ export default function DisclosureCard() {
 
       <div className="flex flex-col md:flex-row">
         {/* Navigation Sidebar */}
-        <div className="w-full md:w-60 border-b md:border-b-0 md:border-r border-slate-200 bg-slate-50 p-3.5 space-y-2 shrink-0">
+        <div className="w-full md:w-64 border-b md:border-b-0 md:border-r border-slate-200 bg-slate-50 p-5 space-y-3 shrink-0">
           <button
             onClick={() => setActiveTab("nsd")}
-            className={`w-full text-left px-3.5 py-3.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 transition-all ${
+            className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "nsd"
                 ? "bg-emerald-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -43,7 +43,7 @@ export default function DisclosureCard() {
 
           <button
             onClick={() => setActiveTab("cac")}
-            className={`w-full text-left px-3.5 py-3.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 transition-all ${
+            className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "cac"
                 ? "bg-emerald-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -55,7 +55,7 @@ export default function DisclosureCard() {
 
           <button
             onClick={() => setActiveTab("models")}
-            className={`w-full text-left px-3.5 py-3.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 transition-all ${
+            className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "models"
                 ? "bg-emerald-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -67,7 +67,7 @@ export default function DisclosureCard() {
 
           <button
             onClick={() => setActiveTab("cfo")}
-            className={`w-full text-left px-3.5 py-3.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 transition-all ${
+            className={`w-full text-left px-4 py-4 rounded-xl text-xs font-semibold flex items-center gap-3 transition-all ${
               activeTab === "cfo"
                 ? "bg-emerald-600 text-white shadow-md font-bold"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -79,7 +79,7 @@ export default function DisclosureCard() {
         </div>
 
         {/* Detailed Explanation View Area */}
-        <div className="flex-1 p-6 space-y-6">
+        <div className="flex-1 p-8 sm:p-10 space-y-8">
           {activeTab === "nsd" && (
             <div className="space-y-4">
               <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
@@ -94,7 +94,7 @@ export default function DisclosureCard() {
                   In Indian financial filings, most non-banking financial wings or parent entities (like 360 ONE or IIFL Wealth) split specialized margin books directly. However, standard brokerage firms are regulated under a single <strong>Client Margin Ledger</strong> standard by SEBI.
                 </p>
 
-                <div className="bg-amber-50/50 border border-amber-200/50 p-4 rounded-xl text-amber-900 text-xs flex items-start gap-3">
+                <div className="bg-amber-50/50 border border-amber-200/50 p-5 rounded-2xl text-amber-900 text-xs flex items-start gap-3">
                   <Info className="text-amber-500 shrink-0 mt-0.5" size={16} />
                   <div>
                     <span className="font-bold uppercase tracking-wider block text-[10px] text-amber-800 mb-1">
@@ -138,9 +138,9 @@ export default function DisclosureCard() {
                   Client acquisition patterns vary widely based on the core operating mechanism of the broker—resulting in a sharp contrast in how Customer Acquisition Cost (CAC) is reported, categorized, or disclosed.
                 </p>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {explanations.cacVariance.explanation.map((item, id) => (
-                    <div key={id} className="p-4.5 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col gap-2">
+                    <div key={id} className="p-6 rounded-2xl border border-slate-200 bg-slate-50/50 flex flex-col gap-3">
                       <span className="inline-flex max-w-fit items-center gap-1.5 px-2 bg-emerald-50 border border-emerald-100 rounded text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider">
                         {item.type.includes("Discount") ? "Digital Platform Model" : "Relationship Partner Model"}
                       </span>
@@ -180,7 +180,7 @@ export default function DisclosureCard() {
                   The Indian capital market landscape is dividing into two distinct broker types: **Discount Fintech Titans** and **Traditional Advisory Houses**.
                 </p>
 
-                <div className="p-5 bg-gradient-to-br from-emerald-50/20 to-slate-50 border border-emerald-100/50 rounded-xl space-y-3">
+                <div className="p-6 sm:p-8 bg-gradient-to-br from-emerald-50/20 to-slate-50 border border-emerald-100/50 rounded-2xl space-y-4">
                   <p className="text-xs font-medium text-slate-700 leading-relaxed">
                     {explanations.businessModels.explanation}
                   </p>
@@ -189,9 +189,9 @@ export default function DisclosureCard() {
                 <h5 className="font-bold text-slate-800 text-xs uppercase tracking-wider pt-2">
                   Operating Model Playbook comparison
                 </h5>
-                <div className="grid grid-cols-2 gap-4 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs">
                   <div>
-                    <span className="font-extrabold text-[#0f172a] block mb-1 uppercase tracking-wider text-[10px]">
+                    <span className="font-extrabold text-[#0f172a] block mb-2 uppercase tracking-wider text-[10px]">
                       Discount Playbook (Groww & Angel One)
                     </span>
                     <ul className="list-disc pl-4 space-y-1 text-slate-500 leading-normal">
@@ -226,8 +226,8 @@ export default function DisclosureCard() {
                 </h4>
               </div>
 
-              <div className="text-sm text-slate-600 leading-relaxed space-y-5">
-                <div className="p-4 border border-slate-100 bg-slate-50/50 rounded-xl space-y-2">
+              <div className="text-sm text-slate-600 leading-relaxed space-y-6">
+                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
                   <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
                     <span className="font-mono text-emerald-600">01.</span> Capital Productivity: Gearing vs. Net Interest Margin (NIM)
                   </h5>
@@ -239,7 +239,7 @@ export default function DisclosureCard() {
                   </p>
                 </div>
 
-                <div className="p-4 border border-slate-100 bg-slate-50/50 rounded-xl space-y-2">
+                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
                   <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
                     <span className="font-mono text-emerald-600">02.</span> Cost Structure Analysis: Sourcing & Technology Investments
                   </h5>
@@ -251,7 +251,7 @@ export default function DisclosureCard() {
                   </p>
                 </div>
 
-                 <div className="p-4 border border-slate-100 bg-slate-50/50 rounded-xl space-y-2">
+                 <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
                   <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
                     <span className="font-mono text-emerald-600">03.</span> Earnings Volatility: Statutory vs. Core Operating Performance
                   </h5>
@@ -260,7 +260,7 @@ export default function DisclosureCard() {
                   </p>
                 </div>
 
-                <div className="p-4 border border-slate-100 bg-slate-50/50 rounded-xl space-y-2">
+                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
                   <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
                     <span className="font-mono text-emerald-600">04.</span> Strategic Shift from Transactional to Annuity Revenue
                   </h5>
@@ -272,7 +272,7 @@ export default function DisclosureCard() {
                   </p>
                 </div>
 
-                <div className="p-4 border border-slate-100 bg-slate-50/50 rounded-xl space-y-2">
+                <div className="p-5 sm:p-6 border border-slate-100 bg-slate-50/50 rounded-2xl space-y-3">
                   <h5 className="font-display font-extrabold text-[#0f172a] text-sm flex items-center gap-2">
                     <span className="font-mono text-emerald-600">05.</span> Gearing & Gearing Limits: Impact of Leverage on NIM
                   </h5>

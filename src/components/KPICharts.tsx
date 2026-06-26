@@ -86,9 +86,9 @@ export default function KPICharts() {
   }, [chartData, selectedKpiKey]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Chart Selector Header */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col md:flex-row gap-4 items-center justify-between">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs flex flex-col md:flex-row gap-6 items-center justify-between">
         <div>
           <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5 font-sans">
             Select Parameter to Visualize
@@ -167,9 +167,9 @@ export default function KPICharts() {
       </div>
 
       {/* KPI Stats Bento Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 font-sans">
         {/* Metric 1 */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex items-center gap-3.5">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex items-center gap-4">
           <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
             <Award size={20} />
           </div>
@@ -187,7 +187,7 @@ export default function KPICharts() {
         </div>
 
         {/* Metric 2 */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex items-center gap-3.5">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex items-center gap-4">
           <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
             <TrendingUp size={20} />
           </div>
@@ -205,7 +205,7 @@ export default function KPICharts() {
         </div>
 
         {/* Metric 3 */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex items-center gap-3.5">
+        <div className="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs flex items-center gap-4">
           <div className="p-3 bg-amber-50 text-amber-600 rounded-xl">
             <Landmark size={20} />
           </div>
@@ -224,7 +224,7 @@ export default function KPICharts() {
       </div>
 
       {/* Main Chart Card */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
         <div className="mb-4">
           <h3 className="font-display font-extrabold text-slate-900 text-base">
             {currentKPI.label} Visual Comparison Matrix
@@ -360,7 +360,7 @@ export default function KPICharts() {
         </div>
 
         {/* Disclosure Warning on Chart Page */}
-        <div className="mt-4 p-3.5 bg-slate-50 border border-slate-200/60 rounded-xl flex items-center gap-2.5">
+        <div className="mt-6 p-4 sm:p-5 bg-slate-50 border border-slate-200/60 rounded-xl flex items-center gap-3">
           <Activity size={15} className="text-slate-400" />
           <p className="text-[11px] text-slate-500 font-sans leading-relaxed">
             Note: Where a company is marked as <strong>NSD (Not Separately Disclosed)</strong>, its numeric chart value is treated as zero to prevent distortion on coordinates. Click over to the <strong>KPI Matrix</strong> view to consult notes on NSD boundaries.
