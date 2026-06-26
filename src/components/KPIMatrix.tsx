@@ -268,33 +268,48 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
                         : [...prev, broker.id]
                     );
                   }}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-[11px] font-bold transition-all ${
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-xl border text-[11px] font-bold transition-all"
+                  style={
                     isChecked
-                      ? "bg-slate-900 border-slate-900 text-white shadow-sm"
-                      : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-                  }`}
+                      ? {
+                          backgroundColor: broker.accentColor + "15",
+                          borderColor: broker.accentColor + "60",
+                          color: broker.accentColor,
+                          boxShadow: `0 0 0 1px ${broker.accentColor}22`,
+                        }
+                      : {
+                          backgroundColor: "#f8fafc",
+                          borderColor: "#e2e8f0",
+                          color: "#475569",
+                        }
+                  }
                 >
+                  {/* Colored dot indicator */}
                   <div
-                    className={`w-3 h-3 rounded flex items-center justify-center border transition-all ${
+                    className="w-3 h-3 rounded-sm flex items-center justify-center border transition-all"
+                    style={
                       isChecked
-                        ? "bg-amber-500 border-amber-500 text-slate-950"
-                        : "border-slate-300 bg-white"
-                    }`}
+                        ? { backgroundColor: broker.accentColor, borderColor: broker.accentColor }
+                        : { backgroundColor: "white", borderColor: "#cbd5e1" }
+                    }
                   >
                     {isChecked && (
                       <svg
-                        className="w-2.5 h-2.5 text-slate-950 stroke-[4]"
+                        className="w-2 h-2 stroke-[4]"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="currentColor"
+                        stroke="white"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     )}
                   </div>
                   <span>{broker.name}</span>
-                  <span className={`text-[9px] font-normal ${isChecked ? "text-slate-300" : "text-slate-400"}`}>
-                    ({broker.type})
+                  <span
+                    className="text-[9px] font-normal"
+                    style={{ color: isChecked ? broker.accentColor + "aa" : "#94a3b8" }}
+                  >
+                    ({broker.type === "Discount" ? "Disc." : "Trad."})
                   </span>
                 </button>
               );
@@ -312,42 +327,83 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
               className="w-full text-left border-collapse table-fixed"
             >
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200">
+                <tr className="border-b border-slate-200">
                   <th 
                     rowSpan={yearView === "Both" ? 2 : 1}
                     className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
                   >
                     KPI Parameter
                   </th>
-                  {filteredBrokers.map((company) => (
-                    <th 
-                      key={company.id} 
-                      colSpan={yearView === "Both" ? 2 : 1}
-                      className={`py-5 px-4 text-center border-r border-slate-200/60 last:border-r-0 ${
-                        yearView === "Both" ? "w-[240px]" : "w-[160px]"
-                      }`}
-                    >
-                      <div className="inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-1.5">
-                        {company.type}
-                      </div>
-                      <div className="font-display font-bold text-sm text-slate-900 block truncate">
-                        {company.name}
-                      </div>
-                      <div className="text-[9.5px] text-slate-400 font-sans font-medium truncate mt-0.5 leading-normal">
-                        {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
-                      </div>
-                    </th>
-                  ))}
+                  {filteredBrokers.map((company) => {
+                    const initials = company.name
+                      .split(/\s+/)
+                      .slice(0, 2)
+                      .map((w) => w[0])
+                      .join("")
+                      .toUpperCase();
+                    return (
+                      <th
+                        key={company.id}
+                        colSpan={yearView === "Both" ? 2 : 1}
+                        className={`text-center border-r border-slate-200/60 last:border-r-0 overflow-hidden ${
+                          yearView === "Both" ? "w-[240px]" : "w-[160px]"
+                        }`}
+                        style={{ padding: 0 }}
+                      >
+                        {/* Gradient top bar */}
+                        <div className={`h-1.5 w-full bg-gradient-to-r ${company.logoColor}`} />
+
+                        <div className="py-4 px-3 flex flex-col items-center gap-2">
+                          {/* Avatar circle with gradient & initials */}
+                          <div
+                            className={`w-9 h-9 rounded-xl bg-gradient-to-br ${company.logoColor} flex items-center justify-center shadow-md shrink-0`}
+                          >
+                            <span className="text-white text-[11px] font-extrabold tracking-tight font-mono leading-none">
+                              {initials}
+                            </span>
+                          </div>
+
+                          {/* Broker name */}
+                          <div className="font-display font-extrabold text-[13px] text-slate-900 leading-tight truncate w-full text-center">
+                            {company.name}
+                          </div>
+
+                          {/* Short entity name */}
+                          <div className="text-[9px] text-slate-400 font-sans font-medium truncate w-full text-center leading-normal">
+                            {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
+                          </div>
+
+                          {/* Type badge — colored */}
+                          <div
+                            className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full border"
+                            style={{
+                              color: company.accentColor,
+                              borderColor: company.accentColor + "55",
+                              backgroundColor: company.accentColor + "12",
+                            }}
+                          >
+                            {company.type}
+                          </div>
+                        </div>
+                      </th>
+                    );
+                  })}
                 </tr>
                 {yearView === "Both" && (
-                  <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
+                  <tr className="border-b border-slate-200 text-[10px] font-bold uppercase tracking-wider font-mono">
                     {filteredBrokers.map((company) => (
                       <React.Fragment key={company.id}>
-                        <th className="py-3 px-2 text-center border-r border-slate-100 bg-slate-50/50 w-[115px]">
-                          2025
+                        <th
+                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px]"
+                          style={{ color: company.accentColor, backgroundColor: company.accentColor + "08" }}
+                        >
+                          FY25
                         </th>
-                        <th className="py-3 px-2 text-center border-r border-slate-200/60 last:border-r-0 bg-slate-50/50 w-[125px]">
-                          2026
+                        <th
+                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px]"
+                          style={{ color: company.accentColor, backgroundColor: company.accentColor + "14" }}
+                        >
+                          FY26
                         </th>
                       </React.Fragment>
                     ))}
