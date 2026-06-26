@@ -50,7 +50,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="font-display font-extrabold text-white text-xs leading-tight uppercase tracking-tight flex items-center gap-1.5">
-              Brokerage Intel
+              Broking Business Intel
               <span className="inline-block px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
                 FY25-26
               </span>
@@ -84,7 +84,7 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 w-72 bg-[#0F172A] border-r border-slate-800 z-50 flex flex-col shadow-2xl lg:hidden"
+              className="fixed inset-y-0 left-0 w-80 bg-[#0F172A] border-r border-slate-800 z-50 flex flex-col shadow-2xl lg:hidden"
             >
               <div className="flex items-center justify-between px-6 py-5 border-b border-slate-800">
                 <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ export default function App() {
                   </div>
                   <div>
                     <h1 className="font-display font-extrabold text-white text-xs leading-tight uppercase tracking-tight">
-                      Brokerage Intel
+                      Broking Business Intel
                     </h1>
                   </div>
                 </div>
@@ -134,14 +134,14 @@ export default function App() {
       </AnimatePresence>
 
       {/* Desktop Sidebar (Persistent, static) */}
-      <aside className="hidden lg:flex lg:flex-col lg:w-72 lg:fixed lg:inset-y-0 bg-[#0F172A] border-r border-slate-800 shadow-xl">
+      <aside className="hidden lg:flex lg:flex-col lg:w-80 lg:fixed lg:inset-y-0 bg-[#0F172A] border-r border-slate-800 shadow-xl">
         <div className="flex items-center gap-3.5 px-6 py-6 border-b border-slate-800/80 bg-slate-950/20">
           <div className="p-2.5 bg-amber-600 rounded-xl text-white shadow-lg shrink-0">
             <Landmark size={20} className="stroke-[2.5]" />
           </div>
           <div>
             <h1 className="font-display font-extrabold text-white text-sm leading-tight tracking-tight uppercase flex items-center gap-1.5">
-              Brokerage Intel
+              Broking Business Intel
               <span className="inline-block px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
                 FY25-26
               </span>
@@ -173,7 +173,7 @@ export default function App() {
       </aside>
 
       {/* Main Workspace Frame */}
-      <div className="flex-1 lg:pl-72 flex flex-col min-h-screen min-w-0 overflow-x-hidden">
+      <div className="flex-1 lg:pl-80 flex flex-col min-h-screen min-w-0 overflow-x-hidden">
         <main className="flex-1 w-full py-8 sm:py-10 bg-slate-50 min-w-0">
           <div className={contentWidthClass}>
             <AnimatePresence mode="wait">
