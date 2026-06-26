@@ -82,10 +82,10 @@ export default function BrokerProfiler() {
       </div>
 
       {/* Main Profile Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-        {/* Left Side: Strategic Overview & Gauges (Unified Card for Height Symmetry) */}
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden flex flex-col justify-between h-full space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Side: Strategic Overview & Gauges (Unified Card Sticky to Prevent Empty Space) */}
+        <div className="lg:col-span-1 lg:sticky lg:top-[160px] self-start">
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs relative overflow-hidden space-y-6">
             <div className="space-y-6">
               {/* Brand Background Section */}
               <div className="relative">
@@ -185,8 +185,8 @@ export default function BrokerProfiler() {
               </div>
             </div>
 
-            {/* Analyst Outlook (pinned at bottom) */}
-            <div className="p-4.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-2 mt-auto">
+            {/* Analyst Outlook (rendered inline at bottom) */}
+            <div className="p-4.5 bg-emerald-50 border border-emerald-100 rounded-xl space-y-2 pt-2.5">
               <span className="text-[10px] font-extrabold text-emerald-700 block uppercase tracking-wider font-sans flex items-center gap-1">
                 <Award size={10} />
                 Analyst Outlook (FY26)
@@ -202,10 +202,10 @@ export default function BrokerProfiler() {
           </div>
         </div>
 
-        {/* Right Side: Categorized KPI lists */}
+        {/* Right Side: Categorized KPI lists (Extended Height, No internal scrolling) */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col h-full">
-            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50 flex-none">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+            <div className="p-6 sm:p-8 border-b border-slate-100 bg-slate-50">
               <h3 className="font-display font-extrabold text-slate-900 text-base">
                 Operational & Balance-Sheet Auditing
               </h3>
@@ -214,7 +214,7 @@ export default function BrokerProfiler() {
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200 flex-1">
+            <div className="divide-y divide-slate-100">
               {kpiCategories.map((cat, idx) => (
                 <div key={idx} className="p-6 sm:p-8 space-y-4.5">
                   <h4 className="text-[11px] font-extrabold text-emerald-600 uppercase tracking-widest font-sans flex items-center gap-1.5 matches-category">

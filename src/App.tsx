@@ -29,7 +29,7 @@ export default function App() {
               </div>
               <div>
                 <h1 className="font-display font-extrabold text-white text-sm sm:text-base md:text-lg leading-tight tracking-tight uppercase flex items-center gap-2 flex-wrap">
-                  Shriram AMC — Brokerage Intelligence Suite
+                  Shriram Group — Brokerage Intelligence Suite
                   <span className="inline-block px-2 py-0.5 rounded-md bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[9px] uppercase tracking-wider font-mono">
                     FY25 vs FY26
                   </span>
