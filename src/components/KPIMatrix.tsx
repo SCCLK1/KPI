@@ -214,7 +214,7 @@ export default function KPIMatrix({ onSelectNsdExplanation }: KPIMatrixProps) {
 
       {/* KPI Matrix Table */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
           <table className={`w-full text-left border-collapse table-fixed ${
             yearView === "Both" ? "min-w-[1760px]" : "min-w-[1200px]"
           }`}>
