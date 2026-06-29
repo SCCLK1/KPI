@@ -9,7 +9,9 @@ import {
   Sliders, 
   TrendingUp, 
   Menu, 
-  X 
+  X,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import KPIMatrix from "./components/KPIMatrix";
 import BrokerProfiler from "./components/BrokerProfiler";
@@ -34,6 +36,7 @@ const navItems = [
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("matrix");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const isFullWidth = activeTab === "matrix";
   const contentWidthClass = isFullWidth 
@@ -133,24 +136,44 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Desktop Sidebar (Persistent, static) */}
-      <aside className="hidden lg:flex lg:flex-col lg:w-80 lg:fixed lg:inset-y-0 bg-[#0F172A] border-r border-slate-800 shadow-xl">
-        <div className="flex items-center gap-3.5 px-6 py-6 border-b border-slate-800/80 bg-slate-950/20">
-          <div className="p-2.5 bg-amber-600 rounded-xl text-white shadow-lg shrink-0">
-            <Landmark size={20} className="stroke-[2.5]" />
+      {/* Desktop Sidebar (Persistent, static/collapsible) */}
+      <aside 
+        className={`hidden lg:flex lg:flex-col lg:fixed lg:inset-y-0 bg-[#0F172A] border-r border-slate-800 shadow-xl transition-all duration-300 z-30 ${
+          isSidebarCollapsed ? "lg:w-20" : "lg:w-80"
+        }`}
+      >
+        <div className="flex items-center justify-between px-4 py-6 border-b border-slate-800/80 bg-slate-950/20">
+          <div className="flex items-center gap-3.5 overflow-hidden">
+            <div className="p-2.5 bg-amber-600 rounded-xl text-white shadow-lg shrink-0">
+              <Landmark size={20} className="stroke-[2.5]" />
+            </div>
+            {!isSidebarCollapsed && (
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="shrink-0"
+              >
+                <h1 className="font-display font-extrabold text-white text-sm leading-tight tracking-tight uppercase">
+                  Broking Business Intel
+                </h1>
+                <span className="inline-block mt-1 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
+                  FY25-26
+                </span>
+              </motion.div>
+            )}
           </div>
-          <div>
-            <h1 className="font-display font-extrabold text-white text-sm leading-tight tracking-tight uppercase">
-              Broking Business Intel
-            </h1>
-            <span className="inline-block mt-1 px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-400 font-extrabold text-[8px] uppercase tracking-wider font-mono">
-              FY25-26
-            </span>
-
-          </div>
+          
+          {/* Collapse/Expand Toggle Button */}
+          <button
+            onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors border border-slate-800 bg-slate-900/50"
+            title={isSidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+          >
+            {isSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+          </button>
         </div>
 
-        <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
+        <nav className="flex-1 px-3 py-6 space-y-1.5 overflow-y-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.id;
@@ -158,14 +181,25 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+                className={`w-full flex items-center gap-3 px-3 py-3.5 text-xs font-bold rounded-xl transition-all duration-200 ${
+                  isSidebarCollapsed ? "justify-center" : ""
+                } ${
                   isActive
                     ? "bg-amber-600/10 text-amber-400 border border-amber-500/20 shadow-inner"
                     : "text-slate-400 hover:text-white hover:bg-slate-800/40 border border-transparent"
                 }`}
+                title={isSidebarCollapsed ? item.label : undefined}
               >
                 <Icon size={16} className={isActive ? "text-amber-500" : "text-slate-400"} />
-                <span>{item.label}</span>
+                {!isSidebarCollapsed && (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="truncate"
+                  >
+                    {item.label}
+                  </motion.span>
+                )}
               </button>
             );
           })}
@@ -173,7 +207,11 @@ export default function App() {
       </aside>
 
       {/* Main Workspace Frame */}
-      <div className="flex-1 lg:pl-80 flex flex-col min-h-screen min-w-0 overflow-x-hidden">
+      <div 
+        className={`flex-1 flex flex-col min-h-screen min-w-0 overflow-x-hidden transition-all duration-300 ${
+          isSidebarCollapsed ? "lg:pl-20" : "lg:pl-80"
+        }`}
+      >
         <main className="flex-1 w-full py-8 sm:py-10 bg-slate-50 min-w-0">
           <div className={contentWidthClass}>
             <AnimatePresence mode="wait">
