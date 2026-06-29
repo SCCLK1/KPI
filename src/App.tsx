@@ -142,8 +142,12 @@ export default function App() {
           isSidebarCollapsed ? "lg:w-20" : "lg:w-80"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-6 border-b border-slate-800/80 bg-slate-950/20">
-          <div className="flex items-center gap-3.5 overflow-hidden">
+        <div className={`flex items-center justify-between border-b border-slate-800/80 bg-slate-950/20 py-6 transition-all duration-300 ${
+          isSidebarCollapsed ? "flex-col gap-4 px-2" : "px-4"
+        }`}>
+          <div className={`flex items-center overflow-hidden ${
+            isSidebarCollapsed ? "flex-col items-center" : "gap-3.5"
+          }`}>
             <div className="p-2.5 bg-amber-600 rounded-xl text-white shadow-lg shrink-0">
               <Landmark size={20} className="stroke-[2.5]" />
             </div>
@@ -166,7 +170,9 @@ export default function App() {
           {/* Collapse/Expand Toggle Button */}
           <button
             onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors border border-slate-800 bg-slate-900/50"
+            className={`p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none transition-colors border border-slate-800 bg-slate-900/50 ${
+              isSidebarCollapsed ? "w-8 h-8 flex items-center justify-center" : ""
+            }`}
             title={isSidebarCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
           >
             {isSidebarCollapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
