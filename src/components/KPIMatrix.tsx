@@ -392,14 +392,14 @@ export default function KPIMatrix() {
                     {filteredBrokers.map((company) => (
                       <React.Fragment key={company.id}>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px] sticky top-[148px] bg-slate-50 z-20"
-                          style={{ color: company.accentColor, backgroundColor: company.accentColor + "08" }}
+                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px] sticky top-[148px] bg-slate-100 z-20"
+                          style={{ color: company.accentColor }}
                         >
                           FY25
                         </th>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px] sticky top-[148px] bg-slate-50 z-20"
-                          style={{ color: company.accentColor, backgroundColor: company.accentColor + "14" }}
+                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px] sticky top-[148px] bg-slate-200/50 z-20"
+                          style={{ color: company.accentColor }}
                         >
                           FY26
                         </th>
