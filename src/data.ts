@@ -2440,6 +2440,180 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Not disclosed. Implied revenue per active client FY25: ₹5,120 Cr / 14.62 lakh ≈ ₹3,502/active client/year — highest in peer set due to full-service model with PCG/wealth management premiums. Source: Derived from KMB Annual Report and NSE active client data."
       }
     }
+  },
+  // ─── Way2Wealth Securities ──────────────────────────────────────────────────
+  {
+    id: "way2wealth",
+    name: "Way2Wealth",
+    fullName: "Way2Wealth Brokers Private Limited",
+    type: "Traditional Advisory",
+    background: "Originally established in 2000 as part of Coffee Day Group and subsequently acquired by Shriram Credit Company Limited in 2020. Way2Wealth functions as a wealth management and traditional brokerage advisory network. Offers investment distribution across mutual funds, insurance schemes, portfolio management systems, and specialized Margin Trading Facilities (MTF). It leverages Shriram Group's cross-synergy opportunities.",
+    logoColor: "from-blue-600 to-green-600",
+    accentColor: "#0056b3",
+    kpis: {
+      broking_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Individual broking stream bundled in operations. In FY25, broking and third-party distribution fees together accounted for 75.49% of total income. Source: CARE Ratings."
+      },
+      distribution_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Third-party distribution fees for mutual funds, insurance, and financial products are combined with broking revenues. Source: CARE Ratings."
+      },
+      mtf_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "MTF interest income is not separately broken out. Book size remains modest at ₹1 Cr. Source: CARE Ratings."
+      },
+      total_income: {
+        fy25: "₹86.02 Cr", fy26: "NSD",
+        fy25Val: 86.02, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 standalone operating revenue audited at ₹86.02 Cr. H1FY26 standalone revenue recorded at ₹33.37 Cr. Source: CARE Ratings (Feb 2026)."
+      },
+      franchisee_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Commission structure paid to partner networks and sub-broker desks is grouped under operating expenses. Source: CARE Ratings."
+      },
+      employee_cost: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Staff strength stood at ~270 employees as of Feb 2025. Total payroll expenses are grouped in general statements. Source: CARE Ratings."
+      },
+      it_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Core tech, connectivity, and transactional processing engine costs are grouped within other expenses. Source: CARE Ratings."
+      },
+      marketing_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Offline network marketing and client-relationship activities are aggregated within operating overheads. Source: CARE Ratings."
+      },
+      total_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Aggregated operating costs not separately structured in short credit reviews. Source: CARE Ratings."
+      },
+      pbt: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Pre-tax profits are grouped in internal statutory filings. Source: CARE Ratings."
+      },
+      pat: {
+        fy25: "₹4.52 Cr", fy26: "NSD",
+        fy25Val: 4.52, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 standalone net profit was ₹4.52 Cr (improving on RoNW to 9.63%). H1FY26 standalone PAT was ₹0.44 Cr. Source: CARE Ratings (Feb 2026)."
+      },
+      brokerage_yield: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "bps",
+        notes: "Yield figures not declared. Traditional advisory broker charging per-transaction commission rates. Source: Way2Wealth tariff book."
+      },
+      turnover_cash: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Tn",
+        notes: "Trading volume figures not publicly declared. Cash market share in H1FY26 stood at ~0.16% (combined with SISBL). Source: CARE Ratings."
+      },
+      turnover_derivatives: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Tn",
+        notes: "Derivative turnover volumes not declared in public disclosures. Source: CARE Ratings."
+      },
+      market_share_cash: {
+        fy25: "NSD", fy26: "~0.16%",
+        fy25Val: null, fy26Val: 0.16,
+        unit: "%",
+        notes: "Shriram Group brokerage arm cash market share (consolidated with SISBL) in H1FY26. Source: CARE Ratings."
+      },
+      market_share_derivatives: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "%",
+        notes: "Derivative market share segment not disclosed. Source: CARE Ratings."
+      },
+      mtf_portfolio: {
+        fy25: "NSD", fy26: "₹1.00 Cr",
+        fy25Val: null, fy26Val: 1.0,
+        unit: "₹ Cr",
+        notes: "MTF outstanding book recorded at ₹1.00 Cr as of Nov 30, 2025. Source: CARE Ratings (Feb 2026)."
+      },
+      t5_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "T5 short-term margin funding book is not separately disclosed. Source: CARE Ratings."
+      },
+      esop_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "ESOP funding loans are not separately structured. Source: CARE Ratings."
+      },
+      networth: {
+        fy25: "₹49.00 Cr", fy26: "₹53.00 Cr",
+        fy25Val: 49.0, fy26Val: 53.0,
+        unit: "₹ Cr",
+        notes: "FY25 net worth was ₹49.00 Cr as of March 31, 2025. Ended H1FY26 at ₹53.00 Cr as of September 30, 2025. Source: CARE Ratings (Feb 2026)."
+      },
+      borrowing: {
+        fy25: "₹33.00 Cr", fy26: "₹34.00 Cr",
+        fy25Val: 33.0, fy26Val: 34.0,
+        unit: "₹ Cr",
+        notes: "FY25 total borrowings stood at ₹33.00 Cr. Recorded at ₹34.00 Cr as of September 30, 2025. Source: CARE Ratings (Feb 2026)."
+      },
+      cost_of_borrowing: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "%",
+        notes: "Weighted cost of debt lines not disclosed. Source: CARE Ratings."
+      },
+      total_clients: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "Accounts",
+        notes: "Demat accounts and client registrations are not disclosed in CARE reports."
+      },
+      active_clients: {
+        fy25: "0.24 lakh", fy26: "0.23 lakh",
+        fy25Val: 24400, fy26Val: 23016,
+        unit: "Clients",
+        notes: "FY25 active traders on NSE stood at ~24,400. Ended FY26 at 23,016 active accounts. Source: Chittorgarh (NSE exchange data)."
+      },
+      new_customers: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "Accounts",
+        notes: "Incremental new client additions not disclosed."
+      },
+      cac: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Client acquisition spends are not broken out. Advisory model leverages relationship managers and franchisee offices. Source: CARE Ratings."
+      },
+      revenue_per_new_customer: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Not reported. Implied revenue per active client in FY25: ₹86.02 Cr / 24,400 active accounts ≈ ₹35,254 per active account annually. Source: Derived."
+      }
+    }
   }];
 
 export const MISSING_DISCLOSURES_EXPLANATIONS = {
