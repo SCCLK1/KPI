@@ -64,7 +64,7 @@ export default function BrokerProfiler() {
   return (
     <div className="space-y-8">
       {/* Brand Tabs Row */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin">
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-thin w-full max-w-full">
         {BROKER_DATA.map((b) => (
           <button
             key={b.id}
