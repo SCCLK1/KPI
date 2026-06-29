@@ -341,7 +341,7 @@ export default function KPIMatrix() {
                       <th
                         key={company.id}
                         colSpan={yearView === "Both" ? 2 : 1}
-                        className={`text-center border-r border-slate-200/60 last:border-r-0 overflow-hidden sticky top-0 bg-white z-20 ${
+                        className={`text-center border-r border-slate-200/60 last:border-r-0 overflow-hidden sticky top-0 bg-white z-20 h-[148px] ${
                           yearView === "Both" ? "w-[240px]" : "w-[160px]"
                         }`}
                         style={{ padding: 0 }}
@@ -349,29 +349,31 @@ export default function KPIMatrix() {
                         {/* Gradient top bar */}
                         <div className={`h-1.5 w-full bg-gradient-to-r ${company.logoColor}`} />
 
-                        <div className="py-4 px-3 flex flex-col items-center gap-2">
-                          {/* Avatar circle with gradient & initials */}
-                          <div
-                            className={`w-9 h-9 rounded-xl bg-gradient-to-br ${company.logoColor} flex items-center justify-center shadow-md shrink-0`}
-                          >
-                            <span className="text-white text-[11px] font-extrabold tracking-tight font-mono leading-none">
-                              {initials}
-                            </span>
-                          </div>
+                        <div className="py-3.5 px-3 flex flex-col items-center gap-1.5 h-[141.5px] justify-between">
+                          <div className="flex flex-col items-center gap-1.5 w-full">
+                            {/* Avatar circle with gradient & initials */}
+                            <div
+                              className={`w-9 h-9 rounded-xl bg-gradient-to-br ${company.logoColor} flex items-center justify-center shadow-md shrink-0`}
+                            >
+                              <span className="text-white text-[11px] font-extrabold tracking-tight font-mono leading-none">
+                                {initials}
+                              </span>
+                            </div>
 
-                          {/* Broker name */}
-                          <div className="font-display font-extrabold text-[13px] text-slate-900 leading-tight truncate w-full text-center">
-                            {company.name}
-                          </div>
+                            {/* Broker name */}
+                            <div className="font-display font-extrabold text-[13px] text-slate-900 leading-tight truncate w-full text-center">
+                              {company.name}
+                            </div>
 
-                          {/* Short entity name */}
-                          <div className="text-[9px] text-slate-400 font-sans font-medium truncate w-full text-center leading-normal">
-                            {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
+                            {/* Short entity name */}
+                            <div className="text-[9px] text-slate-400 font-sans font-medium truncate w-full text-center leading-normal">
+                              {company.fullName.replace(/(\s+Ltd|\s+Limited).*$/i, "")}
+                            </div>
                           </div>
 
                           {/* Type badge — colored */}
                           <div
-                            className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full border"
+                            className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full border shrink-0"
                             style={{
                               color: company.accentColor,
                               borderColor: company.accentColor + "55",
@@ -390,13 +392,13 @@ export default function KPIMatrix() {
                     {filteredBrokers.map((company) => (
                       <React.Fragment key={company.id}>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px] sticky top-[108px] bg-slate-50 z-20"
+                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px] sticky top-[148px] bg-slate-50 z-20"
                           style={{ color: company.accentColor, backgroundColor: company.accentColor + "08" }}
                         >
                           FY25
                         </th>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px] sticky top-[108px] bg-slate-50 z-20"
+                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px] sticky top-[148px] bg-slate-50 z-20"
                           style={{ color: company.accentColor, backgroundColor: company.accentColor + "14" }}
                         >
                           FY26
