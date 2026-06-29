@@ -326,7 +326,7 @@ export default function KPIMatrix() {
                 <tr className="border-b border-slate-200">
                   <th 
                     rowSpan={yearView === "Both" ? 2 : 1}
-                    className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 top-0 bg-slate-50 z-30 border-r border-slate-200"
+                    className="p-5 w-[240px] text-xs font-bold text-[#475569] uppercase tracking-wider sticky left-0 top-0 bg-[#f8fafc] z-40 border-r border-slate-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]"
                   >
                     KPI Parameter
                   </th>
@@ -424,7 +424,7 @@ export default function KPIMatrix() {
                         }}
                       >
                         {/* Metric Name & Info */}
-                        <td className="p-5 sticky left-0 bg-white group-hover:bg-slate-50 z-10 border-r border-slate-200 font-sans shadow-sm">
+                        <td className="p-5 sticky left-0 bg-white z-15 border-r border-slate-200 font-sans shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                           <div className="flex items-start gap-2.5">
                             <div>
                               <span className="font-semibold text-slate-800 text-sm block leading-snug">
