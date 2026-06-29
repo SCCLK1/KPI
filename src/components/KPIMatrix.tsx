@@ -326,7 +326,7 @@ export default function KPIMatrix() {
                 <tr className="border-b border-slate-200">
                   <th 
                     rowSpan={yearView === "Both" ? 2 : 1}
-                    className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 bg-slate-50 z-20 border-r border-slate-200"
+                    className="p-5 w-[240px] text-xs font-bold text-slate-500 uppercase tracking-wider sticky left-0 top-0 bg-slate-50 z-30 border-r border-slate-200"
                   >
                     KPI Parameter
                   </th>
@@ -341,7 +341,7 @@ export default function KPIMatrix() {
                       <th
                         key={company.id}
                         colSpan={yearView === "Both" ? 2 : 1}
-                        className={`text-center border-r border-slate-200/60 last:border-r-0 overflow-hidden ${
+                        className={`text-center border-r border-slate-200/60 last:border-r-0 overflow-hidden sticky top-0 bg-white z-20 ${
                           yearView === "Both" ? "w-[240px]" : "w-[160px]"
                         }`}
                         style={{ padding: 0 }}
@@ -390,13 +390,13 @@ export default function KPIMatrix() {
                     {filteredBrokers.map((company) => (
                       <React.Fragment key={company.id}>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px]"
+                          className="py-2.5 px-2 text-center border-r border-slate-100 w-[115px] sticky top-[108px] bg-slate-50 z-20"
                           style={{ color: company.accentColor, backgroundColor: company.accentColor + "08" }}
                         >
                           FY25
                         </th>
                         <th
-                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px]"
+                          className="py-2.5 px-2 text-center border-r border-slate-200/60 last:border-r-0 w-[125px] sticky top-[108px] bg-slate-50 z-20"
                           style={{ color: company.accentColor, backgroundColor: company.accentColor + "14" }}
                         >
                           FY26
