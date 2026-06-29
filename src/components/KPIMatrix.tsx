@@ -316,8 +316,8 @@ export default function KPIMatrix() {
 
       {/* KPI Matrix Table */}
       {filteredBrokers.length > 0 ? (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-          <div className="overflow-x-auto scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col">
+          <div className="overflow-auto scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400 max-h-[75vh]">
             <table 
               style={{ minWidth: `${tableMinWidth}px` }} 
               className="w-full text-left border-collapse table-fixed"
