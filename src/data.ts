@@ -262,11 +262,11 @@ export const BROKER_DATA: BrokerCompany[] = [{
       },
       employee_cost: {
         fy25: "₹315.2",
-        fy26: "~₹650.0",
+        fy26: "₹590.83",
         fy25Val: 315.18,
-        fy26Val: 650,
+        fy26Val: 590.83,
         unit: "₹ Cr",
-        notes: "FY25 employee opex ₹315.18 Cr per RHP Prospectus. FY26 includes ESOP opex."
+        notes: "FY25 employee opex ₹315.18 Cr; FY26 audited opex at ₹590.83 Cr (5,908.33 Mn) per shareholders letter."
       },
       it_expense: {
         fy25: "NSD",
@@ -301,9 +301,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "High operating leverage post-IPO scale."
       },
       pat: {
-        fy25: "₹1,824.0",
+        fy25: "₹1,824.37",
         fy26: "₹2,083.0",
-        fy25Val: 1824,
+        fy25Val: 1824.37,
         fy26Val: 2083,
         unit: "₹ Cr",
         notes: "Consolidated Net Profit (+14.2% YoY)."
@@ -584,10 +584,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "NSE F&O market share contracted."
       },
       mtf_portfolio: {
-        fy25: "₹3,700.0",
-        fy26: "₹5,450.0",
-        fy25Val: 3700,
-        fy26Val: 5450,
+        fy25: "₹3,858.8",
+        fy26: "₹5,449.4",
+        fy25Val: 3858.8,
+        fy26Val: 5449.4,
         unit: "₹ Cr",
         notes: "Key margin counter-balance (+46.3% YoY)."
       },
@@ -616,10 +616,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Comfortable capital ratios (per consolidated balance sheet: ₹5,639 Cr FY25, ₹6,149 Cr FY26)."
       },
       borrowing: {
-        fy25: "₹3,380.0",
-        fy26: "₹7,880.0",
-        fy25Val: 3380,
-        fy26Val: 7880,
+        fy25: "₹3,382.8",
+        fy26: "₹7,879.1",
+        fy25Val: 3382.8,
+        fy26Val: 7879.1,
         unit: "₹ Cr",
         notes: "Increased to fund the growing MTF book."
       },
@@ -716,9 +716,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
       },
       total_income: {
         fy25: "₹2,405.0",
-        fy26: "₹2,439.0",
+        fy26: "₹2,438.8",
         fy25Val: 2405,
-        fy26Val: 2439,
+        fy26Val: 2438.8,
         unit: "₹ Cr",
         notes: "Consolidated Operating Revenue."
       },
@@ -771,10 +771,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Dragged down by regulatory impacts on certain segments."
       },
       pat: {
-        fy25: "₹713.0",
-        fy26: "₹564.0",
-        fy25Val: 713,
-        fy26Val: 564,
+        fy25: "₹712.9",
+        fy26: "₹563.6",
+        fy25Val: 712.9,
+        fy26Val: 563.6,
         unit: "₹ Cr",
         notes: "Net profit down 21% YoY."
       },
@@ -819,10 +819,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Minimal discount derivative presence."
       },
       mtf_portfolio: {
-        fy25: "₹931.0",
-        fy26: "₹1,445.0",
-        fy25Val: 931,
-        fy26Val: 1445,
+        fy25: "₹930.0",
+        fy26: "₹1,450.0",
+        fy25Val: 930,
+        fy26Val: 1450,
         unit: "₹ Cr",
         notes: "Funded via bank borrowings and short-term debt."
       },
@@ -919,9 +919,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
   {
     id: "anand_rathi",
     name: "Anand Rathi",
-    fullName: "Anand Rathi Share & Stock Brokers Ltd (ARSSBL)",
+    fullName: "Anand Rathi Wealth Limited (ARWL)",
     type: "Traditional Advisory",
-    background: "Separate from Anand Rathi Wealth, ARSSBL centers on premium cash equity delivery and advisory-led high-touch relationship models, mainly in Tier 2 and Tier 3 cities. It scales through localized sub-brokers, commanding elite profit ratios on advisory volumes.",
+    background: "Anand Rathi Wealth Limited is one of the leading non-bank wealth solutions firms in India, specializing in structured product distribution, mutual fund advisory, and holistic wealth management for High Net Worth Individuals (HNIs).",
     logoColor: "from-yellow-500 to-amber-600",
     accentColor: "#eab308",
     kpis: {
@@ -950,10 +950,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Key profitability driver (+34.6% YoY)."
       },
       total_income: {
-        fy25: "₹845.70",
-        fy26: "₹932.16",
-        fy25Val: 845.70,
-        fy26Val: 932.16,
+        fy25: "₹980.20",
+        fy26: "₹1,253.10",
+        fy25Val: 980.20,
+        fy26Val: 1253.10,
         unit: "₹ Cr",
         notes: "Consolidated Operational Revenue."
       },
@@ -998,18 +998,18 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Derived from EBITDA and PBT calculations."
       },
       pbt: {
-        fy25: "₹142.13",
-        fy26: "₹174.50",
-        fy25Val: 142.13,
-        fy26Val: 174.50,
+        fy25: "₹404.40",
+        fy26: "₹520.60",
+        fy25Val: 404.40,
+        fy26Val: 520.60,
         unit: "₹ Cr",
         notes: "Operating profit before tax."
       },
       pat: {
-        fy25: "₹103.61",
-        fy26: "₹129.27",
-        fy25Val: 103.61,
-        fy26Val: 129.27,
+        fy25: "₹300.50",
+        fy26: "₹385.70",
+        fy25Val: 300.50,
+        fy26Val: 385.70,
         unit: "₹ Cr",
         notes: "Net profit grew 24.8% YoY."
       },
@@ -1054,10 +1054,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Low retail speculative market share."
       },
       mtf_portfolio: {
-        fy25: "₹685.51",
-        fy26: "₹1,101.93",
-        fy25Val: 685.51,
-        fy26Val: 1101.93,
+        fy25: "₹21,565 Cr",
+        fy26: "₹26,472 Cr",
+        fy25Val: 21565,
+        fy26Val: 26472,
         unit: "₹ Cr",
         notes: "Zero NPAs; high-quality collateral."
       },
@@ -1321,10 +1321,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Total equity: ₹1,243.5 Cr (Mar-25) → ₹1,295.2 Cr (Mar-26)."
       },
       borrowing: {
-        fy25: "Nil",
-        fy26: "₹84.0",
-        fy25Val: null,
-        fy26Val: 84,
+        fy25: "₹21.8",
+        fy26: "₹17.0",
+        fy25Val: 21.8,
+        fy26Val: 17,
         unit: "₹ Cr",
         notes: "Historically debt-free; utilizes minor bank credit lines."
       },
@@ -1420,9 +1420,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Generated via client cash balance interest."
       },
       total_income: {
-        fy25: "₹8,847.0",
+        fy25: "₹8,809.94",
         fy26: "~₹7,800.0",
-        fy25Val: 8847,
+        fy25Val: 8809.94,
         fy26Val: 7800,
         unit: "₹ Cr",
         notes: "Consolidated Operating Revenue."
@@ -1671,9 +1671,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Distributed to physical franchise partners."
       },
       employee_cost: {
-        fy25: "₹1,120.0",
+        fy25: "₹1,704.0",
         fy26: "NSD",
-        fy25Val: 1120,
+        fy25Val: 1704,
         fy26Val: null,
         unit: "₹ Cr",
         notes: "Elevated due to wealth advisor onboarding."
@@ -1783,18 +1783,18 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Managed via Motilal Oswal Finvest."
       },
       networth: {
-        fy25: "₹11,110.3",
+        fy25: "₹11,079.0",
         fy26: "₹12,888.0",
-        fy25Val: 11110.30,
+        fy25Val: 11079.0,
         fy26Val: 12888,
         unit: "₹ Cr",
         notes: "Strong consolidated equity reserves; net worth +16% YoY to ₹12,888 Cr."
       },
       borrowing: {
-        fy25: "₹11,845.0",
-        fy26: "₹16,750.0",
-        fy25Val: 11845,
-        fy26Val: 16750,
+        fy25: "₹14,732.0",
+        fy26: "₹21,255.0",
+        fy25Val: 14732,
+        fy26Val: 21255,
         unit: "₹ Cr",
         notes: "Used to scale the lending and treasury books."
       },
@@ -2026,9 +2026,9 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25 reported ₹3,348.6 Cr; ₹3,569.1 Cr at Dec-25 (Q3FY26). FY26 estimated."
       },
       borrowing: {
-        fy25: "~₹2,240.0",
+        fy25: "₹7,943.77",
         fy26: "~₹3,900.0",
-        fy25Val: 2240,
+        fy25Val: 7943.77,
         fy26Val: 3900,
         unit: "₹ Cr",
         notes: "Uses parent bank credit facilities."
