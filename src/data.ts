@@ -2090,6 +2090,356 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Transitioning to low-fee digital models to protect client assets."
       }
     }
+  },
+
+  // ─── ICICI Securities ───────────────────────────────────────────────────────
+  {
+    id: "icici_securities",
+    name: "ICICI Securities",
+    fullName: "ICICI Securities Limited (ICICIdirect)",
+    type: "Traditional Advisory",
+    background: "India's largest full-service broker by active clients (20.45 lakh, 4.6% NSE share). Operates the iconic ICICIdirect.com platform and pioneered the 3-in-1 account (savings + trading + demat). A 100% subsidiary of ICICI Bank since delisting in March 2025. Generates revenue across retail broking, MTF funding, investment banking, MF distribution, and private wealth.",
+    logoColor: "from-orange-500 to-red-600",
+    accentColor: "#F77F00",
+    kpis: {
+      broking_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Bundled within 'Retail Broking & Allied Revenue'. Q1 FY25 retail broking & allied = ₹990.8 Cr. Full-year breakout not separately disclosed. Source: ISEC Q1 FY25 Performance Update."
+      },
+      distribution_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "MF trail commissions + insurance distribution + wealth advisory fees. Q1 FY25 distribution = ₹175.7 Cr. Full-year separate line not disclosed in public summaries. Source: ISEC Q1 FY25 Update."
+      },
+      mtf_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Included within Retail Broking & Allied Revenue. ISEC held ~20% MTF market share in FY25. Avg MTF book Q1 FY25 = ₹13,980 Cr (+131% YoY). Finance costs FY25 = ₹1,699 Cr (cost of funds, not revenue). Source: ISEC Q1 FY25 Update, ICRA."
+      },
+      total_income: {
+        fy25: "₹6,332 Cr", fy26: "₹5,890 Cr",
+        fy25Val: 6332, fy26Val: 5890,
+        unit: "₹ Cr",
+        notes: "FY25 +25.4% YoY from ₹5,049 Cr. FY26 -6.98% YoY — impacted by SEBI F&O framework tightening (Oct 2024) and post-delisting revenue compression. Source: ISEC FY25 Audited Results; JM Financial data for FY26."
+      },
+      franchisee_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Disclosed as part of 'Fees and Commission Expense' in P&L. Not separately broken out in public summaries. ICICI Securities uses Authorised Persons (APs) as channel partners. Source: ISEC Annual Report."
+      },
+      employee_cost: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Disclosed as 'Employee Benefits Expenses' in audited financial statements. Full breakdown in Notes to Accounts of Annual Report. Estimated ~10–12% of total income based on sector norms (~₹630–760 Cr). Source: ISEC Annual Report 2024-25."
+      },
+      it_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Categorised under 'Operating Expenses / Other Expenses' in statutory filings. Significant digital infrastructure investment for ICICIdirect platform. Not separately broken out in public summaries. Source: ISEC Annual Report."
+      },
+      marketing_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Typically sub-line under 'Other Expenses'. Not publicly summarised. ICICI Securities benefits from ICICI Bank brand and 3-in-1 account referral pipeline, reducing standalone marketing spend vs pure-play digital brokers. Source: ISEC Annual Report."
+      },
+      total_expense: {
+        fy25: "₹3,731 Cr", fy26: "NSD",
+        fy25Val: 3731, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 confirmed: ₹37,312.7 million = ₹3,731 Cr. Includes finance costs (₹1,699 Cr), depreciation (₹157 Cr), employee benefits, and operating expenses. FY26 detailed expense breakdown pending Annual Report 2025-26. Source: ISEC FY25 Audited P&L."
+      },
+      pbt: {
+        fy25: "₹2,605 Cr", fy26: "NSD",
+        fy25Val: 2605, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 = ₹26,053 million confirmed. FY26 PBT estimated ~₹2,200–2,300 Cr based on full-year PAT of ₹1,713 Cr and effective tax rate. Source: ISEC FY25 Audited Results."
+      },
+      pat: {
+        fy25: "₹1,942 Cr", fy26: "₹1,713 Cr",
+        fy25Val: 1942, fy26Val: 1713,
+        unit: "₹ Cr",
+        notes: "FY25 +14.4% YoY from ₹1,697 Cr (FY24). FY26 -11.8% YoY — SEBI F&O volume restrictions + post-delisting disclosure reduction. Q4 FY26 PAT ₹422 Cr (+10.9% YoY) signals recovery in exit quarter. Source: ISEC FY25 Audited; JM Financial / ICICI Bank IR for FY26."
+      },
+      brokerage_yield: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "bps",
+        notes: "Multi-plan pricing: Prime Plan ~0.07% (7 bps) cash; iValue ₹20/order flat. Blended yield across plans not published. ISEC does not disclose a single aggregated yield figure. Source: ISEC pricing page, Q1 FY25 Performance Update."
+      },
+      turnover_cash: {
+        fy25: "~₹9.0 Tn", fy26: "NSD",
+        fy25Val: 9.0, fy26Val: null,
+        unit: "₹ Tn",
+        notes: "FY25 cash ADTO = ₹3,599 Cr/day (+36% YoY) × ~250 trading days ≈ ₹9.0 Tn annual. FY26 annual equivalent not publicly disclosed post-delisting. Source: ISEC FY25 Annual Report / Investor Update."
+      },
+      turnover_derivatives: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Tn",
+        notes: "Retail derivative turnover not disclosed as a standalone absolute figure. Significant headwind in H2 FY25 from SEBI F&O tightening (Oct 2024). Historical retail derivative market share ~7.8% (FY24). Source: ISEC Annual Report."
+      },
+      market_share_cash: {
+        fy25: "~8.1%", fy26: "NSD",
+        fy25Val: 8.1, fy26Val: null,
+        unit: "%",
+        notes: "FY25 overall retail equity market share ~8.1% (+30 bps YoY). Cross-segment metric; NSE turnover-based. FY26 post-delisting, granular market share not published in public summaries. Source: ISEC FY25 Investor Updates."
+      },
+      market_share_derivatives: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "%",
+        notes: "Retail derivative share ~7.8% historically (FY24). FY25 active client NSE share = 3.96%. Post-SEBI F&O restrictions, derivative share likely compressed in H2 FY25 and FY26. Not separately reported. Source: NSE data, ISEC Investor Updates."
+      },
+      mtf_portfolio: {
+        fy25: "~₹13,980 Cr (avg Q1)", fy26: "NSD",
+        fy25Val: 13980, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Average MTF book Q1 FY25 = ₹13,980 Cr (+131% YoY). ISEC held ~20% MTF market share in FY25. FY26 MTF market share moderated to ~17%. Full-year average book and year-end balance not publicly disclosed. Source: ISEC Q1 FY25 Performance Update, ICRA."
+      },
+      t5_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Not a standard publicly reported classification in ICICI Securities' filings. Short-term settlement receivables included within the broader funding/lending book alongside MTF. Source: ISEC Annual Report."
+      },
+      esop_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "ESOP financing and Loan Against Securities included in broader secured lending book; not separately broken out in public summaries. Source: ISEC Annual Report 2024-25."
+      },
+      networth: {
+        fy25: "~₹5,389 Cr", fy26: "NSD",
+        fy25Val: 5389, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 shareholders' equity ~₹5,389 Cr (Trendlyne / IndiaInfoline aggregators). Backed by ICICI Bank parentage and strong AAA-rated balance sheet. FY26 figures pending Annual Report 2025-26. Source: Trendlyne, ISEC FY25 Balance Sheet."
+      },
+      borrowing: {
+        fy25: "~₹21,083 Cr", fy26: "NSD",
+        fy25Val: 21083, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Primarily short-term commercial paper (CP) to fund the large MTF book. Rated CRISIL A1+ / ICRA A1+ (₹35,000 Cr CP program limit) and CRISIL AAA / ICRA AAA for NCDs. FY26 borrowings not yet disclosed. Source: Trendlyne, ICRA Rating Report."
+      },
+      cost_of_borrowing: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "%",
+        notes: "Not disclosed publicly. ICICI Bank parentage enables competitive CP rates vs peers (est. ~7.5–9% p.a.). Finance costs FY25 = ₹1,699 Cr (72.1% YoY growth reflects MTF book scale). MTF client rates: 9.85%–17.99% p.a. Source: ISEC FY25 Audited P&L, ICRA."
+      },
+      total_clients: {
+        fy25: "~95 lakh", fy26: "NSD",
+        fy25Val: 9500000, fy26Val: null,
+        unit: "Accounts",
+        notes: "~95 lakh registered clients referenced for H1 FY25. These are cumulative registered/demat accounts, not active traders. FY26 total client count not disclosed post-delisting. Source: ISEC H1 FY25 Communications."
+      },
+      active_clients: {
+        fy25: "19.47 lakh", fy26: "20.45 lakh",
+        fy25Val: 1947000, fy26Val: 2045000,
+        unit: "Clients",
+        notes: "FY25: 19,46,882 NSE active clients (3.96% market share). FY26: 20,45,086 (+5.04% YoY, 4.60% NSE share) — largest active client base among all listed/delisted full-service brokers. Source: InvestorGain / NSE Active Client Data."
+      },
+      new_customers: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "Accounts",
+        notes: "Q3 FY25 reported 'six-quarter high' in new customer additions. Exact annual figures not published in standard summaries. Net active client addition FY25 ≈ ~76,000. ICICI Bank ecosystem (3-in-1 account) is primary acquisition channel. Source: ISEC Q3 FY25 Update."
+      },
+      cac: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Not disclosed. ICICI Bank's 3-in-1 account structure structurally lowers CAC vs pure-play digital brokers — bank savings account activation triggers trading account. Exact CAC proprietary. Source: ISEC Annual Report, ICICI Bank disclosures."
+      },
+      revenue_per_new_customer: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Not separately disclosed. Implied revenue per active client FY25: ₹6,332 Cr / 19.47 lakh ≈ ₹3,252/active client/year — among the highest in the sector. Source: Derived from ISEC FY25 total income and NSE active client data."
+      }
+    }
+  },
+
+  // ─── Kotak Securities ───────────────────────────────────────────────────────
+  {
+    id: "kotak_securities",
+    name: "Kotak Securities",
+    fullName: "Kotak Securities Limited (Kotak Neo)",
+    type: "Traditional Advisory",
+    background: "One of India's oldest full-service broking houses, incorporated 1994 as a 100% subsidiary of Kotak Mahindra Bank. Operates Kotak Neo (flat ₹10/order digital), full-service PCG (Private Client Group), and institutional equities. Largest networth (₹10,009 Cr) among domestic brokers. Benefits from strong bank parentage, competitive MTF borrowing costs, and a 988-strong franchisee network.",
+    logoColor: "from-red-600 to-rose-800",
+    accentColor: "#E31837",
+    kpis: {
+      broking_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "All income streams bundled within Total Income in public disclosures. Individual broking revenue line not broken out. Retail + institutional broking (equity/F&O/commodities). Source: KMB Annual Report 2024-25, Subsidiary Financials."
+      },
+      distribution_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Earns trail + upfront commissions as AMFI ARN-0164 MF distributor. PCG wealth fees from AIF/PMS/insurance distribution. Noted as a growing segment in FY25 but not separately quantified. Source: KMB Annual Report 2024-25."
+      },
+      mtf_income: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Not individually disclosed. Average MTF book grew from ₹5,038 Cr (FY24) to ₹9,325 Cr (FY25 avg). MTF market share ~12% (Mar 2025), growing to ~14% (Mar 2026). Interest income included in Total Income. Source: ICRA Rating Report, KMB Q4 FY25 Presentation."
+      },
+      total_income: {
+        fy25: "₹5,120 Cr", fy26: "₹5,705 Cr",
+        fy25Val: 5120, fy26Val: 5705,
+        unit: "₹ Cr",
+        notes: "FY25: ₹5,120.23 Cr (audited). FY26: ₹5,705 Cr (+11.4% YoY). FY26 PAT flat despite revenue growth suggests cost base expansion. Source: KMB Annual Report 2024-25 (Subsidiary AOC-1); KMB Q4 FY26 Investor Presentation."
+      },
+      franchisee_expense: {
+        fy25: "₹595 Cr", fy26: "NSD",
+        fy25Val: 595, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25: ₹594.67 Cr (₹59,466.62 lakh) — 'Referral fees and Sub-brokerage Expense' per Note to Standalone Financial Statements. 988 sub-brokers/franchisees as of Mar 2025. FY26 not available in public disclosures. Source: Kotak Securities Standalone Financials FY25, Note to Accounts."
+      },
+      employee_cost: {
+        fy25: "₹806 Cr", fy26: "NSD",
+        fy25Val: 806, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25: ₹80,617.77 lakh = ₹806.18 Cr (Salaries ₹721 Cr + PF ₹29.5 Cr + ESOP ₹46.4 Cr + Gratuity ₹8.2 Cr + Leave ₹1.0 Cr). ~4,837 employees (Mar 2026). Source: Note 31, Kotak Securities Standalone Financials FY25."
+      },
+      it_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Not separately disclosed in public summaries. Classified within 'Other Expenses' in Notes to Accounts. Significant investment in Kotak Neo digital platform. Source: Kotak Securities Annual Report."
+      },
+      marketing_expense: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Not separately disclosed publicly. Heavy investment noted in Kotak Neo digital onboarding and brand building. Kotak Neo app crossed 10 million downloads in FY26. Exact figure not public. Source: KMB Q4 FY26 Investor Presentation."
+      },
+      total_expense: {
+        fy25: "~₹2,951 Cr", fy26: "NSD",
+        fy25Val: 2951, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 derived: Total Income ₹5,120 Cr − PBT ₹2,169 Cr = Total Expenses ~₹2,951 Cr. Not directly stated as a line item in public summaries. FY26 total expense not available. Source: KMB Annual Report 2024-25 (derived)."
+      },
+      pbt: {
+        fy25: "₹2,169 Cr", fy26: "NSD",
+        fy25Val: 2169, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25: ₹2,169.31 Cr (highest-ever PBT for Kotak Securities). FY24: ₹1,738 Cr (+24.8% YoY). FY26 standalone PBT not yet published (FY26 Annual Report pending). Source: KMB Annual Report 2024-25, AOC-1 / Subsidiary Section."
+      },
+      pat: {
+        fy25: "₹1,638 Cr", fy26: "₹1,642 Cr",
+        fy25Val: 1638, fy26Val: 1642,
+        unit: "₹ Cr",
+        notes: "FY25: ₹1,637.78 Cr (highest-ever PAT). FY26: ₹1,642 Cr (flat YoY, +0.2%). Revenue grew +11.4% but cost expansion offset gains. Q4 FY26 PAT ₹400 Cr (+15% YoY, -7% QoQ). Source: KMB Annual Report 2024-25; KMB Q4 FY26 Investor Presentation."
+      },
+      brokerage_yield: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "bps",
+        notes: "Multi-plan structure: ₹10/order flat (Kotak Neo/Trade Free digital), ₹20/order premium, 0.20% delivery / 0.02% intraday for dealer plans. Blended yield not published. Cost-to-income ~47% (FY25) implies strong per-trade economics. Source: Kotak Securities pricing page."
+      },
+      turnover_cash: {
+        fy25: "~₹14.3 Tn", fy26: "~₹17.8 Tn",
+        fy25Val: 14.3, fy26Val: 17.8,
+        unit: "₹ Tn",
+        notes: "FY25: Cash ADTO Q4 FY25 = ₹5,698 Cr/day × ~250 trading days ≈ ₹14.3 Tn annual. FY26: Cash ADV FY26 avg = ₹7,118 Cr/day × ~250 trading days ≈ ₹17.8 Tn (Q4 FY26 = ₹7,636 Cr/day). Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
+      },
+      turnover_derivatives: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Tn",
+        notes: "Derivatives ADTO in absolute terms not disclosed by the company; only market share figures are published. Source: KMB Q4 FY25 & FY26 Investor Presentations."
+      },
+      market_share_cash: {
+        fy25: "8.8%", fy26: "9.9%",
+        fy25Val: 8.8, fy26Val: 9.9,
+        unit: "%",
+        notes: "FY25: 8.8% (Q4 FY25). FY26: 9.9% avg (Q4 FY26: 9.8%). Expanding cash market share reflects Kotak Neo digital growth and shift from F&O to delivery-based trading. Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
+      },
+      market_share_derivatives: {
+        fy25: "13.6%", fy26: "15.3%",
+        fy25Val: 13.6, fy26Val: 15.3,
+        unit: "%",
+        notes: "FY25: 13.6% (Q4 FY25). FY26: 15.3% (Q4 FY26), avg ~15.0%. Strong institutional + retail derivative franchise. Blended overall market share Q4 FY26: 13.5% (excl. proprietary). Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
+      },
+      mtf_portfolio: {
+        fy25: "₹13,073 Cr", fy26: "NSD",
+        fy25Val: 13073, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25 outstanding: ₹13,072.98 Cr (net of ECL provision ₹80 Cr), per Standalone Balance Sheet Mar 2025. Average MTF book FY25: ₹9,325 Cr. MTF market share ~12% (Mar 2025) → ~14% (Mar 2026). FY26 absolute book size not yet disclosed. Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+      },
+      t5_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "Term 'T5 portfolio' not used in Kotak Securities' public disclosures. Short-term settlement receivables are internal classifications not separately reported. Source: Kotak Securities Annual Report."
+      },
+      esop_portfolio: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "ESOP expense (issuer side) ₹46.4 Cr included in employee cost (FY25). LAS as a loan product falls under Kotak Mahindra Bank's retail lending balance sheet, not Kotak Securities. Not separately disclosed as a funded book. Source: Note 31, Kotak Securities Standalone Financials FY25."
+      },
+      networth: {
+        fy25: "₹10,009 Cr", fy26: "NSD",
+        fy25Val: 10009, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25: ₹10,008.68 Cr total equity — largest networth among Indian broking firms. Gearing: 0.72x (FY25) vs 0.78x (FY24). FY26 standalone networth pending Annual Report release (typically Aug–Sep 2026). Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+      },
+      borrowing: {
+        fy25: "₹7,180 Cr", fy26: "NSD",
+        fy25Val: 7180, fy26Val: null,
+        unit: "₹ Cr",
+        notes: "FY25: ₹7,179.89 Cr — Commercial Paper ₹7,055 Cr + Other borrowings ₹125 Cr. ICRA A1+ rated CP program limit: ₹22,500 Cr. FY24: ₹6,648 Cr. FY26 borrowings not yet publicly available. Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+      },
+      cost_of_borrowing: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "%",
+        notes: "Not disclosed publicly. Kotak Mahindra Bank parentage enables competitive CP rates. AAA/A1+ ratings support low borrowing costs. Commercial paper market rates ~7.5–8.5% for AAA NBFCs in FY25. Exact CoF proprietary. Source: ICRA Rating Report, KMB Disclosures."
+      },
+      total_clients: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "Accounts",
+        notes: "Cumulative registered clients / demat account count not explicitly disclosed in investor presentations. Kotak is a DP with both NSDL and CDSL. Source: KMB Investor Presentations."
+      },
+      active_clients: {
+        fy25: "14.62 lakh", fy26: "13.69 lakh",
+        fy25Val: 1462000, fy26Val: 1369000,
+        unit: "Clients",
+        notes: "FY25: 14,62,281 NSE active clients (2.99% market share). FY26: 13,68,501 (-7.79% YoY) but NSE market share rose to 3.08% due to overall market active client decline. Source: InvestorGain / NSE Active Client Data."
+      },
+      new_customers: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "Accounts",
+        notes: "Not publicly disclosed by Kotak Securities. Kotak Neo platform drives digital onboarding; app crossed 10 million downloads (FY26). 44% YoY growth in app-based trading volumes in FY25. Source: KMB Q4 FY26 Investor Presentation."
+      },
+      cac: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Not disclosed. Full-service brokers typically have higher CAC than discount brokers (₹1,000–3,000+/account). Kotak Neo model has structurally lower CAC than traditional full-service channels. Kotak Mahindra Bank branch network provides low-cost referral pipeline. Source: KMB Annual Report, industry estimates."
+      },
+      revenue_per_new_customer: {
+        fy25: "NSD", fy26: "NSD",
+        fy25Val: null, fy26Val: null,
+        unit: "₹",
+        notes: "Not disclosed. Implied revenue per active client FY25: ₹5,120 Cr / 14.62 lakh ≈ ₹3,502/active client/year — highest in peer set due to full-service model with PCG/wealth management premiums. Source: Derived from KMB Annual Report and NSE active client data."
+      }
+    }
   }];
 
 export const MISSING_DISCLOSURES_EXPLANATIONS = {
