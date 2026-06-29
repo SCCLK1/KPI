@@ -2133,10 +2133,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Disclosed as part of 'Fees and Commission Expense' in P&L. Not separately broken out in public summaries. ICICI Securities uses Authorised Persons (APs) as channel partners. Source: ISEC Annual Report."
       },
       employee_cost: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹1,060 Cr", fy26: "NSD",
+        fy25Val: 1060, fy26Val: null,
         unit: "₹ Cr",
-        notes: "Disclosed as 'Employee Benefits Expenses' in audited financial statements. Full breakdown in Notes to Accounts of Annual Report. Estimated ~10–12% of total income based on sector norms (~₹630–760 Cr). Source: ISEC Annual Report 2024-25."
+        notes: "Annualised from Q1 FY25 employee benefits expense of ₹265.1 Cr. FY26 detailed disclosures pending Annual Report. Source: ISEC Q1 FY25 Performance Update."
       },
       it_expense: {
         fy25: "NSD", fy26: "NSD",
@@ -2217,16 +2217,16 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "ESOP financing and Loan Against Securities included in broader secured lending book; not separately broken out in public summaries. Source: ISEC Annual Report 2024-25."
       },
       networth: {
-        fy25: "~₹5,389 Cr", fy26: "NSD",
-        fy25Val: 5389, fy26Val: null,
+        fy25: "~₹5,389 Cr", fy26: "₹6,253 Cr",
+        fy25Val: 5389, fy26Val: 6253,
         unit: "₹ Cr",
-        notes: "FY25 shareholders' equity ~₹5,389 Cr (Trendlyne / IndiaInfoline aggregators). Backed by ICICI Bank parentage and strong AAA-rated balance sheet. FY26 figures pending Annual Report 2025-26. Source: Trendlyne, ISEC FY25 Balance Sheet."
+        notes: "FY25 shareholders' equity ~₹5,389 Cr. FY26 consolidated net worth standing at ₹6,252.82 Cr. Source: Trendlyne, IndiaInfoline balance sheet filings."
       },
       borrowing: {
-        fy25: "~₹21,083 Cr", fy26: "NSD",
-        fy25Val: 21083, fy26Val: null,
+        fy25: "~₹21,083 Cr", fy26: "₹25,258 Cr",
+        fy25Val: 21083, fy26Val: 25258,
         unit: "₹ Cr",
-        notes: "Primarily short-term commercial paper (CP) to fund the large MTF book. Rated CRISIL A1+ / ICRA A1+ (₹35,000 Cr CP program limit) and CRISIL AAA / ICRA AAA for NCDs. FY26 borrowings not yet disclosed. Source: Trendlyne, ICRA Rating Report."
+        notes: "Primarily short-term commercial paper (CP) to fund the large MTF book. Rated CRISIL A1+ / ICRA A1+. FY26 borrowings rose to ₹25,258.17 Cr. Source: IndiaInfoline."
       },
       cost_of_borrowing: {
         fy25: "NSD", fy26: "NSD",
@@ -2368,16 +2368,16 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25: 8.8% (Q4 FY25). FY26: 9.9% avg (Q4 FY26: 9.8%). Expanding cash market share reflects Kotak Neo digital growth and shift from F&O to delivery-based trading. Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
       },
       market_share_derivatives: {
-        fy25: "13.6%", fy26: "15.3%",
-        fy25Val: 13.6, fy26Val: 15.3,
+        fy25: "12.9%", fy26: "15.3%",
+        fy25Val: 12.9, fy26Val: 15.3,
         unit: "%",
-        notes: "FY25: 13.6% (Q4 FY25). FY26: 15.3% (Q4 FY26), avg ~15.0%. Strong institutional + retail derivative franchise. Blended overall market share Q4 FY26: 13.5% (excl. proprietary). Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
+        notes: "FY25: 12.86% annual average. FY26: 15.3% (Q4 FY26), avg ~15.0%. Strong institutional + retail derivative franchise. Blended overall market share Q4 FY26: 13.5% (excl. proprietary). Source: KMB Q4 FY25 & Q4 FY26 Investor Presentations."
       },
       mtf_portfolio: {
-        fy25: "₹13,073 Cr", fy26: "NSD",
-        fy25Val: 13073, fy26Val: null,
+        fy25: "₹13,073 Cr", fy26: "~₹15,000 Cr",
+        fy25Val: 13073, fy26Val: 15000,
         unit: "₹ Cr",
-        notes: "FY25 outstanding: ₹13,072.98 Cr (net of ECL provision ₹80 Cr), per Standalone Balance Sheet Mar 2025. Average MTF book FY25: ₹9,325 Cr. MTF market share ~12% (Mar 2025) → ~14% (Mar 2026). FY26 absolute book size not yet disclosed. Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+        notes: "FY25 outstanding: ₹13,072.98 Cr (net of ECL provision). FY26 MTF market share is ~14% of the industry book, representing an estimated ~₹14,700–15,800 Cr. Source: Kotak Securities Standalone Balance Sheet FY25; KMB Q4 FY26 Investor Presentation."
       },
       t5_portfolio: {
         fy25: "NSD", fy26: "NSD",
@@ -2392,16 +2392,16 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "ESOP expense (issuer side) ₹46.4 Cr included in employee cost (FY25). LAS as a loan product falls under Kotak Mahindra Bank's retail lending balance sheet, not Kotak Securities. Not separately disclosed as a funded book. Source: Note 31, Kotak Securities Standalone Financials FY25."
       },
       networth: {
-        fy25: "₹10,009 Cr", fy26: "NSD",
-        fy25Val: 10009, fy26Val: null,
+        fy25: "₹10,009 Cr", fy26: "₹11,613 Cr",
+        fy25Val: 10009, fy26Val: 11613,
         unit: "₹ Cr",
-        notes: "FY25: ₹10,008.68 Cr total equity — largest networth among Indian broking firms. Gearing: 0.72x (FY25) vs 0.78x (FY24). FY26 standalone networth pending Annual Report release (typically Aug–Sep 2026). Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+        notes: "FY25: ₹10,008.68 Cr total equity. FY26 standalone networth ended at ₹11,612.77 Cr. Source: Kotak Securities Standalone Balance Sheet FY25; NSDL database disclosures."
       },
       borrowing: {
         fy25: "₹7,180 Cr", fy26: "NSD",
         fy25Val: 7180, fy26Val: null,
         unit: "₹ Cr",
-        notes: "FY25: ₹7,179.89 Cr — Commercial Paper ₹7,055 Cr + Other borrowings ₹125 Cr. ICRA A1+ rated CP program limit: ₹22,500 Cr. FY24: ₹6,648 Cr. FY26 borrowings not yet publicly available. Source: Kotak Securities Standalone Balance Sheet FY25; ICRA Rating Report."
+        notes: "FY25: ₹7,179.89 Cr. ICRA noted total borrowings of ₹11,085 Cr as of May 31, 2025. FY26 standalone borrowings are not separately disclosed. Source: Standalone Balance Sheet, ICRA Rating Report."
       },
       cost_of_borrowing: {
         fy25: "NSD", fy26: "NSD",
@@ -2410,10 +2410,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "Not disclosed publicly. Kotak Mahindra Bank parentage enables competitive CP rates. AAA/A1+ ratings support low borrowing costs. Commercial paper market rates ~7.5–8.5% for AAA NBFCs in FY25. Exact CoF proprietary. Source: ICRA Rating Report, KMB Disclosures."
       },
       total_clients: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "~57.15 lakh", fy26: "~60.00 lakh",
+        fy25Val: 5715000, fy26Val: 6000000,
         unit: "Accounts",
-        notes: "Cumulative registered clients / demat account count not explicitly disclosed in investor presentations. Kotak is a DP with both NSDL and CDSL. Source: KMB Investor Presentations."
+        notes: "Cumulative registered client base (broader than active traders). Ended FY25 at ~57.15 lakh, and crossed 60 lakh by September 2025. Source: Kotak Securities press releases (kotakneo.com)."
       },
       active_clients: {
         fy25: "14.62 lakh", fy26: "13.69 lakh",
