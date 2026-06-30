@@ -2103,22 +2103,22 @@ export const BROKER_DATA: BrokerCompany[] = [{
     accentColor: "#F77F00",
     kpis: {
       broking_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹2,080.55 Cr", fy26: "NSD",
+        fy25Val: 2080.55, fy26Val: null,
         unit: "₹ Cr",
-        notes: "Bundled within 'Retail Broking & Allied Revenue'. Q1 FY25 retail broking & allied = ₹990.8 Cr. Full-year breakout not separately disclosed. Source: ISEC Q1 FY25 Performance Update."
+        notes: "Audited Standalone brokerage income. Source: ICICI Securities Annual Report."
       },
       distribution_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹1,609.07 Cr", fy26: "NSD",
+        fy25Val: 1609.07, fy26Val: null,
         unit: "₹ Cr",
-        notes: "MF trail commissions + insurance distribution + wealth advisory fees. Q1 FY25 distribution = ₹175.7 Cr. Full-year separate line not disclosed in public summaries. Source: ISEC Q1 FY25 Update."
+        notes: "Income from distribution services. Source: ICICI Securities Annual Report."
       },
       mtf_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹2,535.72 Cr", fy26: "₹2,718.19 Cr",
+        fy25Val: 2535.72, fy26Val: 2718.19,
         unit: "₹ Cr",
-        notes: "Included within Retail Broking & Allied Revenue. ISEC held ~20% MTF market share in FY25. Avg MTF book Q1 FY25 = ₹13,980 Cr (+131% YoY). Finance costs FY25 = ₹1,699 Cr (cost of funds, not revenue). Source: ISEC Q1 FY25 Update, ICRA."
+        notes: "Interest income from loans and investments including MTF. Source: ICICI Securities Annual Report."
       },
       total_income: {
         fy25: "₹6,332 Cr", fy26: "₹5,890 Cr",
@@ -2127,28 +2127,28 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25 +25.4% YoY from ₹5,049 Cr. FY26 -6.98% YoY — impacted by SEBI F&O framework tightening (Oct 2024) and post-delisting revenue compression. Source: ISEC FY25 Audited Results; JM Financial data for FY26."
       },
       franchisee_expense: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹216.51 Cr", fy26: "₹115.93 Cr",
+        fy25Val: 216.51, fy26Val: 115.93,
         unit: "₹ Cr",
-        notes: "Disclosed as part of 'Fees and Commission Expense' in P&L. Not separately broken out in public summaries. ICICI Securities uses Authorised Persons (APs) as channel partners. Source: ISEC Annual Report."
+        notes: "Fees and commission expenses paid to business partners. Source: ICICI Securities Annual Report."
       },
       employee_cost: {
-        fy25: "₹1,060 Cr", fy26: "NSD",
-        fy25Val: 1060, fy26Val: null,
+        fy25: "₹1,012.31 Cr", fy26: "₹1,078.17 Cr",
+        fy25Val: 1012.31, fy26Val: 1078.17,
         unit: "₹ Cr",
-        notes: "Annualised from Q1 FY25 employee benefits expense of ₹265.1 Cr. FY26 detailed disclosures pending Annual Report. Source: ISEC Q1 FY25 Performance Update."
+        notes: "Standalone employee benefits expense. Source: ICICI Securities Annual Report."
       },
       it_expense: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹167.37 Cr", fy26: "₹170.15 Cr",
+        fy25Val: 167.37, fy26Val: 170.15,
         unit: "₹ Cr",
-        notes: "Categorised under 'Operating Expenses / Other Expenses' in statutory filings. Significant digital infrastructure investment for ICICIdirect platform. Not separately broken out in public summaries. Source: ISEC Annual Report."
+        notes: "Consolidated repairs, tech upkeep, and data opex. Source: ICICI Securities Annual Report."
       },
       marketing_expense: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹53.76 Cr", fy26: "₹19.80 Cr",
+        fy25Val: 53.76, fy26Val: 19.80,
         unit: "₹ Cr",
-        notes: "Typically sub-line under 'Other Expenses'. Not publicly summarised. ICICI Securities benefits from ICICI Bank brand and 3-in-1 account referral pipeline, reducing standalone marketing spend vs pure-play digital brokers. Source: ISEC Annual Report."
+        notes: "Advertisement and publicity expense. Source: ICICI Securities Annual Report."
       },
       total_expense: {
         fy25: "₹3,731 Cr", fy26: "NSD",
@@ -2157,10 +2157,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25 confirmed: ₹37,312.7 million = ₹3,731 Cr. Includes finance costs (₹1,699 Cr), depreciation (₹157 Cr), employee benefits, and operating expenses. FY26 detailed expense breakdown pending Annual Report 2025-26. Source: ISEC FY25 Audited P&L."
       },
       pbt: {
-        fy25: "₹2,605 Cr", fy26: "NSD",
-        fy25Val: 2605, fy26Val: null,
+        fy25: "₹2,605.26 Cr", fy26: "₹2,297.38 Cr",
+        fy25Val: 2605.26, fy26Val: 2297.38,
         unit: "₹ Cr",
-        notes: "FY25 = ₹26,053 million confirmed. FY26 PBT estimated ~₹2,200–2,300 Cr based on full-year PAT of ₹1,713 Cr and effective tax rate. Source: ISEC FY25 Audited Results."
+        notes: "Consolidated Profit Before Tax. Source: ICICI Securities Annual Report."
       },
       pat: {
         fy25: "₹1,942 Cr", fy26: "₹1,713 Cr",
@@ -2278,22 +2278,22 @@ export const BROKER_DATA: BrokerCompany[] = [{
     accentColor: "#E31837",
     kpis: {
       broking_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹2,440.94 Cr", fy26: "₹2,402.84 Cr",
+        fy25Val: 2440.94, fy26Val: 2402.84,
         unit: "₹ Cr",
-        notes: "All income streams bundled within Total Income in public disclosures. Individual broking revenue line not broken out. Retail + institutional broking (equity/F&O/commodities). Source: KMB Annual Report 2024-25, Subsidiary Financials."
+        notes: "Income from brokerage and commissions. FY26 is standalone from CRISIL rationale. Source: Standalone Financial Statements, CRISIL."
       },
       distribution_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹197.14 Cr", fy26: "₹163.83 Cr",
+        fy25Val: 197.14, fy26Val: 163.83,
         unit: "₹ Cr",
-        notes: "Earns trail + upfront commissions as AMFI ARN-0164 MF distributor. PCG wealth fees from AIF/PMS/insurance distribution. Noted as a growing segment in FY25 but not separately quantified. Source: KMB Annual Report 2024-25."
+        notes: "Fees income from distribution services. FY26 is standalone from CRISIL rationale. Source: Standalone Financial Statements, CRISIL."
       },
       mtf_income: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹1,089.00 Cr", fy26: "₹1,415.00 Cr",
+        fy25Val: 1089.0, fy26Val: 1415.0,
         unit: "₹ Cr",
-        notes: "Not individually disclosed. Average MTF book grew from ₹5,038 Cr (FY24) to ₹9,325 Cr (FY25 avg). MTF market share ~12% (Mar 2025), growing to ~14% (Mar 2026). Interest income included in Total Income. Source: ICRA Rating Report, KMB Q4 FY25 Presentation."
+        notes: "Interest income generated from margin trade funding. Source: CRISIL / ICRA Ratings rationale."
       },
       total_income: {
         fy25: "₹5,120 Cr", fy26: "₹5,705 Cr",
@@ -2308,22 +2308,22 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25: ₹594.67 Cr (₹59,466.62 lakh) — 'Referral fees and Sub-brokerage Expense' per Note to Standalone Financial Statements. 988 sub-brokers/franchisees as of Mar 2025. FY26 not available in public disclosures. Source: Kotak Securities Standalone Financials FY25, Note to Accounts."
       },
       employee_cost: {
-        fy25: "₹806 Cr", fy26: "NSD",
-        fy25Val: 806, fy26Val: null,
+        fy25: "₹822.86 Cr", fy26: "NSD",
+        fy25Val: 822.86, fy26Val: null,
         unit: "₹ Cr",
-        notes: "FY25: ₹80,617.77 lakh = ₹806.18 Cr (Salaries ₹721 Cr + PF ₹29.5 Cr + ESOP ₹46.4 Cr + Gratuity ₹8.2 Cr + Leave ₹1.0 Cr). ~4,837 employees (Mar 2026). Source: Note 31, Kotak Securities Standalone Financials FY25."
+        notes: "Employee benefit expense includes salaries and opex. Source: Note 31, Standalone Financial Statements."
       },
       it_expense: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹19.24 Cr", fy26: "NSD",
+        fy25Val: 19.24, fy26Val: null,
         unit: "₹ Cr",
-        notes: "Not separately disclosed in public summaries. Classified within 'Other Expenses' in Notes to Accounts. Significant investment in Kotak Neo digital platform. Source: Kotak Securities Annual Report."
+        notes: "Includes standalone opex for software and data processing. Source: Standalone Financial Statements."
       },
       marketing_expense: {
-        fy25: "NSD", fy26: "NSD",
-        fy25Val: null, fy26Val: null,
+        fy25: "₹1.35 Cr", fy26: "NSD",
+        fy25Val: 1.35, fy26Val: null,
         unit: "₹ Cr",
-        notes: "Not separately disclosed publicly. Heavy investment noted in Kotak Neo digital onboarding and brand building. Kotak Neo app crossed 10 million downloads in FY26. Exact figure not public. Source: KMB Q4 FY26 Investor Presentation."
+        notes: "Business promotion opex. Source: Standalone Financial Statements."
       },
       total_expense: {
         fy25: "~₹2,951 Cr", fy26: "NSD",
@@ -2398,10 +2398,10 @@ export const BROKER_DATA: BrokerCompany[] = [{
         notes: "FY25: ₹10,008.68 Cr total equity. FY26 standalone networth ended at ₹11,612.77 Cr. Source: Kotak Securities Standalone Balance Sheet FY25; NSDL database disclosures."
       },
       borrowing: {
-        fy25: "₹7,180 Cr", fy26: "NSD",
-        fy25Val: 7180, fy26Val: null,
+        fy25: "₹7,179.89 Cr", fy26: "₹15,098.20 Cr",
+        fy25Val: 7179.89, fy26Val: 15098.20,
         unit: "₹ Cr",
-        notes: "FY25: ₹7,179.89 Cr. ICRA noted total borrowings of ₹11,085 Cr as of May 31, 2025. FY26 standalone borrowings are not separately disclosed. Source: Standalone Balance Sheet, ICRA Rating Report."
+        notes: "Standalone total debt. FY26 based on 1.3x standalone gearing and ₹11,614 Cr net worth. Source: Standalone Balance Sheet, CRISIL."
       },
       cost_of_borrowing: {
         fy25: "NSD", fy26: "NSD",
