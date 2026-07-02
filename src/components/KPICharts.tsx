@@ -272,7 +272,7 @@ export default function KPICharts() {
                   formatter={(value: any, name: any, props: any) => {
                     const originalData = props.payload;
                     const valueStr = name === "FY25" ? originalData.fy25Display : originalData.fy26Display;
-                    const cleanValue = valueStr === "NSD" ? "Not Separately Disclosed (NSD)" : valueStr;
+                    const cleanValue = valueStr === "NSD" ? "Not Disclosed" : valueStr;
                     return [cleanValue, name === "FY25" ? "FY25 Actual" : "FY26 Actual"];
                   }}
                 />
@@ -330,7 +330,7 @@ export default function KPICharts() {
                   formatter={(value: any, name: any, props: any) => {
                     const originalData = props.payload;
                     const valueStr = name === "FY25" ? originalData.fy25Display : originalData.fy26Display;
-                    const cleanValue = valueStr === "NSD" ? "Not Separately Disclosed (NSD)" : valueStr;
+                    const cleanValue = valueStr === "NSD" ? "Not Disclosed" : valueStr;
                     return [cleanValue, name === "FY25" ? "FY25 Actual" : "FY26 Actual"];
                   }}
                 />
@@ -363,7 +363,7 @@ export default function KPICharts() {
         <div className="mt-6 p-4 sm:p-5 bg-slate-50 border border-slate-200/60 rounded-xl flex items-center gap-3">
           <Activity size={15} className="text-slate-400" />
           <p className="text-[11px] text-slate-500 font-sans leading-relaxed">
-            Note: Where a company is marked as <strong>NSD (Not Separately Disclosed)</strong>, its numeric chart value is treated as zero to prevent distortion on coordinates. Click over to the <strong>KPI Matrix</strong> view to consult notes on NSD boundaries.
+            Note: Where a company is marked as <strong>Not Disclosed</strong>, its numeric chart value is treated as zero to prevent distortion on coordinates. Click over to the <strong>KPI Matrix</strong> view to consult notes on NSD boundaries.
           </p>
         </div>
       </div>

@@ -261,7 +261,7 @@ export default function BrokerProfiler() {
                               <span className={`font-mono text-xs font-bold ${
                                 (kpiVal.fy25 && typeof kpiVal.fy25 === "string" && kpiVal.fy25.includes("NSD")) ? "text-slate-400 font-sans italic" : "text-slate-800"
                               }`}>
-                                {kpiVal.fy25}
+                                {kpiVal.fy25 === "NSD" ? "Not Disclosed" : kpiVal.fy25}
                               </span>
                             </div>
                             <div className="h-6 w-px bg-slate-200" />
@@ -270,7 +270,7 @@ export default function BrokerProfiler() {
                               <span className={`font-mono text-xs font-bold ${
                                 (kpiVal.fy26 && typeof kpiVal.fy26 === "string" && kpiVal.fy26.includes("NSD")) ? "text-slate-400 font-sans italic" : "text-slate-900"
                               }`}>
-                                {kpiVal.fy26}
+                                {kpiVal.fy26 === "NSD" ? "Not Disclosed" : kpiVal.fy26}
                               </span>
                             </div>
                           </div>
